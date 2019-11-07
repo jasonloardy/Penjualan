@@ -22,12 +22,14 @@ Partial Class FormUtama
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUtama))
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.DataMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataKecilToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.JenisBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SatuanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataSupplierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -38,15 +40,6 @@ Partial Class FormUtama
         Me.CariNotaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PembelianToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PenjualanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PengaturanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.lblNamaToko = New System.Windows.Forms.Label()
-        Me.lblDeskripsi = New System.Windows.Forms.Label()
-        Me.lblAlamat = New System.Windows.Forms.Label()
-        Me.lblTelp = New System.Windows.Forms.Label()
-        Me.DataKecilToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.JenisBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SatuanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -72,7 +65,7 @@ Partial Class FormUtama
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataMasterToolStripMenuItem, Me.TransaksiToolStripMenuItem, Me.LaporanToolStripMenuItem, Me.CariNotaToolStripMenuItem, Me.PengaturanToolStripMenuItem, Me.LogoutToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataMasterToolStripMenuItem, Me.TransaksiToolStripMenuItem, Me.LaporanToolStripMenuItem, Me.CariNotaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
@@ -92,6 +85,25 @@ Partial Class FormUtama
         Me.DataBarangToolStripMenuItem.Name = "DataBarangToolStripMenuItem"
         Me.DataBarangToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.DataBarangToolStripMenuItem.Text = "Data Barang"
+        '
+        'DataKecilToolStripMenuItem
+        '
+        Me.DataKecilToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.JenisBarangToolStripMenuItem, Me.SatuanToolStripMenuItem})
+        Me.DataKecilToolStripMenuItem.Name = "DataKecilToolStripMenuItem"
+        Me.DataKecilToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.DataKecilToolStripMenuItem.Text = "Data Kecil"
+        '
+        'JenisBarangToolStripMenuItem
+        '
+        Me.JenisBarangToolStripMenuItem.Name = "JenisBarangToolStripMenuItem"
+        Me.JenisBarangToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.JenisBarangToolStripMenuItem.Text = "Jenis Barang"
+        '
+        'SatuanToolStripMenuItem
+        '
+        Me.SatuanToolStripMenuItem.Name = "SatuanToolStripMenuItem"
+        Me.SatuanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SatuanToolStripMenuItem.Text = "Satuan"
         '
         'DataPelangganToolStripMenuItem
         '
@@ -155,103 +167,11 @@ Partial Class FormUtama
         Me.PenjualanToolStripMenuItem1.Size = New System.Drawing.Size(136, 22)
         Me.PenjualanToolStripMenuItem1.Text = "Penjualan"
         '
-        'PengaturanToolStripMenuItem
-        '
-        Me.PengaturanToolStripMenuItem.Name = "PengaturanToolStripMenuItem"
-        Me.PengaturanToolStripMenuItem.Size = New System.Drawing.Size(86, 21)
-        Me.PengaturanToolStripMenuItem.Text = "Pengaturan"
-        '
-        'LogoutToolStripMenuItem
-        '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(61, 21)
-        Me.LogoutToolStripMenuItem.Text = "Logout"
-        '
-        'lblNamaToko
-        '
-        Me.lblNamaToko.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblNamaToko.BackColor = System.Drawing.Color.Transparent
-        Me.lblNamaToko.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNamaToko.Location = New System.Drawing.Point(16, 119)
-        Me.lblNamaToko.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblNamaToko.Name = "lblNamaToko"
-        Me.lblNamaToko.Size = New System.Drawing.Size(1252, 41)
-        Me.lblNamaToko.TabIndex = 9
-        Me.lblNamaToko.Text = "<NAMA TOKO>"
-        Me.lblNamaToko.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblDeskripsi
-        '
-        Me.lblDeskripsi.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblDeskripsi.BackColor = System.Drawing.Color.Transparent
-        Me.lblDeskripsi.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDeskripsi.Location = New System.Drawing.Point(16, 160)
-        Me.lblDeskripsi.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblDeskripsi.Name = "lblDeskripsi"
-        Me.lblDeskripsi.Size = New System.Drawing.Size(1252, 41)
-        Me.lblDeskripsi.TabIndex = 10
-        Me.lblDeskripsi.Text = "<DESKRIPSI TOKO>"
-        Me.lblDeskripsi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblAlamat
-        '
-        Me.lblAlamat.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAlamat.BackColor = System.Drawing.Color.Transparent
-        Me.lblAlamat.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAlamat.Location = New System.Drawing.Point(16, 201)
-        Me.lblAlamat.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblAlamat.Name = "lblAlamat"
-        Me.lblAlamat.Size = New System.Drawing.Size(1252, 41)
-        Me.lblAlamat.TabIndex = 11
-        Me.lblAlamat.Text = "<ALAMAT TOKO>"
-        Me.lblAlamat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblTelp
-        '
-        Me.lblTelp.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTelp.BackColor = System.Drawing.Color.Transparent
-        Me.lblTelp.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTelp.Location = New System.Drawing.Point(16, 241)
-        Me.lblTelp.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblTelp.Name = "lblTelp"
-        Me.lblTelp.Size = New System.Drawing.Size(1252, 41)
-        Me.lblTelp.TabIndex = 12
-        Me.lblTelp.Text = "<TELP TOKO>"
-        Me.lblTelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'DataKecilToolStripMenuItem
-        '
-        Me.DataKecilToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.JenisBarangToolStripMenuItem, Me.SatuanToolStripMenuItem})
-        Me.DataKecilToolStripMenuItem.Name = "DataKecilToolStripMenuItem"
-        Me.DataKecilToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
-        Me.DataKecilToolStripMenuItem.Text = "Data Kecil"
-        '
-        'JenisBarangToolStripMenuItem
-        '
-        Me.JenisBarangToolStripMenuItem.Name = "JenisBarangToolStripMenuItem"
-        Me.JenisBarangToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.JenisBarangToolStripMenuItem.Text = "Jenis Barang"
-        '
-        'SatuanToolStripMenuItem
-        '
-        Me.SatuanToolStripMenuItem.Name = "SatuanToolStripMenuItem"
-        Me.SatuanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.SatuanToolStripMenuItem.Text = "Satuan"
-        '
         'FormUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1284, 661)
-        Me.Controls.Add(Me.lblTelp)
-        Me.Controls.Add(Me.lblAlamat)
-        Me.Controls.Add(Me.lblDeskripsi)
-        Me.Controls.Add(Me.lblNamaToko)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -276,11 +196,6 @@ Partial Class FormUtama
     Friend WithEvents TransaksiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LaporanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CariNotaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents lblNamaToko As System.Windows.Forms.Label
-    Friend WithEvents lblDeskripsi As System.Windows.Forms.Label
-    Friend WithEvents lblAlamat As System.Windows.Forms.Label
-    Friend WithEvents PengaturanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataBarangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataPelangganToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataSupplierToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -289,7 +204,6 @@ Partial Class FormUtama
     Friend WithEvents PenjualanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PembelianToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PenjualanToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents lblTelp As System.Windows.Forms.Label
     Friend WithEvents DataKecilToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents JenisBarangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SatuanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

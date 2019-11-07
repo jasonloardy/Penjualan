@@ -49,9 +49,28 @@ Module ModuleDB
             MsgBox(ex.Message, 16, "Error")
         End Try
     End Sub
-    Sub query(ByVal query As String)
+    Sub QueryBarang(ByVal query As String, ByVal kd_barang As String, ByVal nama_barang As String,
+                    ByVal kd_jenis As String, ByVal kd_satuan As String, ByVal harga_beli As String,
+                    ByVal harga_jual As String, ByVal stok As String)
         Try
-            Call koneksi()
+            Using cmd As New MySqlCommand
+                cmd.CommandText = query
+                cmd.Parameters.AddWithValue("@kd_barang", kd_barang)
+                cmd.Parameters.AddWithValue("@nama_barang", nama_barang)
+                cmd.Parameters.AddWithValue("@kd_jenis", kd_jenis)
+                cmd.Parameters.AddWithValue("@kd_satuan", kd_satuan)
+                cmd.Parameters.AddWithValue("@harga_beli", harga_beli)
+                cmd.Parameters.AddWithValue("@harga_jual", harga_jual)
+                cmd.Parameters.AddWithValue("@stok", stok)
+                cmd.Connection = konek
+                cmd.ExecuteNonQuery()
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message, 16, "Error")
+        End Try
+    End Sub
+    Sub Query(ByVal query As String)
+        Try
             Using cmd As New MySqlCommand
                 cmd.CommandText = query
                 cmd.Connection = konek

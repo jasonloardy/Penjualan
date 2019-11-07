@@ -23,14 +23,13 @@ Partial Class FormBarang
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBarang))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tbcari = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnsatuan = New System.Windows.Forms.Button()
         Me.btnjenis = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.chkbarcode = New System.Windows.Forms.CheckBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.tbstok = New System.Windows.Forms.TextBox()
         Me.cbsatuan = New System.Windows.Forms.ComboBox()
@@ -78,7 +77,7 @@ Partial Class FormBarang
         Me.GroupBox1.Controls.Add(Me.dgv)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.tbcari)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(811, 537)
@@ -90,7 +89,7 @@ Partial Class FormBarang
         '
         Me.GroupBox2.Controls.Add(Me.btnsatuan)
         Me.GroupBox2.Controls.Add(Me.btnjenis)
-        Me.GroupBox2.Controls.Add(Me.CheckBox1)
+        Me.GroupBox2.Controls.Add(Me.chkbarcode)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.tbstok)
         Me.GroupBox2.Controls.Add(Me.cbsatuan)
@@ -105,7 +104,7 @@ Partial Class FormBarang
         Me.GroupBox2.Controls.Add(Me.tbhargabeli)
         Me.GroupBox2.Controls.Add(Me.tbnamabarang)
         Me.GroupBox2.Controls.Add(Me.tbkdbarang)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(839, 12)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(433, 260)
@@ -133,16 +132,16 @@ Partial Class FormBarang
         Me.btnjenis.Text = "Atur"
         Me.btnjenis.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'chkbarcode
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(279, 28)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(79, 20)
-        Me.CheckBox1.TabIndex = 25
-        Me.CheckBox1.Text = "Barcode"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chkbarcode.AutoSize = True
+        Me.chkbarcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkbarcode.Location = New System.Drawing.Point(279, 28)
+        Me.chkbarcode.Name = "chkbarcode"
+        Me.chkbarcode.Size = New System.Drawing.Size(79, 20)
+        Me.chkbarcode.TabIndex = 25
+        Me.chkbarcode.Text = "Barcode"
+        Me.chkbarcode.UseVisualStyleBackColor = True
         '
         'Label8
         '
@@ -327,14 +326,6 @@ Partial Class FormBarang
         'dgv
         '
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv.DefaultCellStyle = DataGridViewCellStyle1
         Me.dgv.Location = New System.Drawing.Point(9, 59)
         Me.dgv.Name = "dgv"
         Me.dgv.Size = New System.Drawing.Size(796, 472)
@@ -386,7 +377,7 @@ Partial Class FormBarang
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents tbstok As System.Windows.Forms.TextBox
     Friend WithEvents cbsatuan As System.Windows.Forms.ComboBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents chkbarcode As System.Windows.Forms.CheckBox
     Friend WithEvents btnsatuan As System.Windows.Forms.Button
     Friend WithEvents btnjenis As System.Windows.Forms.Button
     Friend WithEvents dgv As System.Windows.Forms.DataGridView

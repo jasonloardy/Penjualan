@@ -94,12 +94,6 @@
     <Compile Include="FormJenis.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPengaturan.Designer.vb">
-      <DependentUpon>FormPengaturan.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormPengaturan.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormUtama.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -133,9 +127,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormJenis.resx">
       <DependentUpon>FormJenis.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormPengaturan.resx">
-      <DependentUpon>FormPengaturan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.vb</DependentUpon>
