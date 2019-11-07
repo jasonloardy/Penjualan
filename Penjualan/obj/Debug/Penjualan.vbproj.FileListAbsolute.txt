@@ -1,0 +1,16 @@
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\bin\Debug\Penjualan.exe.config
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\bin\Debug\Penjualan.exe
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\bin\Debug\Penjualan.pdb
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\bin\Debug\Penjualan.xml
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.Resources.resources
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.vbproj.GenerateResource.Cache
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.exe
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.xml
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.pdb
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\bin\Debug\MySql.Data.dll
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.vbprojResolveAssemblyReference.cache
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.FormUtama.resources
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.FormPengaturan.resources
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.FormBarang.resources
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.FormJenis.resources
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.FormSatuan.resources
