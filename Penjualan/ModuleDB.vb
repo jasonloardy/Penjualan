@@ -69,6 +69,22 @@ Module ModuleDB
             MsgBox(ex.Message, 16, "Error")
         End Try
     End Sub
+    Sub QueryPelSup(ByVal query As String, ByVal kd As String, ByVal nama As String,
+                    ByVal alamat As String, ByVal no_telp As String)
+        Try
+            Using cmd As New MySqlCommand
+                cmd.CommandText = query
+                cmd.Parameters.AddWithValue("@kd", kd)
+                cmd.Parameters.AddWithValue("@nama", nama)
+                cmd.Parameters.AddWithValue("@alamat", alamat)
+                cmd.Parameters.AddWithValue("@no_telp", no_telp)
+                cmd.Connection = konek
+                cmd.ExecuteNonQuery()
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message, 16, "Error")
+        End Try
+    End Sub
     Sub Query(ByVal query As String)
         Try
             Using cmd As New MySqlCommand

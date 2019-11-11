@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormBarang
+Partial Class FormSupplier
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class FormBarang
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBarang))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormSupplier))
         Me.tbcari = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -35,23 +35,14 @@ Partial Class FormBarang
         Me.btnprev = New System.Windows.Forms.Button()
         Me.btnfirst = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btnsatuan = New System.Windows.Forms.Button()
-        Me.btnjenis = New System.Windows.Forms.Button()
-        Me.chkbarcode = New System.Windows.Forms.CheckBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.tbstok = New System.Windows.Forms.TextBox()
-        Me.cbsatuan = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.cbjenis = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.tbhargajual = New System.Windows.Forms.TextBox()
-        Me.tbhargabeli = New System.Windows.Forms.TextBox()
-        Me.tbnamabarang = New System.Windows.Forms.TextBox()
-        Me.tbkdbarang = New System.Windows.Forms.TextBox()
+        Me.tbnotelp = New System.Windows.Forms.TextBox()
+        Me.tbalamat = New System.Windows.Forms.TextBox()
+        Me.tbnama = New System.Windows.Forms.TextBox()
+        Me.tbkdsupplier = New System.Windows.Forms.TextBox()
         Me.btntambah = New System.Windows.Forms.Button()
         Me.btnedit = New System.Windows.Forms.Button()
         Me.btnhapus = New System.Windows.Forms.Button()
@@ -66,9 +57,9 @@ Partial Class FormBarang
         Me.tbcari.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbcari.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbcari.Location = New System.Drawing.Point(179, 26)
+        Me.tbcari.Location = New System.Drawing.Point(185, 26)
         Me.tbcari.Name = "tbcari"
-        Me.tbcari.Size = New System.Drawing.Size(626, 22)
+        Me.tbcari.Size = New System.Drawing.Size(620, 22)
         Me.tbcari.TabIndex = 1
         '
         'Label1
@@ -77,9 +68,9 @@ Partial Class FormBarang
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(6, 29)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(167, 16)
+        Me.Label1.Size = New System.Drawing.Size(173, 16)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Cari Kode / Nama Barang :"
+        Me.Label1.Text = "Cari Kode / Nama Supplier :"
         '
         'GroupBox1
         '
@@ -102,18 +93,18 @@ Partial Class FormBarang
         Me.GroupBox1.Size = New System.Drawing.Size(811, 537)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "DAFTAR BARANG"
+        Me.GroupBox1.Text = "DAFTAR SUPPLIER"
         '
         'lbltotitem
         '
         Me.lbltotitem.AutoSize = True
         Me.lbltotitem.BackColor = System.Drawing.Color.LightSkyBlue
         Me.lbltotitem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltotitem.Location = New System.Drawing.Point(180, 57)
+        Me.lbltotitem.Location = New System.Drawing.Point(187, 56)
         Me.lbltotitem.Name = "lbltotitem"
-        Me.lbltotitem.Size = New System.Drawing.Size(79, 16)
+        Me.lbltotitem.Size = New System.Drawing.Size(110, 16)
         Me.lbltotitem.TabIndex = 21
-        Me.lbltotitem.Text = "Jumlah Item"
+        Me.lbltotitem.Text = "Jumlah Supplier :"
         '
         'tbpage
         '
@@ -187,137 +178,42 @@ Partial Class FormBarang
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.btnsatuan)
-        Me.GroupBox2.Controls.Add(Me.btnjenis)
-        Me.GroupBox2.Controls.Add(Me.chkbarcode)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.tbstok)
-        Me.GroupBox2.Controls.Add(Me.cbsatuan)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.cbjenis)
-        Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.tbhargajual)
-        Me.GroupBox2.Controls.Add(Me.tbhargabeli)
-        Me.GroupBox2.Controls.Add(Me.tbnamabarang)
-        Me.GroupBox2.Controls.Add(Me.tbkdbarang)
+        Me.GroupBox2.Controls.Add(Me.tbnotelp)
+        Me.GroupBox2.Controls.Add(Me.tbalamat)
+        Me.GroupBox2.Controls.Add(Me.tbnama)
+        Me.GroupBox2.Controls.Add(Me.tbkdsupplier)
+        Me.GroupBox2.Enabled = False
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(839, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(433, 260)
+        Me.GroupBox2.Size = New System.Drawing.Size(433, 160)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "DETAIL BARANG"
-        '
-        'btnsatuan
-        '
-        Me.btnsatuan.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsatuan.Location = New System.Drawing.Point(276, 125)
-        Me.btnsatuan.Name = "btnsatuan"
-        Me.btnsatuan.Size = New System.Drawing.Size(75, 24)
-        Me.btnsatuan.TabIndex = 27
-        Me.btnsatuan.Text = "Atur"
-        Me.btnsatuan.UseVisualStyleBackColor = True
-        '
-        'btnjenis
-        '
-        Me.btnjenis.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnjenis.Location = New System.Drawing.Point(276, 92)
-        Me.btnjenis.Name = "btnjenis"
-        Me.btnjenis.Size = New System.Drawing.Size(75, 24)
-        Me.btnjenis.TabIndex = 26
-        Me.btnjenis.Text = "Atur"
-        Me.btnjenis.UseVisualStyleBackColor = True
-        '
-        'chkbarcode
-        '
-        Me.chkbarcode.AutoSize = True
-        Me.chkbarcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkbarcode.Location = New System.Drawing.Point(279, 28)
-        Me.chkbarcode.Name = "chkbarcode"
-        Me.chkbarcode.Size = New System.Drawing.Size(79, 20)
-        Me.chkbarcode.TabIndex = 25
-        Me.chkbarcode.Text = "Barcode"
-        Me.chkbarcode.UseVisualStyleBackColor = True
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(7, 227)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(41, 16)
-        Me.Label8.TabIndex = 24
-        Me.Label8.Text = "Stok :"
-        '
-        'tbstok
-        '
-        Me.tbstok.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbstok.Location = New System.Drawing.Point(110, 224)
-        Me.tbstok.Name = "tbstok"
-        Me.tbstok.Size = New System.Drawing.Size(160, 22)
-        Me.tbstok.TabIndex = 23
-        '
-        'cbsatuan
-        '
-        Me.cbsatuan.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbsatuan.FormattingEnabled = True
-        Me.cbsatuan.Location = New System.Drawing.Point(110, 125)
-        Me.cbsatuan.Name = "cbsatuan"
-        Me.cbsatuan.Size = New System.Drawing.Size(160, 24)
-        Me.cbsatuan.TabIndex = 22
+        Me.GroupBox2.Text = "DETAIL SUPPLIER"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(6, 194)
+        Me.Label7.Location = New System.Drawing.Point(6, 128)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(80, 16)
+        Me.Label7.Size = New System.Drawing.Size(89, 16)
         Me.Label7.TabIndex = 21
-        Me.Label7.Text = "Harga Jual :"
+        Me.Label7.Text = "No. Telepon :"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(6, 161)
+        Me.Label6.Location = New System.Drawing.Point(6, 95)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(78, 16)
+        Me.Label6.Size = New System.Drawing.Size(56, 16)
         Me.Label6.TabIndex = 20
-        Me.Label6.Text = "Harga Beli :"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 128)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(56, 16)
-        Me.Label5.TabIndex = 19
-        Me.Label5.Text = "Satuan :"
-        '
-        'cbjenis
-        '
-        Me.cbjenis.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbjenis.FormattingEnabled = True
-        Me.cbjenis.Location = New System.Drawing.Point(110, 92)
-        Me.cbjenis.Name = "cbjenis"
-        Me.cbjenis.Size = New System.Drawing.Size(160, 24)
-        Me.cbjenis.TabIndex = 18
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(6, 95)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(93, 16)
-        Me.Label4.TabIndex = 17
-        Me.Label4.Text = "Jenis Barang :"
+        Me.Label6.Text = "Alamat :"
         '
         'Label3
         '
@@ -325,9 +221,9 @@ Partial Class FormBarang
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(6, 62)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(98, 16)
+        Me.Label3.Size = New System.Drawing.Size(104, 16)
         Me.Label3.TabIndex = 16
-        Me.Label3.Text = "Nama Barang :"
+        Me.Label3.Text = "Nama Supplier :"
         '
         'Label2
         '
@@ -335,41 +231,42 @@ Partial Class FormBarang
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(6, 29)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 16)
+        Me.Label2.Size = New System.Drawing.Size(99, 16)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Kode Barang :"
+        Me.Label2.Text = "Kode Supplier :"
         '
-        'tbhargajual
+        'tbnotelp
         '
-        Me.tbhargajual.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbhargajual.Location = New System.Drawing.Point(110, 191)
-        Me.tbhargajual.Name = "tbhargajual"
-        Me.tbhargajual.Size = New System.Drawing.Size(317, 22)
-        Me.tbhargajual.TabIndex = 15
+        Me.tbnotelp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbnotelp.Location = New System.Drawing.Point(116, 125)
+        Me.tbnotelp.Name = "tbnotelp"
+        Me.tbnotelp.Size = New System.Drawing.Size(311, 22)
+        Me.tbnotelp.TabIndex = 15
         '
-        'tbhargabeli
+        'tbalamat
         '
-        Me.tbhargabeli.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbhargabeli.Location = New System.Drawing.Point(110, 158)
-        Me.tbhargabeli.Name = "tbhargabeli"
-        Me.tbhargabeli.Size = New System.Drawing.Size(317, 22)
-        Me.tbhargabeli.TabIndex = 4
+        Me.tbalamat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbalamat.Location = New System.Drawing.Point(116, 92)
+        Me.tbalamat.Name = "tbalamat"
+        Me.tbalamat.Size = New System.Drawing.Size(311, 22)
+        Me.tbalamat.TabIndex = 4
         '
-        'tbnamabarang
+        'tbnama
         '
-        Me.tbnamabarang.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbnamabarang.Location = New System.Drawing.Point(110, 59)
-        Me.tbnamabarang.Name = "tbnamabarang"
-        Me.tbnamabarang.Size = New System.Drawing.Size(317, 22)
-        Me.tbnamabarang.TabIndex = 1
+        Me.tbnama.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbnama.Location = New System.Drawing.Point(116, 59)
+        Me.tbnama.Name = "tbnama"
+        Me.tbnama.Size = New System.Drawing.Size(311, 22)
+        Me.tbnama.TabIndex = 1
         '
-        'tbkdbarang
+        'tbkdsupplier
         '
-        Me.tbkdbarang.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbkdbarang.Location = New System.Drawing.Point(110, 26)
-        Me.tbkdbarang.Name = "tbkdbarang"
-        Me.tbkdbarang.Size = New System.Drawing.Size(160, 22)
-        Me.tbkdbarang.TabIndex = 0
+        Me.tbkdsupplier.Enabled = False
+        Me.tbkdsupplier.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbkdsupplier.Location = New System.Drawing.Point(116, 26)
+        Me.tbkdsupplier.Name = "tbkdsupplier"
+        Me.tbkdsupplier.Size = New System.Drawing.Size(138, 22)
+        Me.tbkdsupplier.TabIndex = 0
         '
         'btntambah
         '
@@ -377,7 +274,7 @@ Partial Class FormBarang
         Me.btntambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btntambah.Image = CType(resources.GetObject("btntambah.Image"), System.Drawing.Image)
         Me.btntambah.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btntambah.Location = New System.Drawing.Point(934, 278)
+        Me.btntambah.Location = New System.Drawing.Point(934, 178)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(80, 75)
         Me.btntambah.TabIndex = 11
@@ -391,7 +288,7 @@ Partial Class FormBarang
         Me.btnedit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnedit.Image = CType(resources.GetObject("btnedit.Image"), System.Drawing.Image)
         Me.btnedit.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnedit.Location = New System.Drawing.Point(1020, 278)
+        Me.btnedit.Location = New System.Drawing.Point(1020, 178)
         Me.btnedit.Name = "btnedit"
         Me.btnedit.Size = New System.Drawing.Size(80, 75)
         Me.btnedit.TabIndex = 12
@@ -405,7 +302,7 @@ Partial Class FormBarang
         Me.btnhapus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnhapus.Image = CType(resources.GetObject("btnhapus.Image"), System.Drawing.Image)
         Me.btnhapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnhapus.Location = New System.Drawing.Point(1106, 278)
+        Me.btnhapus.Location = New System.Drawing.Point(1106, 178)
         Me.btnhapus.Name = "btnhapus"
         Me.btnhapus.Size = New System.Drawing.Size(80, 75)
         Me.btnhapus.TabIndex = 13
@@ -419,7 +316,7 @@ Partial Class FormBarang
         Me.btnbatal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbatal.Image = CType(resources.GetObject("btnbatal.Image"), System.Drawing.Image)
         Me.btnbatal.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnbatal.Location = New System.Drawing.Point(1192, 278)
+        Me.btnbatal.Location = New System.Drawing.Point(1192, 178)
         Me.btnbatal.Name = "btnbatal"
         Me.btnbatal.Size = New System.Drawing.Size(80, 75)
         Me.btnbatal.TabIndex = 14
@@ -427,7 +324,7 @@ Partial Class FormBarang
         Me.btnbatal.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnbatal.UseVisualStyleBackColor = True
         '
-        'FormBarang
+        'FormSupplier
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(1284, 561)
@@ -440,9 +337,9 @@ Partial Class FormBarang
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "FormBarang"
+        Me.Name = "FormSupplier"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Data Barang"
+        Me.Text = "Data Supplier"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
@@ -458,24 +355,15 @@ Partial Class FormBarang
     Friend WithEvents btntambah As System.Windows.Forms.Button
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents cbjenis As System.Windows.Forms.ComboBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents tbhargajual As System.Windows.Forms.TextBox
-    Friend WithEvents tbhargabeli As System.Windows.Forms.TextBox
-    Friend WithEvents tbnamabarang As System.Windows.Forms.TextBox
-    Friend WithEvents tbkdbarang As System.Windows.Forms.TextBox
+    Friend WithEvents tbnotelp As System.Windows.Forms.TextBox
+    Friend WithEvents tbalamat As System.Windows.Forms.TextBox
+    Friend WithEvents tbnama As System.Windows.Forms.TextBox
+    Friend WithEvents tbkdsupplier As System.Windows.Forms.TextBox
     Friend WithEvents btnedit As System.Windows.Forms.Button
     Friend WithEvents btnhapus As System.Windows.Forms.Button
     Friend WithEvents btnbatal As System.Windows.Forms.Button
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents tbstok As System.Windows.Forms.TextBox
-    Friend WithEvents cbsatuan As System.Windows.Forms.ComboBox
-    Friend WithEvents chkbarcode As System.Windows.Forms.CheckBox
-    Friend WithEvents btnsatuan As System.Windows.Forms.Button
-    Friend WithEvents btnjenis As System.Windows.Forms.Button
     Friend WithEvents dgv As System.Windows.Forms.DataGridView
     Friend WithEvents tbpage As System.Windows.Forms.TextBox
     Friend WithEvents lbltotpage As System.Windows.Forms.Label

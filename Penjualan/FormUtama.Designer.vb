@@ -32,7 +32,6 @@ Partial Class FormUtama
         Me.SatuanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataSupplierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DataUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -75,7 +74,7 @@ Partial Class FormUtama
         '
         'DataMasterToolStripMenuItem
         '
-        Me.DataMasterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataBarangToolStripMenuItem, Me.DataKecilToolStripMenuItem, Me.DataPelangganToolStripMenuItem, Me.DataSupplierToolStripMenuItem, Me.DataUserToolStripMenuItem})
+        Me.DataMasterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataBarangToolStripMenuItem, Me.DataKecilToolStripMenuItem, Me.DataPelangganToolStripMenuItem, Me.DataSupplierToolStripMenuItem})
         Me.DataMasterToolStripMenuItem.Name = "DataMasterToolStripMenuItem"
         Me.DataMasterToolStripMenuItem.Size = New System.Drawing.Size(92, 21)
         Me.DataMasterToolStripMenuItem.Text = "Data Master"
@@ -116,12 +115,6 @@ Partial Class FormUtama
         Me.DataSupplierToolStripMenuItem.Name = "DataSupplierToolStripMenuItem"
         Me.DataSupplierToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.DataSupplierToolStripMenuItem.Text = "Data Supplier"
-        '
-        'DataUserToolStripMenuItem
-        '
-        Me.DataUserToolStripMenuItem.Name = "DataUserToolStripMenuItem"
-        Me.DataUserToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
-        Me.DataUserToolStripMenuItem.Text = "Data User"
         '
         'TransaksiToolStripMenuItem
         '
@@ -175,12 +168,12 @@ Partial Class FormUtama
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FormUtama"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormUtama"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
@@ -199,7 +192,6 @@ Partial Class FormUtama
     Friend WithEvents DataBarangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataPelangganToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataSupplierToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DataUserToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PembelianToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PenjualanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PembelianToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem

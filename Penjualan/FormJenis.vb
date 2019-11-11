@@ -30,7 +30,7 @@ Public Class FormJenis
         dgv.Columns(0).HeaderText = "ID"
         dgv.Columns(1).HeaderText = "Jenis Barang"
         dgv.Columns(0).Width = 150
-        dgv.Columns(1).Width = 350
+        dgv.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         objAlternatingCellStyle.BackColor = Color.AliceBlue
         dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgv.ReadOnly = True
