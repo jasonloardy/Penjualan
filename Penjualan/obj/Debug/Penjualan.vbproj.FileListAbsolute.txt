@@ -15,3 +15,4 @@ C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Deb
 C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.FormSatuan.resources
 C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.FormPelanggan.resources
 C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.FormSupplier.resources
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.FormPembelian.resources

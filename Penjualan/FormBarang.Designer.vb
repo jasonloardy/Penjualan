@@ -68,7 +68,7 @@ Partial Class FormBarang
         Me.tbcari.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbcari.Location = New System.Drawing.Point(179, 26)
         Me.tbcari.Name = "tbcari"
-        Me.tbcari.Size = New System.Drawing.Size(626, 22)
+        Me.tbcari.Size = New System.Drawing.Size(526, 22)
         Me.tbcari.TabIndex = 1
         '
         'Label1
@@ -99,7 +99,7 @@ Partial Class FormBarang
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(811, 537)
+        Me.GroupBox1.Size = New System.Drawing.Size(711, 537)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "DAFTAR BARANG"
@@ -118,7 +118,7 @@ Partial Class FormBarang
         'tbpage
         '
         Me.tbpage.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tbpage.Location = New System.Drawing.Point(614, 56)
+        Me.tbpage.Location = New System.Drawing.Point(514, 56)
         Me.tbpage.Name = "tbpage"
         Me.tbpage.Size = New System.Drawing.Size(50, 21)
         Me.tbpage.TabIndex = 20
@@ -131,14 +131,14 @@ Partial Class FormBarang
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Location = New System.Drawing.Point(9, 82)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(796, 449)
+        Me.dgv.Size = New System.Drawing.Size(696, 449)
         Me.dgv.TabIndex = 3
         '
         'lbltotpage
         '
         Me.lbltotpage.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbltotpage.AutoSize = True
-        Me.lbltotpage.Location = New System.Drawing.Point(670, 59)
+        Me.lbltotpage.Location = New System.Drawing.Point(570, 59)
         Me.lbltotpage.Name = "lbltotpage"
         Me.lbltotpage.Size = New System.Drawing.Size(34, 15)
         Me.lbltotpage.TabIndex = 19
@@ -147,7 +147,7 @@ Partial Class FormBarang
         'btnlast
         '
         Me.btnlast.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnlast.Location = New System.Drawing.Point(760, 54)
+        Me.btnlast.Location = New System.Drawing.Point(660, 54)
         Me.btnlast.Name = "btnlast"
         Me.btnlast.Size = New System.Drawing.Size(45, 23)
         Me.btnlast.TabIndex = 18
@@ -157,7 +157,7 @@ Partial Class FormBarang
         'btnnext
         '
         Me.btnnext.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnnext.Location = New System.Drawing.Point(709, 54)
+        Me.btnnext.Location = New System.Drawing.Point(609, 54)
         Me.btnnext.Name = "btnnext"
         Me.btnnext.Size = New System.Drawing.Size(45, 23)
         Me.btnnext.TabIndex = 17
@@ -167,7 +167,7 @@ Partial Class FormBarang
         'btnprev
         '
         Me.btnprev.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnprev.Location = New System.Drawing.Point(563, 54)
+        Me.btnprev.Location = New System.Drawing.Point(463, 54)
         Me.btnprev.Name = "btnprev"
         Me.btnprev.Size = New System.Drawing.Size(45, 23)
         Me.btnprev.TabIndex = 16
@@ -177,7 +177,7 @@ Partial Class FormBarang
         'btnfirst
         '
         Me.btnfirst.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnfirst.Location = New System.Drawing.Point(512, 54)
+        Me.btnfirst.Location = New System.Drawing.Point(412, 54)
         Me.btnfirst.Name = "btnfirst"
         Me.btnfirst.Size = New System.Drawing.Size(45, 23)
         Me.btnfirst.TabIndex = 15
@@ -205,7 +205,7 @@ Partial Class FormBarang
         Me.GroupBox2.Controls.Add(Me.tbnamabarang)
         Me.GroupBox2.Controls.Add(Me.tbkdbarang)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(839, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(739, 12)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(433, 260)
         Me.GroupBox2.TabIndex = 4
@@ -377,7 +377,7 @@ Partial Class FormBarang
         Me.btntambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btntambah.Image = CType(resources.GetObject("btntambah.Image"), System.Drawing.Image)
         Me.btntambah.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btntambah.Location = New System.Drawing.Point(934, 278)
+        Me.btntambah.Location = New System.Drawing.Point(834, 278)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(80, 75)
         Me.btntambah.TabIndex = 11
@@ -391,7 +391,7 @@ Partial Class FormBarang
         Me.btnedit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnedit.Image = CType(resources.GetObject("btnedit.Image"), System.Drawing.Image)
         Me.btnedit.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnedit.Location = New System.Drawing.Point(1020, 278)
+        Me.btnedit.Location = New System.Drawing.Point(920, 278)
         Me.btnedit.Name = "btnedit"
         Me.btnedit.Size = New System.Drawing.Size(80, 75)
         Me.btnedit.TabIndex = 12
@@ -405,7 +405,7 @@ Partial Class FormBarang
         Me.btnhapus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnhapus.Image = CType(resources.GetObject("btnhapus.Image"), System.Drawing.Image)
         Me.btnhapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnhapus.Location = New System.Drawing.Point(1106, 278)
+        Me.btnhapus.Location = New System.Drawing.Point(1006, 278)
         Me.btnhapus.Name = "btnhapus"
         Me.btnhapus.Size = New System.Drawing.Size(80, 75)
         Me.btnhapus.TabIndex = 13
@@ -419,7 +419,7 @@ Partial Class FormBarang
         Me.btnbatal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbatal.Image = CType(resources.GetObject("btnbatal.Image"), System.Drawing.Image)
         Me.btnbatal.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnbatal.Location = New System.Drawing.Point(1192, 278)
+        Me.btnbatal.Location = New System.Drawing.Point(1092, 278)
         Me.btnbatal.Name = "btnbatal"
         Me.btnbatal.Size = New System.Drawing.Size(80, 75)
         Me.btnbatal.TabIndex = 14
@@ -430,7 +430,7 @@ Partial Class FormBarang
         'FormBarang
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(1284, 561)
+        Me.ClientSize = New System.Drawing.Size(1184, 561)
         Me.Controls.Add(Me.btnbatal)
         Me.Controls.Add(Me.btnhapus)
         Me.Controls.Add(Me.btnedit)

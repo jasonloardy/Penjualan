@@ -60,4 +60,11 @@ Public Class FormUtama
         FormSupplier.Dock = DockStyle.Fill
         FormSupplier.Show()
     End Sub
+
+    Private Sub PembelianToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PembelianToolStripMenuItem.Click
+        allclose()
+        FormPembelian.MdiParent = Me
+        FormPembelian.Dock = DockStyle.Fill
+        FormPembelian.Show()
+    End Sub
 End Class
