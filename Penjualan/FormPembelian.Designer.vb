@@ -108,10 +108,11 @@ Partial Class FormPembelian
         '
         'tbkdpembelian
         '
+        Me.tbkdpembelian.Enabled = False
         Me.tbkdpembelian.Location = New System.Drawing.Point(126, 50)
         Me.tbkdpembelian.Name = "tbkdpembelian"
         Me.tbkdpembelian.Size = New System.Drawing.Size(200, 22)
-        Me.tbkdpembelian.TabIndex = 0
+        Me.tbkdpembelian.TabIndex = 2
         '
         'GroupBox2
         '
@@ -134,7 +135,7 @@ Partial Class FormPembelian
         Me.GroupBox2.Location = New System.Drawing.Point(12, 153)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(1260, 76)
-        Me.GroupBox2.TabIndex = 1
+        Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Input Barang"
         '
@@ -144,7 +145,7 @@ Partial Class FormPembelian
         Me.btninput.Location = New System.Drawing.Point(928, 42)
         Me.btninput.Name = "btninput"
         Me.btninput.Size = New System.Drawing.Size(75, 24)
-        Me.btninput.TabIndex = 23
+        Me.btninput.TabIndex = 4
         Me.btninput.Text = "INPUT"
         Me.btninput.UseVisualStyleBackColor = True
         '
@@ -156,7 +157,7 @@ Partial Class FormPembelian
         Me.lbltotalbarang.Name = "lbltotalbarang"
         Me.lbltotalbarang.Size = New System.Drawing.Size(200, 22)
         Me.lbltotalbarang.TabIndex = 26
-        Me.lbltotalbarang.Text = "0,000,000,000"
+        Me.lbltotalbarang.Text = "0"
         Me.lbltotalbarang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblsatuan
@@ -208,14 +209,14 @@ Partial Class FormPembelian
         Me.tbqty.Location = New System.Drawing.Point(616, 43)
         Me.tbqty.Name = "tbqty"
         Me.tbqty.Size = New System.Drawing.Size(100, 22)
-        Me.tbqty.TabIndex = 19
+        Me.tbqty.TabIndex = 2
         '
         'btnbarang
         '
         Me.btnbarang.Location = New System.Drawing.Point(165, 42)
         Me.btnbarang.Name = "btnbarang"
         Me.btnbarang.Size = New System.Drawing.Size(30, 24)
-        Me.btnbarang.TabIndex = 18
+        Me.btnbarang.TabIndex = 1
         Me.btnbarang.Text = "..."
         Me.btnbarang.UseVisualStyleBackColor = True
         '
@@ -235,7 +236,7 @@ Partial Class FormPembelian
         Me.tbhargabeli.Location = New System.Drawing.Point(722, 43)
         Me.tbhargabeli.Name = "tbhargabeli"
         Me.tbhargabeli.Size = New System.Drawing.Size(200, 22)
-        Me.tbhargabeli.TabIndex = 7
+        Me.tbhargabeli.TabIndex = 3
         '
         'Label6
         '
@@ -273,7 +274,6 @@ Partial Class FormPembelian
         Me.tbkdbarang.Name = "tbkdbarang"
         Me.tbkdbarang.Size = New System.Drawing.Size(150, 22)
         Me.tbkdbarang.TabIndex = 0
-        Me.tbkdbarang.Text = "1111111111111111"
         '
         'GroupBox3
         '
@@ -284,7 +284,7 @@ Partial Class FormPembelian
         Me.GroupBox3.Location = New System.Drawing.Point(12, 235)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(1260, 333)
-        Me.GroupBox3.TabIndex = 2
+        Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Keranjang Pembelian"
         '
@@ -308,7 +308,7 @@ Partial Class FormPembelian
         Me.btnsimpan.Location = New System.Drawing.Point(1192, 574)
         Me.btnsimpan.Name = "btnsimpan"
         Me.btnsimpan.Size = New System.Drawing.Size(80, 75)
-        Me.btnsimpan.TabIndex = 12
+        Me.btnsimpan.TabIndex = 6
         Me.btnsimpan.Text = "Simpan"
         Me.btnsimpan.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnsimpan.UseVisualStyleBackColor = True
@@ -322,7 +322,7 @@ Partial Class FormPembelian
         Me.btnbatal.Location = New System.Drawing.Point(1106, 574)
         Me.btnbatal.Name = "btnbatal"
         Me.btnbatal.Size = New System.Drawing.Size(80, 75)
-        Me.btnbatal.TabIndex = 15
+        Me.btnbatal.TabIndex = 5
         Me.btnbatal.Text = "Batal"
         Me.btnbatal.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnbatal.UseVisualStyleBackColor = True
@@ -336,7 +336,7 @@ Partial Class FormPembelian
         Me.btnhapus.Location = New System.Drawing.Point(12, 574)
         Me.btnhapus.Name = "btnhapus"
         Me.btnhapus.Size = New System.Drawing.Size(100, 75)
-        Me.btnhapus.TabIndex = 16
+        Me.btnhapus.TabIndex = 4
         Me.btnhapus.Text = "Hapus Item"
         Me.btnhapus.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnhapus.UseVisualStyleBackColor = True
@@ -355,7 +355,7 @@ Partial Class FormPembelian
         Me.GroupBox4.Location = New System.Drawing.Point(354, 12)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(326, 135)
-        Me.GroupBox4.TabIndex = 17
+        Me.GroupBox4.TabIndex = 1
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Data Supplier"
         '
@@ -364,16 +364,17 @@ Partial Class FormPembelian
         Me.btnsupplier.Location = New System.Drawing.Point(222, 20)
         Me.btnsupplier.Name = "btnsupplier"
         Me.btnsupplier.Size = New System.Drawing.Size(30, 24)
-        Me.btnsupplier.TabIndex = 27
+        Me.btnsupplier.TabIndex = 0
         Me.btnsupplier.Text = "..."
         Me.btnsupplier.UseVisualStyleBackColor = True
         '
         'tbnotelp
         '
+        Me.tbnotelp.Enabled = False
         Me.tbnotelp.Location = New System.Drawing.Point(116, 105)
         Me.tbnotelp.Name = "tbnotelp"
         Me.tbnotelp.Size = New System.Drawing.Size(200, 22)
-        Me.tbnotelp.TabIndex = 7
+        Me.tbnotelp.TabIndex = 4
         '
         'Label10
         '
@@ -386,17 +387,19 @@ Partial Class FormPembelian
         '
         'tbalamat
         '
+        Me.tbalamat.Enabled = False
         Me.tbalamat.Location = New System.Drawing.Point(116, 77)
         Me.tbalamat.Name = "tbalamat"
         Me.tbalamat.Size = New System.Drawing.Size(200, 22)
-        Me.tbalamat.TabIndex = 5
+        Me.tbalamat.TabIndex = 3
         '
         'tbnama
         '
+        Me.tbnama.Enabled = False
         Me.tbnama.Location = New System.Drawing.Point(116, 49)
         Me.tbnama.Name = "tbnama"
         Me.tbnama.Size = New System.Drawing.Size(200, 22)
-        Me.tbnama.TabIndex = 4
+        Me.tbnama.TabIndex = 2
         '
         'Label9
         '
@@ -418,6 +421,7 @@ Partial Class FormPembelian
         '
         'tbkdsupplier
         '
+        Me.tbkdsupplier.Enabled = False
         Me.tbkdsupplier.Location = New System.Drawing.Point(116, 21)
         Me.tbkdsupplier.Name = "tbkdsupplier"
         Me.tbkdsupplier.Size = New System.Drawing.Size(100, 22)
@@ -453,7 +457,7 @@ Partial Class FormPembelian
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(574, 106)
         Me.lbltotal.TabIndex = 27
-        Me.lbltotal.Text = "0,000,000,000"
+        Me.lbltotal.Text = "0"
         Me.lbltotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'FormPembelian

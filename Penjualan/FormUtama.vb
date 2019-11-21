@@ -3,8 +3,7 @@
 Public Class FormUtama
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.WindowState = FormWindowState.Maximized
-        Me.MaximizeBox = False
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("id-ID")
         koneksi()
         resetkeranjang()
     End Sub

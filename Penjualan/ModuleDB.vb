@@ -119,6 +119,23 @@ Module ModuleDB
         Dim queryreset As String = "TRUNCATE TABLE tb_keranjang"
         Query(queryreset)
     End Sub
+    Sub insertkeranjangbeli(ByVal kd_barang As String)
+        cmd = New MySqlCommand("SELECT tb.nama_barang, ts.nama_satuan FROM tb_barang tb JOIN tb_satuan ts ON tb.kd_satuan = ts.kd_satuan " _
+                             & "WHERE tb.kd_barang = @kd_barang", konek)
+        cmd.Parameters.AddWithValue("@kd_barang", kd_barang)
+        dr = cmd.ExecuteReader
+        dr.Read()
+        If dr.HasRows Then
+            FormPembelian.kd_barang = kd_barang
+            FormPembelian.tbkdbarang.Text = kd_barang
+            FormPembelian.lblnamabarang.Text = dr.Item("nama_barang").ToString
+            FormPembelian.lblsatuan.Text = dr.Item("nama_satuan").ToString
+            FormPembelian.tbqty.Focus()
+        Else
+            MsgBox("Barang Tidak Ditemukan!", 16, "Perhatian")
+        End If
+        dr.Close()
+    End Sub
     Function querycb(ByVal query As String)
         da = New MySqlDataAdapter(query, konek)
         Dim dt As New DataTable()

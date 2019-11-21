@@ -126,13 +126,13 @@ Partial Class FormUtama
         'PembelianToolStripMenuItem
         '
         Me.PembelianToolStripMenuItem.Name = "PembelianToolStripMenuItem"
-        Me.PembelianToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PembelianToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
         Me.PembelianToolStripMenuItem.Text = "Pembelian"
         '
         'PenjualanToolStripMenuItem
         '
         Me.PenjualanToolStripMenuItem.Name = "PenjualanToolStripMenuItem"
-        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
         Me.PenjualanToolStripMenuItem.Text = "Penjualan"
         '
         'LaporanToolStripMenuItem
@@ -173,7 +173,9 @@ Partial Class FormUtama
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FormUtama"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormUtama"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
