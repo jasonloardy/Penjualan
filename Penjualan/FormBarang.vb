@@ -299,4 +299,17 @@ Public Class FormBarang
         tbpage.Text = "1"
         isigrid(1)
     End Sub
+
+    Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
+        If from = "pembelian" Then
+            Dim nplh As Integer
+            nplh = MsgBox("Masukkan barang " & tbnamabarang.Text & " (" & tbkdbarang.Text & ") ?", 48 + 4 + 256, "Konfirmasi")
+            If nplh = 6 Then
+                FormPembelian.tbkdbarang.Text = tbkdbarang.Text
+                FormPembelian.lblnamabarang.Text = tbnamabarang.Text
+                FormPembelian.lblsatuan.Text = cbsatuan.Text
+                Me.Close()
+            End If
+        End If
+    End Sub
 End Class

@@ -85,6 +85,25 @@ Module ModuleDB
             MsgBox(ex.Message, 16, "Error")
         End Try
     End Sub
+    Sub QueryKeranjang(ByVal query As String, ByVal kd_barang As String, ByVal nama_barang As String,
+                    ByVal satuan As String, ByVal qty As String, ByVal ambil As String, ByVal harga As String, ByVal total As String)
+        Try
+            Using cmd As New MySqlCommand
+                cmd.CommandText = query
+                cmd.Parameters.AddWithValue("@kd_barang", kd_barang)
+                cmd.Parameters.AddWithValue("@nama_barang", nama_barang)
+                cmd.Parameters.AddWithValue("@satuan", satuan)
+                cmd.Parameters.AddWithValue("@qty", qty)
+                cmd.Parameters.AddWithValue("@ambil", ambil)
+                cmd.Parameters.AddWithValue("@harga", harga)
+                cmd.Parameters.AddWithValue("@total", total)
+                cmd.Connection = konek
+                cmd.ExecuteNonQuery()
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message, 16, "Error")
+        End Try
+    End Sub
     Sub Query(ByVal query As String)
         Try
             Using cmd As New MySqlCommand
@@ -95,6 +114,10 @@ Module ModuleDB
         Catch ex As Exception
             MsgBox(ex.Message, 16, "Error")
         End Try
+    End Sub
+    Sub resetkeranjang()
+        Dim queryreset As String = "TRUNCATE TABLE tb_keranjang"
+        Query(queryreset)
     End Sub
     Function querycb(ByVal query As String)
         da = New MySqlDataAdapter(query, konek)
