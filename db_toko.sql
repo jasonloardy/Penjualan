@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-11-14 11:32:35
+Date: 2019-11-21 13:45:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -53,6 +53,41 @@ INSERT INTO `tb_jenis` VALUES ('J002', 'KAP MOTOR');
 INSERT INTO `tb_jenis` VALUES ('J003', 'KAP MOBIL');
 
 -- ----------------------------
+-- Table structure for `tb_keranjang`
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_keranjang`;
+CREATE TABLE `tb_keranjang` (
+  `no` int(4) NOT NULL AUTO_INCREMENT,
+  `kd_barang` varchar(16) DEFAULT NULL,
+  `nama_barang` varchar(64) DEFAULT NULL,
+  `satuan` varchar(32) DEFAULT NULL,
+  `qty` int(8) DEFAULT NULL,
+  `ambil` int(8) DEFAULT NULL,
+  `harga` decimal(10,0) DEFAULT NULL,
+  `total` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tb_keranjang
+-- ----------------------------
+INSERT INTO `tb_keranjang` VALUES ('1', 'B0000001', 'ASD', 'PCS', '5', '0', '60000', '300000');
+INSERT INTO `tb_keranjang` VALUES ('2', 'B0000001', 'ASD', 'PCS', '5', '0', '60000', '300000');
+INSERT INTO `tb_keranjang` VALUES ('3', 'B0000001', 'ASD', 'PCS', '5', '0', '60000', '300000');
+INSERT INTO `tb_keranjang` VALUES ('4', 'B0000001', 'ASD', 'PCS', '5', '0', '60000', '300000');
+INSERT INTO `tb_keranjang` VALUES ('6', 'B0000001', 'ASD', 'PCS', '5', '0', '60000', '300000');
+INSERT INTO `tb_keranjang` VALUES ('7', 'B0000001', 'ASD', 'PCS', '5', '0', '60000', '300000');
+INSERT INTO `tb_keranjang` VALUES ('8', 'B0000001', 'ASD', 'PCS', '5', '0', '60000', '300000');
+INSERT INTO `tb_keranjang` VALUES ('9', 'B0000001', 'ASD', 'PCS', '5', '0', '60000', '300000');
+INSERT INTO `tb_keranjang` VALUES ('10', 'B0000001', 'ASD', 'PCS', '5', '0', '60000', '300000');
+INSERT INTO `tb_keranjang` VALUES ('11', 'B0000001', 'ASD', 'PCS', '5', '0', '60000', '300000');
+INSERT INTO `tb_keranjang` VALUES ('12', 'B0000001', 'ASD', 'PCS', '5', '0', '6000099', '30000495');
+INSERT INTO `tb_keranjang` VALUES ('13', 'B0000001', 'ASD', 'PCS', '5', '0', '6000099', '30000495');
+INSERT INTO `tb_keranjang` VALUES ('15', 'B0000001', 'ASD', 'PCS', '5', '0', '6000099', '30000495');
+INSERT INTO `tb_keranjang` VALUES ('16', 'B0000001', 'ASD', 'PCS', '5', '0', '6000099', '30000495');
+INSERT INTO `tb_keranjang` VALUES ('17', 'B0000001', 'ASD', 'PCS', '5', '0', '6000099', '30000495');
+
+-- ----------------------------
 -- Table structure for `tb_pelanggan`
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_pelanggan`;
@@ -66,6 +101,21 @@ CREATE TABLE `tb_pelanggan` (
 
 -- ----------------------------
 -- Records of tb_pelanggan
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `tb_pembelian`
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_pembelian`;
+CREATE TABLE `tb_pembelian` (
+  `kd_pembelian` varchar(12) NOT NULL,
+  `tanggal` date DEFAULT NULL,
+  `kd_supplier` varchar(8) DEFAULT NULL,
+  PRIMARY KEY (`kd_pembelian`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tb_pembelian
 -- ----------------------------
 
 -- ----------------------------
@@ -100,3 +150,4 @@ CREATE TABLE `tb_supplier` (
 -- ----------------------------
 -- Records of tb_supplier
 -- ----------------------------
+INSERT INTO `tb_supplier` VALUES ('SP000001', 'ASD', 'ANUGERAH MAS', '21309123');
