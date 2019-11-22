@@ -33,3 +33,4 @@ C:\Users\Jason\Documents\GitHub\Penjualan\Penjualan\obj\Debug\Penjualan.FormJeni
 C:\Users\Jason\Documents\GitHub\Penjualan\Penjualan\obj\Debug\Penjualan.FormUtama.resources
 C:\Users\Jason\Documents\GitHub\Penjualan\Penjualan\obj\Debug\Penjualan.Resources.resources
 C:\Users\Jason\Documents\GitHub\Penjualan\Penjualan\obj\Debug\Penjualan.vbproj.GenerateResource.Cache
+C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.FormPenjualan.resources

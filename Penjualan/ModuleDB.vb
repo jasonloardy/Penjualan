@@ -86,7 +86,8 @@ Module ModuleDB
         End Try
     End Sub
     Sub QueryKeranjang(ByVal query As String, ByVal kd_barang As String, ByVal nama_barang As String,
-                    ByVal satuan As String, ByVal qty As String, ByVal ambil As String, ByVal harga As String, ByVal total As String)
+                    ByVal satuan As String, ByVal qty As String, ByVal ambil As String, ByVal harga_beli As String,
+                    ByVal harga_jual As String, ByVal total As String)
         Try
             Using cmd As New MySqlCommand
                 cmd.CommandText = query
@@ -95,7 +96,8 @@ Module ModuleDB
                 cmd.Parameters.AddWithValue("@satuan", satuan)
                 cmd.Parameters.AddWithValue("@qty", qty)
                 cmd.Parameters.AddWithValue("@ambil", ambil)
-                cmd.Parameters.AddWithValue("@harga", harga)
+                cmd.Parameters.AddWithValue("@harga_beli", harga_beli)
+                cmd.Parameters.AddWithValue("@harga_jual", harga_jual)
                 cmd.Parameters.AddWithValue("@total", total)
                 cmd.Connection = konek
                 cmd.ExecuteNonQuery()
@@ -119,18 +121,28 @@ Module ModuleDB
         Dim queryreset As String = "TRUNCATE TABLE tb_keranjang"
         Query(queryreset)
     End Sub
-    Sub insertkeranjangbeli(ByVal kd_barang As String)
-        cmd = New MySqlCommand("SELECT tb.nama_barang, ts.nama_satuan FROM tb_barang tb JOIN tb_satuan ts ON tb.kd_satuan = ts.kd_satuan " _
+    Sub insertkeranjang(ByVal kd_barang As String, ByVal from As String)
+        cmd = New MySqlCommand("SELECT tb.nama_barang, ts.nama_satuan, tb.harga_beli, tb.harga_jual FROM tb_barang tb JOIN tb_satuan ts ON tb.kd_satuan = ts.kd_satuan " _
                              & "WHERE tb.kd_barang = @kd_barang", konek)
         cmd.Parameters.AddWithValue("@kd_barang", kd_barang)
         dr = cmd.ExecuteReader
         dr.Read()
         If dr.HasRows Then
-            FormPembelian.kd_barang = kd_barang
-            FormPembelian.tbkdbarang.Text = kd_barang
-            FormPembelian.lblnamabarang.Text = dr.Item("nama_barang").ToString
-            FormPembelian.lblsatuan.Text = dr.Item("nama_satuan").ToString
-            FormPembelian.tbqty.Focus()
+            If from = "pembelian" Then
+                FormPembelian.kd_barang = kd_barang
+                FormPembelian.tbkdbarang.Text = kd_barang
+                FormPembelian.lblnamabarang.Text = dr.Item("nama_barang").ToString
+                FormPembelian.lblsatuan.Text = dr.Item("nama_satuan").ToString
+                FormPembelian.tbqty.Focus()
+            ElseIf from = "penjualan" Then
+                FormPenjualan.kd_barang = kd_barang
+                FormPenjualan.tbkdbarang.Text = kd_barang
+                FormPenjualan.lblnamabarang.Text = dr.Item("nama_barang").ToString
+                FormPenjualan.lblsatuan.Text = dr.Item("nama_satuan").ToString
+                FormPenjualan.harga_beli = dr.Item("harga_beli").ToString
+                FormPenjualan.tbhargajual.Text = dr.Item("harga_jual").ToString
+                FormPenjualan.tbqty.Focus()
+            End If
         Else
             MsgBox("Barang Tidak Ditemukan!", 16, "Perhatian")
         End If

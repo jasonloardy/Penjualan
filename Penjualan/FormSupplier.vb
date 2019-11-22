@@ -7,7 +7,6 @@ Public Class FormSupplier
     Public halaman As Integer = 1
 
     Private Sub FormBarang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        koneksi()
         tbpage.Text = "1"
         isigrid(tbpage.Text)
         reset()

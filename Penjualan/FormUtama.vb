@@ -40,10 +40,9 @@ Public Class FormUtama
 
     Private Sub PenjualanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PenjualanToolStripMenuItem.Click
         allclose()
-        FormBarang.from = "penjualan"
-        FormBarang.MdiParent = Me
-        FormBarang.Dock = DockStyle.Fill
-        FormBarang.Show()
+        FormPenjualan.MdiParent = Me
+        FormPenjualan.Dock = DockStyle.Fill
+        FormPenjualan.Show()
     End Sub
 
     Private Sub DataPelangganToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataPelangganToolStripMenuItem.Click

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-11-21 15:47:22
+Date: 2019-11-22 11:49:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,9 +33,9 @@ CREATE TABLE `tb_barang` (
 -- ----------------------------
 -- Records of tb_barang
 -- ----------------------------
-INSERT INTO `tb_barang` VALUES ('B0000001', 'BAUT 5/16X18\"', 'J001', 'S001', '123000', '100000', '30');
-INSERT INTO `tb_barang` VALUES ('B0000002', 'STIKER HONDA', 'J002', 'S001', '1', '10000', '35');
-INSERT INTO `tb_barang` VALUES ('B0000003', 'KOMSTIR', 'J003', 'S002', '12300000', '2000000', '145');
+INSERT INTO `tb_barang` VALUES ('B0000001', 'BAUT 5/16X18\"', 'J001', 'S001', '5000', '100000', '20');
+INSERT INTO `tb_barang` VALUES ('B0000002', 'STIKER HONDA', 'J002', 'S001', '10000', '10000', '30');
+INSERT INTO `tb_barang` VALUES ('B0000003', 'KOMSTIR', 'J003', 'S002', '10000', '2000000', '30');
 
 -- ----------------------------
 -- Table structure for `tb_jenis`
@@ -65,16 +65,15 @@ CREATE TABLE `tb_keranjang` (
   `satuan` varchar(32) DEFAULT NULL,
   `qty` int(8) DEFAULT NULL,
   `ambil` int(8) DEFAULT NULL,
-  `harga` decimal(10,0) DEFAULT NULL,
+  `harga_beli` decimal(10,0) DEFAULT NULL,
+  `harga_jual` decimal(10,0) DEFAULT NULL,
   `total` decimal(10,0) DEFAULT NULL,
   PRIMARY KEY (`no`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_keranjang
 -- ----------------------------
-INSERT INTO `tb_keranjang` VALUES ('1', 'B0000002', 'STIKER HONDA', 'PCS', '1', '0', '10000', '10000');
-INSERT INTO `tb_keranjang` VALUES ('2', 'B0000003', 'KOMSTIR', 'DOS', '1', '0', '100', '100');
 
 -- ----------------------------
 -- Table structure for `tb_pelanggan`
@@ -91,6 +90,7 @@ CREATE TABLE `tb_pelanggan` (
 -- ----------------------------
 -- Records of tb_pelanggan
 -- ----------------------------
+INSERT INTO `tb_pelanggan` VALUES ('PL000001', 'JASON', 'BARONANG', '123901293');
 
 -- ----------------------------
 -- Table structure for `tb_pembelian`
@@ -106,9 +106,7 @@ CREATE TABLE `tb_pembelian` (
 -- ----------------------------
 -- Records of tb_pembelian
 -- ----------------------------
-INSERT INTO `tb_pembelian` VALUES ('PBL191100001', '2019-11-21', '');
-INSERT INTO `tb_pembelian` VALUES ('PBL191100002', '2019-11-21', '');
-INSERT INTO `tb_pembelian` VALUES ('PBL191100003', '2019-11-21', 'SP000001');
+INSERT INTO `tb_pembelian` VALUES ('PBL191100001', '2019-11-22', 'SP000001');
 
 -- ----------------------------
 -- Table structure for `tb_pembelian_detail`
@@ -124,10 +122,46 @@ CREATE TABLE `tb_pembelian_detail` (
 -- ----------------------------
 -- Records of tb_pembelian_detail
 -- ----------------------------
-INSERT INTO `tb_pembelian_detail` VALUES ('PBL191100001', 'B0000001', '8', '123000');
-INSERT INTO `tb_pembelian_detail` VALUES ('PBL191100001', 'B0000002', '20', '456000');
-INSERT INTO `tb_pembelian_detail` VALUES ('PBL191100002', 'b0000003', '45', '12300000');
-INSERT INTO `tb_pembelian_detail` VALUES ('PBL191100003', 'B0000002', '5', '1');
+INSERT INTO `tb_pembelian_detail` VALUES ('PBL191100001', 'B0000002', '5', '10000');
+INSERT INTO `tb_pembelian_detail` VALUES ('PBL191100001', 'B0000001', '10', '5000');
+INSERT INTO `tb_pembelian_detail` VALUES ('PBL191100001', 'B0000003', '5', '10000');
+
+-- ----------------------------
+-- Table structure for `tb_penjualan`
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_penjualan`;
+CREATE TABLE `tb_penjualan` (
+  `kd_penjualan` varchar(12) NOT NULL,
+  `tanggal` date DEFAULT NULL,
+  `kd_pelanggan` varchar(8) DEFAULT NULL,
+  PRIMARY KEY (`kd_penjualan`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tb_penjualan
+-- ----------------------------
+INSERT INTO `tb_penjualan` VALUES ('PJL191100001', '2019-11-22', 'PL000001');
+INSERT INTO `tb_penjualan` VALUES ('PJL191100002', '2019-11-22', 'PL000001');
+
+-- ----------------------------
+-- Table structure for `tb_penjualan_detail`
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_penjualan_detail`;
+CREATE TABLE `tb_penjualan_detail` (
+  `kd_penjualan` varchar(12) DEFAULT NULL,
+  `kd_barang` varchar(16) DEFAULT NULL,
+  `qty` int(8) DEFAULT NULL,
+  `ambil` int(8) DEFAULT NULL,
+  `harga_beli` decimal(10,0) DEFAULT NULL,
+  `harga_jual` decimal(10,0) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tb_penjualan_detail
+-- ----------------------------
+INSERT INTO `tb_penjualan_detail` VALUES ('PJL191100001', 'B0000001', '20', '20', '5000', '100000');
+INSERT INTO `tb_penjualan_detail` VALUES ('PJL191100001', 'B0000003', '10', '10', '10000', '2000000');
+INSERT INTO `tb_penjualan_detail` VALUES ('PJL191100002', 'B0000003', '10', '5', '10000', '2000000');
 
 -- ----------------------------
 -- Table structure for `tb_satuan`
@@ -162,13 +196,24 @@ CREATE TABLE `tb_supplier` (
 -- Records of tb_supplier
 -- ----------------------------
 INSERT INTO `tb_supplier` VALUES ('SP000001', 'ASD', 'ANUGERAH MAS', '21309123');
-DROP TRIGGER IF EXISTS `update tb_barang`;
+DROP TRIGGER IF EXISTS `menambah stok`;
 DELIMITER ;;
-CREATE TRIGGER `update tb_barang` AFTER INSERT ON `tb_pembelian_detail` FOR EACH ROW BEGIN
+CREATE TRIGGER `menambah stok` AFTER INSERT ON `tb_pembelian_detail` FOR EACH ROW BEGIN
 UPDATE tb_barang tb
 SET
 tb.harga_beli = NEW.harga,
 tb.stok = tb.stok + NEW.qty
+WHERE
+tb.kd_barang = NEW.kd_barang;
+END
+;;
+DELIMITER ;
+DROP TRIGGER IF EXISTS `mengurangi stok`;
+DELIMITER ;;
+CREATE TRIGGER `mengurangi stok` AFTER INSERT ON `tb_penjualan_detail` FOR EACH ROW BEGIN
+UPDATE tb_barang tb
+SET
+tb.stok = tb.stok - NEW.qty
 WHERE
 tb.kd_barang = NEW.kd_barang;
 END

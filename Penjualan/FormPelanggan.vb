@@ -7,7 +7,6 @@ Public Class FormPelanggan
     Public halaman As Integer = 1
 
     Private Sub FormBarang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        koneksi()
         tbpage.Text = "1"
         isigrid(tbpage.Text)
         reset()
@@ -233,5 +232,19 @@ Public Class FormPelanggan
     Private Sub tbcari_TextChanged(sender As Object, e As EventArgs) Handles tbcari.TextChanged
         tbpage.Text = "1"
         isigrid(1)
+    End Sub
+
+    Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
+        If from = "penjualan" Then
+            Dim nplh As Integer
+            nplh = MsgBox("Masukkan pelanggan " & tbnama.Text & " (" & tbkdpelanggan.Text & ") ?", 48 + 4 + 256, "Konfirmasi")
+            If nplh = 6 Then
+                FormPenjualan.tbkdpelanggan.Text = tbkdpelanggan.Text
+                FormPenjualan.tbnama.Text = tbnama.Text
+                FormPenjualan.tbalamat.Text = tbalamat.Text
+                FormPenjualan.tbnotelp.Text = tbnotelp.Text
+                Me.Close()
+            End If
+        End If
     End Sub
 End Class

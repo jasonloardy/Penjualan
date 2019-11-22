@@ -87,21 +87,30 @@ Public Class FormPembelian
         dgvkeranjang.Columns(6).HeaderText = "Hrg. Beli"
         dgvkeranjang.Columns(6).Width = 150
         dgvkeranjang.Columns(6).DefaultCellStyle.Format = "c"
-        dgvkeranjang.Columns(7).HeaderText = "Total"
-        dgvkeranjang.Columns(7).Width = 150
-        dgvkeranjang.Columns(7).DefaultCellStyle.Format = "c"
+        dgvkeranjang.Columns(7).Visible = False
+        dgvkeranjang.Columns(8).HeaderText = "Total"
+        dgvkeranjang.Columns(8).Width = 150
+        dgvkeranjang.Columns(8).DefaultCellStyle.Format = "c"
         objAlternatingCellStyle.BackColor = Color.AliceBlue
         dgvkeranjang.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgvkeranjang.ReadOnly = True
         dgvkeranjang.AllowUserToAddRows = False
     End Sub
     Sub inputkeranjang()
-        Dim query As String = "INSERT INTO tb_keranjang (kd_barang, nama_barang, satuan, qty, ambil, harga, total)" _
-                            & "VALUES (@kd_barang, @nama_barang, @satuan, @qty, @ambil, @harga, @total)"
-        QueryKeranjang(query, kd_barang, lblnamabarang.Text, lblsatuan.Text, tbqty.Text, "", tbhargabeli.Text, Val(tbqty.Text) * Val(tbhargabeli.Text))
-        isikeranjang()
-        clearinput()
-        tbkdbarang.Focus()
+        If kd_barang = "" Then
+            MsgBox("Input dahulu item barang!", 16, "Perhatian")
+        Else
+            If Val(tbqty.Text) <= 0 Then
+                MsgBox("Masukkan Qty!", 16, "Perhatian")
+            Else
+                Dim query As String = "INSERT INTO tb_keranjang (kd_barang, nama_barang, satuan, qty, ambil, harga_beli, harga_jual, total)" _
+                                    & "VALUES (@kd_barang, @nama_barang, @satuan, @qty, @ambil, @harga_beli, @harga_jual, @total)"
+                QueryKeranjang(query, kd_barang, lblnamabarang.Text, lblsatuan.Text, tbqty.Text, "", tbhargabeli.Text, "", Val(tbqty.Text) * Val(tbhargabeli.Text))
+                isikeranjang()
+                clearinput()
+                tbkdbarang.Focus()
+            End If
+        End If
     End Sub
 
     Sub hitungtotal()
@@ -117,30 +126,34 @@ Public Class FormPembelian
     End Sub
 
     Private Sub btnhapus_Click(sender As Object, e As EventArgs) Handles btnhapus.Click
-        Dim baris As Integer
-        Dim no As Integer
-        Dim kdbrg As String
-        Dim nmbrg As String
-        With dgvkeranjang
-            baris = .CurrentRow.Index
-            no = .Item(0, baris).Value
-            kdbrg = .Item(1, baris).Value
-            nmbrg = .Item(2, baris).Value
-        End With
-        Dim nhps As Integer
-        nhps = MsgBox("Yakin hapus barang " & nmbrg & " (" & kdbrg & ") ?", 48 + 4 + 256, "Konfirmasi")
-        If nhps = 6 Then
-            Dim queryhps As String = "DELETE FROM tb_keranjang WHERE no = " & no
-            Query(queryhps)
-            isikeranjang()
-        End If
+        Try
+            Dim baris As Integer
+            Dim no As Integer
+            Dim kdbrg As String
+            Dim nmbrg As String
+            With dgvkeranjang
+                baris = .CurrentRow.Index
+                no = .Item(0, baris).Value
+                kdbrg = .Item(1, baris).Value
+                nmbrg = .Item(2, baris).Value
+            End With
+            Dim nhps As Integer
+            nhps = MsgBox("Yakin hapus barang " & nmbrg & " (" & kdbrg & ") ?", 48 + 4 + 256, "Konfirmasi")
+            If nhps = 6 Then
+                Dim queryhps As String = "DELETE FROM tb_keranjang WHERE no = " & no
+                Query(queryhps)
+                isikeranjang()
+            End If
+        Catch ex As Exception
+            MsgBox("Silahkan pilih item barang!", 16, "Perhatian")
+        End Try
     End Sub
     Sub simpanpembelian()
         Dim simpan As String = "INSERT INTO tb_pembelian " _
                             & "VALUES ('" & tbkdpembelian.Text & "', '" & Format(dtptanggal.Value, "yyyy-MM-dd") & "', '" & tbkdsupplier.Text & "')"
         Query(simpan)
         Dim simpandetail As String = "INSERT INTO tb_pembelian_detail (kd_pembelian, kd_barang, qty, harga) " _
-                             & "SELECT '" & tbkdpembelian.Text & "', kd_barang, qty, harga FROM tb_keranjang"
+                             & "SELECT '" & tbkdpembelian.Text & "', kd_barang, qty, harga_beli FROM tb_keranjang"
         Query(simpandetail)
         MsgBox("Pembelian berhasil disimpan!", MsgBoxStyle.Information, "Informasi")
     End Sub
@@ -173,7 +186,7 @@ Public Class FormPembelian
 
     Private Sub tbkdbarang_KeyDown(sender As Object, e As KeyEventArgs) Handles tbkdbarang.KeyDown
         If e.KeyCode = Keys.Enter Then
-            insertkeranjangbeli(tbkdbarang.Text)
+            insertkeranjang(tbkdbarang.Text, "pembelian")
         End If
     End Sub
 

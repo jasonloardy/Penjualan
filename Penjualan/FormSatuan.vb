@@ -6,7 +6,6 @@ Public Class FormSatuan
     Public id_data As String
     Public from As String
     Private Sub FormJenis_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        koneksi()
         isigrid()
         reset()
     End Sub

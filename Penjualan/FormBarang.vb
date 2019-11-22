@@ -38,7 +38,6 @@ Public Class FormBarang
     End Sub
 
     Private Sub FormBarang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        koneksi()
         tbpage.Text = "1"
         isigrid(tbpage.Text)
         isicb()
@@ -48,7 +47,8 @@ Public Class FormBarang
     Sub isigrid(ByVal page As String)
         Dim jumlahitem As Integer = 50
         Dim index As Integer = jumlahitem * (page - 1)
-        Dim query As String = "SELECT kd_barang,nama_barang,tj.nama_jenis,ts.nama_satuan,harga_beli,harga_jual,stok FROM tb_barang tb " _
+        Dim query As String = "SELECT kd_barang,nama_barang,tj.nama_jenis,ts.nama_satuan,harga_beli,harga_jual, " _
+                             & "stok-(SELECT COALESCE(SUM(qty),0) FROM tb_keranjang WHERE kd_barang = tb.kd_barang) FROM tb_barang tb " _
                              & "JOIN tb_jenis tj ON tb.kd_jenis = tj.kd_jenis JOIN tb_satuan ts ON tb.kd_satuan=ts.kd_satuan " _
                              & "WHERE (kd_barang LIKE @kd_barang OR nama_barang LIKE @nama_barang) " _
                              & "LIMIT " & index & ", " & jumlahitem
@@ -305,7 +305,14 @@ Public Class FormBarang
             Dim nplh As Integer
             nplh = MsgBox("Masukkan barang " & tbnamabarang.Text & " (" & tbkdbarang.Text & ") ?", 48 + 4 + 256, "Konfirmasi")
             If nplh = 6 Then
-                insertkeranjangbeli(tbkdbarang.Text)
+                insertkeranjang(tbkdbarang.Text, "pembelian")
+                Me.Close()
+            End If
+        ElseIf from = "penjualan" Then
+            Dim nplh As Integer
+            nplh = MsgBox("Masukkan barang " & tbnamabarang.Text & " (" & tbkdbarang.Text & ") ?", 48 + 4 + 256, "Konfirmasi")
+            If nplh = 6 Then
+                insertkeranjang(tbkdbarang.Text, "penjualan")
                 Me.Close()
             End If
         End If
