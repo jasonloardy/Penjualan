@@ -180,7 +180,7 @@ Public Class FormPenjualan
                                         & "SELECT '" & tbkdpenjualan.Text & "', kd_barang, qty, ambil, harga_beli, harga_jual FROM tb_keranjang"
             Query(simpandetail)
         End If
-        MsgBox("penjualan berhasil disimpan!", MsgBoxStyle.Information, "Informasi")
+        MsgBox("Penjualan berhasil disimpan!", MsgBoxStyle.Information, "Informasi")
     End Sub
 
     Private Sub btnsimpan_Click(sender As Object, e As EventArgs) Handles btnsimpan.Click
@@ -188,7 +188,7 @@ Public Class FormPenjualan
         nplh = MsgBox("Simpan penjualan?", 48 + 4 + 256, "Konfirmasi")
         If nplh = 6 Then
             If tbkdpelanggan.Text = "" Then
-                MsgBox("Masukkan data Pelanggan!", 16, "Perhatian")
+                MsgBox("Masukkan data pelanggan!", 16, "Perhatian")
             ElseIf dgvkeranjang.RowCount = 0 Then
                 MsgBox("Data barang masih kosong!", 16, "Perhatian")
             Else
@@ -269,11 +269,11 @@ Public Class FormPenjualan
                 ambil = .Item(5, baris).Value
             End With
             Dim x As String
-            x = InputBox("Masukkan Jumlah yang Di-Ambil", "Ambil", ambil)
+            x = InputBox("Masukkan jumlah yang di-ambil", "Input Ambil", ambil)
             If Val(x) >= 0 And Val(x) <= qty Then
                 updateambil(Val(x), no)
             Else
-                MessageBox.Show("It's Wrong")
+                MsgBox("Jumlah ambil tidak sesuai!", 16, "Perhatian")
             End If
         End If
     End Sub
