@@ -105,7 +105,7 @@ Public Class FormPembelian
             Else
                 Dim query As String = "INSERT INTO tb_keranjang (kd_barang, nama_barang, satuan, qty, ambil, harga_beli, harga_jual, total)" _
                                     & "VALUES (@kd_barang, @nama_barang, @satuan, @qty, @ambil, @harga_beli, @harga_jual, @total)"
-                QueryKeranjang(query, kd_barang, lblnamabarang.Text, lblsatuan.Text, tbqty.Text, "", tbhargabeli.Text, "", Val(tbqty.Text) * Val(tbhargabeli.Text))
+                QueryKeranjang(query, kd_barang.ToUpper, lblnamabarang.Text, lblsatuan.Text, tbqty.Text, "", tbhargabeli.Text, "", Val(tbqty.Text) * Val(tbhargabeli.Text))
                 isikeranjang()
                 clearinput()
                 tbkdbarang.Focus()
