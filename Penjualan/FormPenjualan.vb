@@ -119,10 +119,21 @@ Public Class FormPenjualan
                 If Val(tbqty.Text) > stok Then
                     MsgBox("Stok tidak cukup!", 16, "Informasi")
                 Else
-                    Dim query As String = "INSERT INTO tb_keranjang (kd_barang, nama_barang, satuan, qty, ambil, harga_beli, harga_jual, total)" _
+                    cmd = New MySqlCommand("SELECT no FROM tb_keranjang where kd_barang = '" & kd_barang & "'", konek)
+                    dr = cmd.ExecuteReader
+                    dr.Read()
+                    If dr.HasRows Then
+                        Dim update As String = "UPDATE tb_keranjang SET qty = qty + " & Val(tbqty.Text) & ", harga_jual = " & tbhargajual.Text _
+                                             & ", total = qty * harga_jual WHERE no = " & dr.Item("no").ToString
+                        dr.Close()
+                        query(update)
+                    Else
+                        dr.Close()
+                        Dim query As String = "INSERT INTO tb_keranjang (kd_barang, nama_barang, satuan, qty, ambil, harga_beli, harga_jual, total)" _
                                 & "VALUES (@kd_barang, @nama_barang, @satuan, @qty, @ambil, @harga_beli, @harga_jual, @total)"
-                    QueryKeranjang(query, kd_barang.ToUpper, lblnamabarang.Text, lblsatuan.Text, tbqty.Text, "", harga_beli,
-                                   tbhargajual.Text, Val(tbqty.Text) * Val(tbhargajual.Text))
+                        QueryKeranjang(query, kd_barang.ToUpper, lblnamabarang.Text, lblsatuan.Text, tbqty.Text, "", harga_beli,
+                                       tbhargajual.Text, Val(tbqty.Text) * Val(tbhargajual.Text))
+                    End If
                     kd_barang = ""
                     isikeranjang()
                     clearinput()
@@ -157,7 +168,7 @@ Public Class FormPenjualan
                 nmbrg = .Item(2, baris).Value
             End With
             Dim nhps As Integer
-            nhps = MsgBox("Yakin hapus barang " & nmbrg & " (" & kdbrg & ") ?", 48 + 4 + 256, "Konfirmasi")
+            nhps = MsgBox("Hapus barang " & nmbrg & " (" & kdbrg & ") ?", 48 + 4 + 256, "Konfirmasi")
             If nhps = 6 Then
                 Dim queryhps As String = "DELETE FROM tb_keranjang WHERE no = " & no
                 Query(queryhps)
@@ -204,7 +215,7 @@ Public Class FormPenjualan
         tbnama.Clear()
         tbalamat.Clear()
         tbnotelp.Clear()
-        lbltotal.Text = "0"
+        lbltotal.Text = FormatCurrency(0)
         clearinput()
         resetkeranjang()
         isikeranjang()
@@ -227,7 +238,7 @@ Public Class FormPenjualan
         lblsatuan.Text = ""
         tbqty.Clear()
         tbhargajual.Clear()
-        lbltotalbarang.Text = "0"
+        lbltotalbarang.Text = FormatCurrency(0)
     End Sub
 
     Private Sub tbqty_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbqty.KeyPress
@@ -257,31 +268,54 @@ Public Class FormPenjualan
     End Sub
 
     Private Sub dgvkeranjang_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvkeranjang.CellMouseDoubleClick
+        Dim baris As Integer
+        Dim no As Integer
+        Dim kd_barang As String
+        Dim qty As Integer
+        Dim ambil As Integer
+        Dim harga_jual As String
+        With dgvkeranjang
+            baris = .CurrentRow.Index
+            no = .Item(0, baris).Value
+            kd_barang = .Item(1, baris).Value
+            qty = .Item(4, baris).Value
+            ambil = .Item(5, baris).Value
+            harga_jual = .Item(7, baris).Value
+        End With
+        If e.ColumnIndex = 4 And e.RowIndex > -1 Then
+            Dim x As String
+            x = InputBox("Masukkan jumlah Qty", "Perubahan Qty", qty)
+            cmd = New MySqlCommand("SELECT stok FROM tb_barang where kd_barang = '" & kd_barang & "'", konek)
+            dr = cmd.ExecuteReader
+            dr.Read()
+            Dim stok As Integer = dr.Item("stok").ToString
+            dr.Close()
+            If Val(x) > stok Then
+                MsgBox("Stok tidak cukup!", 16, "Informasi")
+            ElseIf x = "" Then
+                Exit Sub
+            Else
+                updatekeranjang("qty", Val(x), no, "harga_jual")
+            End If
+        End If
         If e.ColumnIndex = 5 And e.RowIndex > -1 Then
-            Dim baris As Integer
-            Dim no As Integer
-            Dim qty As Integer
-            Dim ambil As Integer
-            With dgvkeranjang
-                baris = .CurrentRow.Index
-                no = .Item(0, baris).Value
-                qty = .Item(4, baris).Value
-                ambil = .Item(5, baris).Value
-            End With
             Dim x As String
             x = InputBox("Masukkan jumlah yang di-ambil", "Input Ambil", ambil)
             If Val(x) >= 0 And Val(x) <= qty Then
-                updateambil(Val(x), no)
+                updatekeranjang("ambil", Val(x), no, "harga_jual")
             Else
                 MsgBox("Jumlah ambil tidak sesuai!", 16, "Perhatian")
             End If
         End If
-    End Sub
-
-    Sub updateambil(ByVal ambil As Integer, ByVal no As Integer)
-        Dim update As String = "UPDATE tb_keranjang SET ambil = " & ambil & " WHERE no = " & no
-        Query(update)
-        isikeranjang()
+        If e.ColumnIndex = 7 And e.RowIndex > -1 Then
+            Dim x As String
+            x = InputBox("Masukkan harga jual", "Perubahan Harga Jual", harga_jual)
+            If x = "" Then
+                Exit Sub
+            Else
+                updatekeranjang("harga_jual", Val(x), no, "harga_jual")
+            End If
+        End If
     End Sub
 
 End Class

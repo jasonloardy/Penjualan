@@ -116,7 +116,7 @@ Public Class FormPembelian
     Sub hitungtotal()
         Dim hitung As Integer
         For i = 0 To dgvkeranjang.RowCount - 1
-            hitung += dgvkeranjang.Rows(i).Cells(7).Value
+            hitung += dgvkeranjang.Rows(i).Cells(8).Value
         Next
         lbltotal.Text = FormatCurrency(hitung)
     End Sub
@@ -138,7 +138,7 @@ Public Class FormPembelian
                 nmbrg = .Item(2, baris).Value
             End With
             Dim nhps As Integer
-            nhps = MsgBox("Yakin hapus barang " & nmbrg & " (" & kdbrg & ") ?", 48 + 4 + 256, "Konfirmasi")
+            nhps = MsgBox("Hapus barang " & nmbrg & " (" & kdbrg & ") ?", 48 + 4 + 256, "Konfirmasi")
             If nhps = 6 Then
                 Dim queryhps As String = "DELETE FROM tb_keranjang WHERE no = " & no
                 Query(queryhps)
@@ -150,7 +150,7 @@ Public Class FormPembelian
     End Sub
     Sub simpanpembelian()
         Dim simpan As String = "INSERT INTO tb_pembelian " _
-                            & "VALUES ('" & tbkdpembelian.Text & "', '" & Format(dtptanggal.Value, "yyyy-MM-dd") & "', '" & tbkdsupplier.Text & "')"
+                            & "VALUES ('" & tbkdpembelian.Text & "', '" & tbbukti.Text & "', '" & Format(dtptanggal.Value, "yyyy-MM-dd") & "', '" & tbkdsupplier.Text & "')"
         Query(simpan)
         Dim simpandetail As String = "INSERT INTO tb_pembelian_detail (kd_pembelian, kd_barang, qty, harga) " _
                              & "SELECT '" & tbkdpembelian.Text & "', kd_barang, qty, harga_beli FROM tb_keranjang"
@@ -174,6 +174,7 @@ Public Class FormPembelian
     End Sub
     Sub reset()
         kode_pembelian()
+        tbbukti.Clear()
         tbkdsupplier.Clear()
         tbnama.Clear()
         tbalamat.Clear()
@@ -216,6 +217,37 @@ Public Class FormPembelian
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub dgvkeranjang_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvkeranjang.CellMouseDoubleClick
+        Dim baris As Integer
+        Dim no As Integer
+        Dim qty As Integer
+        Dim harga_beli As String
+        With dgvkeranjang
+            baris = .CurrentRow.Index
+            no = .Item(0, baris).Value
+            qty = .Item(4, baris).Value
+            harga_beli = .Item(6, baris).Value
+        End With
+        If e.ColumnIndex = 4 And e.RowIndex > -1 Then
+            Dim x As String
+            x = InputBox("Masukkan jumlah Qty", "Perubahan Qty", qty)
+            If x = "" Then
+                Exit Sub
+            Else
+                updatekeranjang("qty", Val(x), no, "harga_beli")
+            End If
+        End If
+        If e.ColumnIndex = 6 And e.RowIndex > -1 Then
+            Dim x As String
+            x = InputBox("Masukkan harga jual", "Perubahan Harga Jual", harga_beli)
+            If x = "" Then
+                Exit Sub
+            Else
+                updatekeranjang("harga_beli", Val(x), no, "harga_beli")
             End If
         End If
     End Sub

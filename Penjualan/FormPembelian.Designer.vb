@@ -60,6 +60,8 @@ Partial Class FormPembelian
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.lbltotal = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.tbbukti = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -70,6 +72,8 @@ Partial Class FormPembelian
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label13)
+        Me.GroupBox1.Controls.Add(Me.tbbukti)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.dtptanggal)
@@ -460,6 +464,22 @@ Partial Class FormPembelian
         Me.lbltotal.Text = "0"
         Me.lbltotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(6, 81)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(78, 16)
+        Me.Label13.TabIndex = 5
+        Me.Label13.Text = "Kode Bukti :"
+        '
+        'tbbukti
+        '
+        Me.tbbukti.Location = New System.Drawing.Point(126, 78)
+        Me.tbbukti.Name = "tbbukti"
+        Me.tbbukti.Size = New System.Drawing.Size(200, 22)
+        Me.tbbukti.TabIndex = 4
+        '
         'FormPembelian
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -528,4 +548,6 @@ Partial Class FormPembelian
     Friend WithEvents lblsatuan As System.Windows.Forms.Label
     Friend WithEvents btnsupplier As System.Windows.Forms.Button
     Friend WithEvents lbltotal As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents tbbukti As System.Windows.Forms.TextBox
 End Class

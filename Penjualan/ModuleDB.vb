@@ -148,6 +148,19 @@ Module ModuleDB
         End If
         dr.Close()
     End Sub
+    Sub updatekeranjang(ByVal param As String, ByVal param2 As Integer, ByVal no As Integer, ByVal harga As String)
+        If harga = "harga_beli" Then
+            Dim update As String = "UPDATE tb_keranjang SET " & param & " = " & param2 _
+                                 & ", total = qty * " & harga & " WHERE no = " & no
+            Query(update)
+            FormPembelian.isikeranjang()
+        ElseIf harga = "harga_jual" Then
+            Dim update As String = "UPDATE tb_keranjang SET " & param & " = " & param2 _
+                                 & ", total = qty * " & harga & " WHERE no = " & no
+            Query(update)
+            FormPenjualan.isikeranjang()
+        End If
+    End Sub
     Function querycb(ByVal query As String)
         da = New MySqlDataAdapter(query, konek)
         Dim dt As New DataTable()

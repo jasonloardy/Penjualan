@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-11-22 11:49:21
+Date: 2019-11-24 11:42:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,7 +35,7 @@ CREATE TABLE `tb_barang` (
 -- ----------------------------
 INSERT INTO `tb_barang` VALUES ('B0000001', 'BAUT 5/16X18\"', 'J001', 'S001', '5000', '100000', '20');
 INSERT INTO `tb_barang` VALUES ('B0000002', 'STIKER HONDA', 'J002', 'S001', '10000', '10000', '30');
-INSERT INTO `tb_barang` VALUES ('B0000003', 'KOMSTIR', 'J003', 'S002', '10000', '2000000', '30');
+INSERT INTO `tb_barang` VALUES ('B0000003', 'KOMSTIR', 'J003', 'S002', '10000', '2000000', '35');
 
 -- ----------------------------
 -- Table structure for `tb_jenis`
@@ -98,6 +98,7 @@ INSERT INTO `tb_pelanggan` VALUES ('PL000001', 'JASON', 'BARONANG', '123901293')
 DROP TABLE IF EXISTS `tb_pembelian`;
 CREATE TABLE `tb_pembelian` (
   `kd_pembelian` varchar(12) NOT NULL,
+  `kd_bukti` varchar(32) DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `kd_supplier` varchar(8) DEFAULT NULL,
   PRIMARY KEY (`kd_pembelian`)
@@ -106,7 +107,8 @@ CREATE TABLE `tb_pembelian` (
 -- ----------------------------
 -- Records of tb_pembelian
 -- ----------------------------
-INSERT INTO `tb_pembelian` VALUES ('PBL191100001', '2019-11-22', 'SP000001');
+INSERT INTO `tb_pembelian` VALUES ('PBL191100001', null, '2019-11-22', 'SP000001');
+INSERT INTO `tb_pembelian` VALUES ('PBL191100002', 'ajsnd123', '2019-11-24', 'SP000001');
 
 -- ----------------------------
 -- Table structure for `tb_pembelian_detail`
@@ -125,6 +127,7 @@ CREATE TABLE `tb_pembelian_detail` (
 INSERT INTO `tb_pembelian_detail` VALUES ('PBL191100001', 'B0000002', '5', '10000');
 INSERT INTO `tb_pembelian_detail` VALUES ('PBL191100001', 'B0000001', '10', '5000');
 INSERT INTO `tb_pembelian_detail` VALUES ('PBL191100001', 'B0000003', '5', '10000');
+INSERT INTO `tb_pembelian_detail` VALUES ('PBL191100002', 'B0000003', '5', '10000');
 
 -- ----------------------------
 -- Table structure for `tb_penjualan`

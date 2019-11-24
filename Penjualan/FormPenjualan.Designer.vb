@@ -24,6 +24,8 @@ Partial Class FormPenjualan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPenjualan))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.cbjenis = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtptanggal = New System.Windows.Forms.DateTimePicker()
@@ -60,8 +62,6 @@ Partial Class FormPenjualan
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.lbltotal = New System.Windows.Forms.Label()
-        Me.cbjenis = New System.Windows.Forms.ComboBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -84,6 +84,25 @@ Partial Class FormPenjualan
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Transaksi Penjualan"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(6, 81)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(109, 16)
+        Me.Label13.TabIndex = 5
+        Me.Label13.Text = "Jenis Transaksi :"
+        '
+        'cbjenis
+        '
+        Me.cbjenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbjenis.FormattingEnabled = True
+        Me.cbjenis.Items.AddRange(New Object() {"Langsung", "Di-antarkan"})
+        Me.cbjenis.Location = New System.Drawing.Point(126, 78)
+        Me.cbjenis.Name = "cbjenis"
+        Me.cbjenis.Size = New System.Drawing.Size(200, 24)
+        Me.cbjenis.TabIndex = 4
         '
         'Label2
         '
@@ -463,25 +482,6 @@ Partial Class FormPenjualan
         Me.lbltotal.TabIndex = 27
         Me.lbltotal.Text = "0"
         Me.lbltotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'cbjenis
-        '
-        Me.cbjenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbjenis.FormattingEnabled = True
-        Me.cbjenis.Items.AddRange(New Object() {"Langsung", "Di-antarkan"})
-        Me.cbjenis.Location = New System.Drawing.Point(126, 78)
-        Me.cbjenis.Name = "cbjenis"
-        Me.cbjenis.Size = New System.Drawing.Size(200, 24)
-        Me.cbjenis.TabIndex = 4
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(6, 81)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(109, 16)
-        Me.Label13.TabIndex = 5
-        Me.Label13.Text = "Jenis Transaksi :"
         '
         'FormPenjualan
         '
