@@ -121,14 +121,29 @@ Public Class FormSuratJalan
         FormSopir.ShowDialog()
     End Sub
     Sub simpansuratjalan()
+        Dim sisa As Integer
+        Dim antar As Integer
+        For i = 0 To dgv.RowCount - 1
+            sisa += dgv.Rows(i).Cells(5).Value
+            antar += dgv.Rows(i).Cells(6).Value
+        Next
+        If sisa = antar Then
+            Dim update As String = "UPDATE tb_penjualan SET status = 'S' WHERE kd_penjualan = '" & tbkdpenjualan.Text & "'"
+            Query(update)
+        End If
         Dim simpan As String = "INSERT INTO tb_suratjalan " _
                             & "VALUES ('" & tbkdsuratjalan.Text & "', '" & Format(dtptanggal.Value, "yyyy-MM-dd") & "', '" & tbkdpenjualan.Text & "', " _
                             & "'" & tbalamat.Text & "', '" & tbnotelp.Text & "', '" & tbnamasopir.Text & "')"
         Query(simpan)
         Dim simpandetail As String = "INSERT INTO tb_suratjalan_detail (kd_suratjalan, kd_barang, antar) " _
-                             & "SELECT '" & tbkdsuratjalan.Text & "', kd_barang, antar FROM tb_keranjang_antar"
+                             & "SELECT '" & tbkdsuratjalan.Text & "', kd_barang, antar FROM tb_keranjang_antar WHERE antar > 0"
         Query(simpandetail)
-        MsgBox("Surat Jalan berhasil disimpan!", MsgBoxStyle.Information, "Informasi")
+        Dim nplh As Integer
+        nplh = MsgBox("Surat Jalan berhasil disimpan! Cetak Surat Jalan?", 48 + 4 + 256, "Konfirmasi")
+        If nplh = 6 Then
+            FormViewCR.suratjalan(tbkdsuratjalan.Text)
+            FormViewCR.ShowDialog()
+        End If
     End Sub
 
     Private Sub btnsimpan_Click(sender As Object, e As EventArgs) Handles btnsimpan.Click

@@ -188,6 +188,7 @@ Partial Class FormSopir
         Me.Controls.Add(Me.btnhapus)
         Me.Controls.Add(Me.btnedit)
         Me.Controls.Add(Me.btntambah)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
