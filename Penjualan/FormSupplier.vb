@@ -236,15 +236,11 @@ Public Class FormSupplier
 
     Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
         If from = "pembelian" Then
-            Dim nplh As Integer
-            nplh = MsgBox("Masukkan supplier " & tbnama.Text & " (" & tbkdsupplier.Text & ") ?", 48 + 4 + 256, "Konfirmasi")
-            If nplh = 6 Then
-                FormPembelian.tbkdsupplier.Text = tbkdsupplier.Text
-                FormPembelian.tbnama.Text = tbnama.Text
-                FormPembelian.tbalamat.Text = tbalamat.Text
-                FormPembelian.tbnotelp.Text = tbnotelp.Text
-                Me.Close()
-            End If
+            FormPembelian.tbkdsupplier.Text = tbkdsupplier.Text
+            FormPembelian.tbnama.Text = tbnama.Text
+            FormPembelian.tbalamat.Text = tbalamat.Text
+            FormPembelian.tbnotelp.Text = tbnotelp.Text
+            Me.Close()
         End If
     End Sub
 End Class

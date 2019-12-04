@@ -67,4 +67,19 @@ Public Class FormUtama
         FormPembelian.Dock = DockStyle.Fill
         FormPembelian.Show()
     End Sub
+
+    Private Sub DataSopirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataSopirToolStripMenuItem.Click
+        allclose()
+        FormSopir.from = "utama"
+        FormSopir.MdiParent = Me
+        FormSopir.Dock = DockStyle.Fill
+        FormSopir.Show()
+    End Sub
+
+    Private Sub SuratJalanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SuratJalanToolStripMenuItem.Click
+        allclose()
+        FormSuratJalan.MdiParent = Me
+        FormSuratJalan.Dock = DockStyle.Fill
+        FormSuratJalan.Show()
+    End Sub
 End Class

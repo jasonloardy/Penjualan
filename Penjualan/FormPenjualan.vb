@@ -179,18 +179,27 @@ Public Class FormPenjualan
         End Try
     End Sub
     Sub simpanpenjualan()
-        Dim simpan As String = "INSERT INTO tb_penjualan " _
-                            & "VALUES ('" & tbkdpenjualan.Text & "', '" & Format(dtptanggal.Value, "yyyy-MM-dd") & "', '" & tbkdpelanggan.Text & "')"
-        Query(simpan)
-        If cbjenis.SelectedIndex = 0 Then
+        Dim qty As Integer
+        Dim ambil As Integer
+        Dim status As Char
+        For i = 0 To dgvkeranjang.RowCount - 1
+            qty += dgvkeranjang.Rows(i).Cells(4).Value
+            ambil += dgvkeranjang.Rows(i).Cells(5).Value
+        Next
+        If cbjenis.SelectedIndex = 0 Or qty = ambil Then
+            status = "S"
             Dim simpandetail As String = "INSERT INTO tb_penjualan_detail (kd_penjualan, kd_barang, qty, ambil, harga_beli, harga_jual) " _
                                         & "SELECT '" & tbkdpenjualan.Text & "', kd_barang, qty, qty, harga_beli, harga_jual FROM tb_keranjang"
             Query(simpandetail)
         ElseIf cbjenis.SelectedIndex = 1 Then
+            status = "P"
             Dim simpandetail As String = "INSERT INTO tb_penjualan_detail (kd_penjualan, kd_barang, qty, ambil, harga_beli, harga_jual) " _
                                         & "SELECT '" & tbkdpenjualan.Text & "', kd_barang, qty, ambil, harga_beli, harga_jual FROM tb_keranjang"
             Query(simpandetail)
         End If
+        Dim simpan As String = "INSERT INTO tb_penjualan " _
+                            & "VALUES ('" & tbkdpenjualan.Text & "', '" & Format(dtptanggal.Value, "yyyy-MM-dd") & "', '" & tbkdpelanggan.Text & "', '" & status & "')"
+        Query(simpan)
         MsgBox("Penjualan berhasil disimpan!", MsgBoxStyle.Information, "Informasi")
     End Sub
 

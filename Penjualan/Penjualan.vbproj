@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormDaftarPenjualanAntar.Designer.vb">
+      <DependentUpon>FormDaftarPenjualanAntar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarPenjualanAntar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPenjualan.Designer.vb">
       <DependentUpon>FormPenjualan.vb</DependentUpon>
     </Compile>
@@ -86,6 +92,12 @@
       <DependentUpon>FormPembelian.vb</DependentUpon>
     </Compile>
     <Compile Include="FormPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSopir.Designer.vb">
+      <DependentUpon>FormSopir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormSopir.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSupplier.Designer.vb">
@@ -118,6 +130,12 @@
     <Compile Include="FormJenis.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormSuratJalan.Designer.vb">
+      <DependentUpon>FormSuratJalan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuratJalan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormUtama.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -143,11 +161,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormDaftarPenjualanAntar.resx">
+      <DependentUpon>FormDaftarPenjualanAntar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPenjualan.resx">
       <DependentUpon>FormPenjualan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPembelian.resx">
       <DependentUpon>FormPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSopir.resx">
+      <DependentUpon>FormSopir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSupplier.resx">
       <DependentUpon>FormSupplier.vb</DependentUpon>
@@ -163,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormJenis.resx">
       <DependentUpon>FormJenis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuratJalan.resx">
+      <DependentUpon>FormSuratJalan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.vb</DependentUpon>

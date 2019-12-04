@@ -101,7 +101,7 @@ Public Class FormSatuan
     End Sub
 
     Sub queryhapus()
-        cmd.CommandText = "SELECT * FROM tb_barang WHERE satuan = '" & id_data & "'"
+        cmd.CommandText = "SELECT * FROM tb_barang WHERE kd_satuan = '" & id_data & "'"
         cmd.Connection = konek
         dr = cmd.ExecuteReader
         dr.Read()

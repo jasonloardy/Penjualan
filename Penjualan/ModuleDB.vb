@@ -49,6 +49,19 @@ Module ModuleDB
             MsgBox(ex.Message, 16, "Error")
         End Try
     End Sub
+    Sub QuerySopir(ByVal query As String, ByVal kd_sopir As String, ByVal nama_sopir As String)
+        Try
+            Using cmd As New MySqlCommand
+                cmd.CommandText = query
+                cmd.Parameters.AddWithValue("@kd_sopir", kd_sopir)
+                cmd.Parameters.AddWithValue("@nama_sopir", nama_sopir)
+                cmd.Connection = konek
+                cmd.ExecuteNonQuery()
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message, 16, "Error")
+        End Try
+    End Sub
     Sub QueryBarang(ByVal query As String, ByVal kd_barang As String, ByVal nama_barang As String,
                     ByVal kd_jenis As String, ByVal kd_satuan As String, ByVal harga_beli As String,
                     ByVal harga_jual As String, ByVal stok As String)
