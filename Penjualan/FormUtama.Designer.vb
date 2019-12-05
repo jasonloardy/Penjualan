@@ -34,8 +34,9 @@ Partial Class FormUtama
         Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SuratJalanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CariNotaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CariTRXToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PembelianToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PenjualanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SuratJalanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,7 +46,7 @@ Partial Class FormUtama
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataMasterToolStripMenuItem, Me.TransaksiToolStripMenuItem, Me.SuratJalanToolStripMenuItem, Me.LaporanToolStripMenuItem, Me.CariNotaToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataMasterToolStripMenuItem, Me.TransaksiToolStripMenuItem, Me.LaporanToolStripMenuItem, Me.CariTRXToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
@@ -105,7 +106,7 @@ Partial Class FormUtama
         '
         'TransaksiToolStripMenuItem
         '
-        Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PembelianToolStripMenuItem, Me.PenjualanToolStripMenuItem})
+        Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PembelianToolStripMenuItem, Me.PenjualanToolStripMenuItem, Me.SuratJalanToolStripMenuItem1})
         Me.TransaksiToolStripMenuItem.Name = "TransaksiToolStripMenuItem"
         Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(73, 21)
         Me.TransaksiToolStripMenuItem.Text = "Transaksi"
@@ -113,14 +114,20 @@ Partial Class FormUtama
         'PembelianToolStripMenuItem
         '
         Me.PembelianToolStripMenuItem.Name = "PembelianToolStripMenuItem"
-        Me.PembelianToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.PembelianToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PembelianToolStripMenuItem.Text = "Pembelian"
         '
         'PenjualanToolStripMenuItem
         '
         Me.PenjualanToolStripMenuItem.Name = "PenjualanToolStripMenuItem"
-        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PenjualanToolStripMenuItem.Text = "Penjualan"
+        '
+        'SuratJalanToolStripMenuItem1
+        '
+        Me.SuratJalanToolStripMenuItem1.Name = "SuratJalanToolStripMenuItem1"
+        Me.SuratJalanToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SuratJalanToolStripMenuItem1.Text = "Surat Jalan"
         '
         'LaporanToolStripMenuItem
         '
@@ -128,29 +135,29 @@ Partial Class FormUtama
         Me.LaporanToolStripMenuItem.Size = New System.Drawing.Size(68, 21)
         Me.LaporanToolStripMenuItem.Text = "Laporan"
         '
-        'CariNotaToolStripMenuItem
+        'CariTRXToolStripMenuItem
         '
-        Me.CariNotaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PembelianToolStripMenuItem1, Me.PenjualanToolStripMenuItem1})
-        Me.CariNotaToolStripMenuItem.Name = "CariNotaToolStripMenuItem"
-        Me.CariNotaToolStripMenuItem.Size = New System.Drawing.Size(76, 21)
-        Me.CariNotaToolStripMenuItem.Text = "Cari Nota"
+        Me.CariTRXToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PembelianToolStripMenuItem1, Me.PenjualanToolStripMenuItem1, Me.SuratJalanToolStripMenuItem})
+        Me.CariTRXToolStripMenuItem.Name = "CariTRXToolStripMenuItem"
+        Me.CariTRXToolStripMenuItem.Size = New System.Drawing.Size(70, 21)
+        Me.CariTRXToolStripMenuItem.Text = "Cari TRX"
         '
         'PembelianToolStripMenuItem1
         '
         Me.PembelianToolStripMenuItem1.Name = "PembelianToolStripMenuItem1"
-        Me.PembelianToolStripMenuItem1.Size = New System.Drawing.Size(136, 22)
+        Me.PembelianToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.PembelianToolStripMenuItem1.Text = "Pembelian"
         '
         'PenjualanToolStripMenuItem1
         '
         Me.PenjualanToolStripMenuItem1.Name = "PenjualanToolStripMenuItem1"
-        Me.PenjualanToolStripMenuItem1.Size = New System.Drawing.Size(136, 22)
+        Me.PenjualanToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.PenjualanToolStripMenuItem1.Text = "Penjualan"
         '
         'SuratJalanToolStripMenuItem
         '
         Me.SuratJalanToolStripMenuItem.Name = "SuratJalanToolStripMenuItem"
-        Me.SuratJalanToolStripMenuItem.Size = New System.Drawing.Size(83, 21)
+        Me.SuratJalanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.SuratJalanToolStripMenuItem.Text = "Surat Jalan"
         '
         'FormUtama
@@ -178,7 +185,7 @@ Partial Class FormUtama
     Friend WithEvents DataMasterToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TransaksiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LaporanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CariNotaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CariTRXToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataBarangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataPelangganToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataSupplierToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -190,6 +197,7 @@ Partial Class FormUtama
     Friend WithEvents JenisBarangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SatuanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataSopirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SuratJalanToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SuratJalanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

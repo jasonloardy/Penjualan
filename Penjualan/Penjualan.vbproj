@@ -86,10 +86,10 @@
       <DependentUpon>CRSuratJalan.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FormDaftarPenjualanAntar.Designer.vb">
-      <DependentUpon>FormDaftarPenjualanAntar.vb</DependentUpon>
+    <Compile Include="FormDaftarTransaksi.Designer.vb">
+      <DependentUpon>FormDaftarTransaksi.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormDaftarPenjualanAntar.vb">
+    <Compile Include="FormDaftarTransaksi.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPenjualan.Designer.vb">
@@ -181,8 +181,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRSuratJalan.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDaftarPenjualanAntar.resx">
-      <DependentUpon>FormDaftarPenjualanAntar.vb</DependentUpon>
+    <EmbeddedResource Include="FormDaftarTransaksi.resx">
+      <DependentUpon>FormDaftarTransaksi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPenjualan.resx">
       <DependentUpon>FormPenjualan.vb</DependentUpon>

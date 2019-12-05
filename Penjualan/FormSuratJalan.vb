@@ -3,8 +3,8 @@
 Public Class FormSuratJalan
 
     Private Sub btnpenjualan_Click(sender As Object, e As EventArgs) Handles btnpenjualan.Click
-        FormDaftarPenjualanAntar.from = "suratjalan"
-        FormDaftarPenjualanAntar.ShowDialog()
+        FormDaftarTransaksi.from = "suratjalan"
+        FormDaftarTransaksi.ShowDialog()
     End Sub
 
     Private Sub tbkdpenjualan_TextChanged(sender As Object, e As EventArgs) Handles tbkdpenjualan.TextChanged
@@ -163,5 +163,10 @@ Public Class FormSuratJalan
 
     Private Sub FormSuratJalan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         reset()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        FormDaftarTransaksi.from = ""
+        FormDaftarTransaksi.ShowDialog()
     End Sub
 End Class
