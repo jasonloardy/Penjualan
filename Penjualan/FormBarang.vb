@@ -102,12 +102,14 @@ Public Class FormBarang
         dgv.Columns(3).HeaderText = "Satuan"
         dgv.Columns(3).Width = 60
         dgv.Columns(4).HeaderText = "Hrg. Beli"
-        dgv.Columns(4).Width = 80
+        dgv.Columns(4).Width = 100
+        dgv.Columns(4).DefaultCellStyle.Format = "c"
         If from = "penjualan" Then
             dgv.Columns(4).Visible = False
         End If
         dgv.Columns(5).HeaderText = "Hrg. Jual"
-        dgv.Columns(5).Width = 80
+        dgv.Columns(5).Width = 100
+        dgv.Columns(5).DefaultCellStyle.Format = "c"
         dgv.Columns(6).HeaderText = "Stok"
         dgv.Columns(6).Width = 50
         objAlternatingCellStyle.BackColor = Color.AliceBlue

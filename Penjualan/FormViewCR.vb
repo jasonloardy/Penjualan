@@ -11,4 +11,22 @@ Public Class FormViewCR
         cryReport.Refresh()
         cryReport.SetParameterValue("kd_suratjalan", kd_suratjalan)
     End Sub
+    Sub penjualan_langsung(ByVal kd_penjualan As String)
+        cryReport.Load(RepLocation & "CRPenjualanLangsung.rpt")
+        CRViewer.ReportSource = cryReport
+        cryReport.Refresh()
+        cryReport.SetParameterValue("kd_penjualan", kd_penjualan)
+    End Sub
+    Sub penjualan_antar(ByVal kd_penjualan As String)
+        cryReport.Load(RepLocation & "CRPenjualanAntar.rpt")
+        CRViewer.ReportSource = cryReport
+        cryReport.Refresh()
+        cryReport.SetParameterValue("kd_penjualan", kd_penjualan)
+    End Sub
+    Sub pembelian(ByVal kd_pembelian As String)
+        cryReport.Load(RepLocation & "CRPembelian.rpt")
+        CRViewer.ReportSource = cryReport
+        cryReport.Refresh()
+        cryReport.SetParameterValue("kd_pembelian", kd_pembelian)
+    End Sub
 End Class

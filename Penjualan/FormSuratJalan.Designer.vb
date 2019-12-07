@@ -50,7 +50,6 @@ Partial Class FormSuratJalan
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tbkdsopir = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -326,21 +325,11 @@ Partial Class FormSuratJalan
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "Kode Sopir :"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(782, 93)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'FormSuratJalan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1284, 661)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.btnbatal)
@@ -389,5 +378,4 @@ Partial Class FormSuratJalan
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents tbkdsopir As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

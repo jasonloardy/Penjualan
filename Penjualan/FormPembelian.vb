@@ -155,7 +155,12 @@ Public Class FormPembelian
         Dim simpandetail As String = "INSERT INTO tb_pembelian_detail (kd_pembelian, kd_barang, qty, harga) " _
                              & "SELECT '" & tbkdpembelian.Text & "', kd_barang, qty, harga_beli FROM tb_keranjang"
         Query(simpandetail)
-        MsgBox("Pembelian berhasil disimpan!", MsgBoxStyle.Information, "Informasi")
+        Dim nplh As Integer
+        nplh = MsgBox("Pembelian berhasil disimpan! Cetak Bukti Pembelian?", 48 + 4 + 256, "Konfirmasi")
+        If nplh = 6 Then
+            FormViewCR.pembelian(tbkdpembelian.Text)
+            FormViewCR.ShowDialog()
+        End If
     End Sub
 
     Private Sub btnsimpan_Click(sender As Object, e As EventArgs) Handles btnsimpan.Click

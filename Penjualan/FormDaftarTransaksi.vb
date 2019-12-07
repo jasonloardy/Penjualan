@@ -2,6 +2,7 @@
 
 Public Class FormDaftarTransaksi
     Public from As String
+    Public status As Char
     Private Sub FormDaftarPenjualanAntar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         custom()
         isigridtrx()
@@ -14,6 +15,10 @@ Public Class FormDaftarTransaksi
             btncetak.Visible = False
         ElseIf from = "ctksuratjalan" Then
             Me.Text = "Daftar Surat Jalan"
+        ElseIf from = "ctkpenjualan" Then
+            Me.Text = "Daftar Penjualan"
+        ElseIf from = "ctkpembelian" Then
+            Me.Text = "Daftar Pembelian"
         End If
     End Sub
     Sub isigridtrx()
@@ -30,6 +35,18 @@ Public Class FormDaftarTransaksi
                 & "JOIN tb_penjualan tj ON tsj.kd_penjualan = tj.kd_penjualan " _
                 & "JOIN tb_pelanggan tp ON tj.kd_pelanggan = tp.kd_pelanggan " _
                 & "ORDER BY tsj.kd_suratjalan DESC"
+        ElseIf from = "ctkpenjualan" Then
+            query = "SELECT tj.kd_penjualan, tj.tanggal, tp.nama, IF(sum(tjd.qty-tjd.ambil)>0,'Antaran','Langsung') AS Status " _
+                & "FROM tb_penjualan tj " _
+                & "JOIN tb_pelanggan tp ON tj.kd_pelanggan = tp.kd_pelanggan " _
+                & "JOIN tb_penjualan_detail tjd ON tj.kd_penjualan = tjd.kd_penjualan " _
+                & "GROUP BY tj.kd_penjualan " _
+                & "ORDER BY tj.kd_penjualan DESC"
+        ElseIf from = "ctkpembelian" Then
+            query = "SELECT tb.kd_pembelian, tb.tanggal, tsp.nama, tb.kd_bukti AS 'Kd. Bukti' " _
+                & "FROM tb_pembelian tb " _
+                & "JOIN tb_supplier tsp ON tb.kd_supplier = tsp.kd_supplier " _
+                & "ORDER BY tb.kd_pembelian DESC"
         End If
         Dim da As New MySqlDataAdapter(query, konek)
         Dim ds As New DataSet()
@@ -49,16 +66,23 @@ Public Class FormDaftarTransaksi
         Dim style As DataGridViewCellStyle = dgvtrx.Columns(0).DefaultCellStyle
         If from = "suratjalan" Then
             dgvtrx.Columns(0).HeaderText = "Kd. Penjualan"
+            dgvtrx.Columns(2).HeaderText = "Nama Pelanggan"
             dgvtrx.Columns(3).Visible = False
             dgvtrx.Columns(4).Visible = False
             dgvtrx.Columns(5).Visible = False
         ElseIf from = "ctksuratjalan" Then
             dgvtrx.Columns(0).HeaderText = "Kd. Surat Jalan"
+            dgvtrx.Columns(2).HeaderText = "Nama Pelanggan"
+        ElseIf from = "ctkpenjualan" Then
+            dgvtrx.Columns(0).HeaderText = "Kd. Penjualan"
+            dgvtrx.Columns(2).HeaderText = "Nama Pelanggan"
+        ElseIf from = "ctkpembelian" Then
+            dgvtrx.Columns(0).HeaderText = "Kd. Pembelian"
+            dgvtrx.Columns(2).HeaderText = "Nama Supplier"
         End If
         dgvtrx.Columns(0).Width = 120
         dgvtrx.Columns(1).HeaderText = "Tanggal"
         dgvtrx.Columns(1).Width = 75
-        dgvtrx.Columns(2).HeaderText = "Nama Pelanggan"
         dgvtrx.Columns(2).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         objAlternatingCellStyle.BackColor = Color.AliceBlue
         dgvtrx.SelectionMode = DataGridViewSelectionMode.FullRowSelect
@@ -74,13 +98,26 @@ Public Class FormDaftarTransaksi
                 & "JOIN tb_satuan ts ON tb.kd_satuan = ts.kd_satuan " _
                 & "LEFT JOIN tb_suratjalan tsj ON tjd.kd_penjualan = tsj.kd_penjualan " _
                 & "LEFT JOIN tb_suratjalan_detail tsjd ON tsj.kd_suratjalan = tsjd.kd_suratjalan AND tjd.kd_barang = tsjd.kd_barang " _
-                & "WHERE tjd.kd_penjualan = '" & kd_trx & "'"
+                & "WHERE tjd.kd_penjualan = '" & kd_trx & "' " _
+                & "GROUP BY tjd.kd_barang"
         ElseIf from = "ctksuratjalan" Then
             query = "SELECT tsjd.kd_barang, tb.nama_barang, ts.nama_satuan, tsjd.antar " _
                 & "FROM tb_suratjalan_detail tsjd " _
                 & "JOIN tb_barang tb ON tsjd.kd_barang = tb.kd_barang " _
                 & "JOIN tb_satuan ts ON tb.kd_satuan = ts.kd_satuan " _
                 & "WHERE tsjd.kd_suratjalan = '" & kd_trx & "'"
+        ElseIf from = "ctkpenjualan" Then
+            query = "SELECT tjd.kd_barang, tb.nama_barang, ts.nama_satuan, tjd.qty, tjd.ambil, tjd.harga_jual " _
+                & "FROM tb_penjualan_detail tjd " _
+                & "JOIN tb_barang tb ON tjd.kd_barang = tb.kd_barang " _
+                & "JOIN tb_satuan ts ON tb.kd_satuan = ts.kd_satuan " _
+                & "WHERE tjd.kd_penjualan = '" & kd_trx & "'"
+        ElseIf from = "ctkpembelian" Then
+            query = "SELECT tbd.kd_barang, tbr.nama_barang, ts.nama_satuan, tbd.qty, tbd.harga " _
+                & "FROM tb_pembelian_detail tbd " _
+                & "JOIN tb_barang tbr ON tbd.kd_barang = tbr.kd_barang " _
+                & "JOIN tb_satuan ts ON tbr.kd_satuan = ts.kd_satuan " _
+                & "WHERE tbd.kd_pembelian = '" & kd_trx & "'"
         End If
         Dim da As New MySqlDataAdapter(query, konek)
         Dim ds As New DataSet()
@@ -109,6 +146,21 @@ Public Class FormDaftarTransaksi
         If from = "suratjalan" Then
             dgvbarang.Columns(4).HeaderText = "Sisa"
             dgvbarang.Columns(4).Width = 70
+        ElseIf from = "ctkpenjualan" Then
+            dgvbarang.Columns(4).HeaderText = "Ambil"
+            dgvbarang.Columns(4).Width = 70
+            dgvbarang.Columns(5).HeaderText = "Hrg. Jual"
+            dgvbarang.Columns(5).Width = 140
+            dgvbarang.Columns(5).DefaultCellStyle.Format = "c"
+            If dgvtrx.Item(3, dgvtrx.CurrentRow.Index).Value = "Antaran" Then
+                dgvbarang.Columns(4).Visible = True
+            Else
+                dgvbarang.Columns(4).Visible = False
+            End If
+        ElseIf from = "ctkpembelian" Then
+            dgvbarang.Columns(4).HeaderText = "Hrg. Beli"
+            dgvbarang.Columns(4).Width = 140
+            dgvbarang.Columns(4).DefaultCellStyle.Format = "c"
         End If
         objAlternatingCellStyle.BackColor = Color.AliceBlue
         dgvbarang.SelectionMode = DataGridViewSelectionMode.FullRowSelect
@@ -124,18 +176,9 @@ Public Class FormDaftarTransaksi
                                  & "JOIN tb_satuan ts ON tb.kd_satuan = ts.kd_satuan " _
                                  & "LEFT JOIN tb_suratjalan tsj ON tjd.kd_penjualan = tsj.kd_penjualan " _
                                  & "LEFT JOIN tb_suratjalan_detail tsjd ON tsj.kd_suratjalan = tsjd.kd_suratjalan AND tjd.kd_barang = tsjd.kd_barang " _
-                                 & "WHERE tjd.kd_penjualan = '" & kd_penjualan & "'"
+                                 & "WHERE tjd.kd_penjualan = '" & kd_penjualan & "' " _
+                                 & "GROUP BY tjd.kd_barang"
         Query(simpandetail)
-    End Sub
-
-    Private Sub dgvtrx_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvtrx.CellClick
-        Dim baris As Integer
-        Dim kd_trx As String
-        With dgvtrx
-            baris = .CurrentRow.Index
-            kd_trx = .Item(0, baris).Value
-        End With
-        isigridbarang(kd_trx)
     End Sub
 
     Private Sub dgvtrx_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvtrx.CellDoubleClick
@@ -164,10 +207,33 @@ Public Class FormDaftarTransaksi
         With dgvtrx
             baris = .CurrentRow.Index
             kd_trx = .Item(0, baris).Value
+            If from = "ctkpenjualan" Then
+                Dim status As String = .Item(3, baris).Value
+            End If
         End With
         If from = "ctksuratjalan" Then
             FormViewCR.suratjalan(kd_trx)
             FormViewCR.ShowDialog()
+        ElseIf from = "ctkpenjualan" Then
+            If status = "Antaran" Then
+                FormViewCR.penjualan_antar(kd_trx)
+            Else
+                FormViewCR.penjualan_langsung(kd_trx)
+            End If
+            FormViewCR.ShowDialog()
+        ElseIf from = "ctkpembelian" Then
+            FormViewCR.pembelian(kd_trx)
+            FormViewCR.ShowDialog()
         End If
+    End Sub
+
+    Private Sub dgvtrx_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvtrx.CellEnter
+        Dim baris As Integer
+        Dim kd_trx As String
+        With dgvtrx
+            baris = .CurrentRow.Index
+            kd_trx = .Item(0, baris).Value
+        End With
+        isigridbarang(kd_trx)
     End Sub
 End Class

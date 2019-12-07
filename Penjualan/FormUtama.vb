@@ -86,22 +86,24 @@ Public Class FormUtama
     Private Sub SuratJalanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SuratJalanToolStripMenuItem.Click
         allclose()
         FormDaftarTransaksi.from = "ctksuratjalan"
-        FormDaftarTransaksi.ShowDialog()
+        FormDaftarTransaksi.MdiParent = Me
+        FormDaftarTransaksi.Dock = DockStyle.Fill
+        FormDaftarTransaksi.Show()
     End Sub
 
     Private Sub PembelianToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PembelianToolStripMenuItem1.Click
         allclose()
+        FormDaftarTransaksi.from = "ctkpembelian"
         FormDaftarTransaksi.MdiParent = Me
         FormDaftarTransaksi.Dock = DockStyle.Fill
-        FormDaftarTransaksi.from = "ctkpembelian"
-        FormDaftarTransaksi.ShowDialog()
+        FormDaftarTransaksi.Show()
     End Sub
 
     Private Sub PenjualanToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PenjualanToolStripMenuItem1.Click
         allclose()
+        FormDaftarTransaksi.from = "ctkpenjualan"
         FormDaftarTransaksi.MdiParent = Me
         FormDaftarTransaksi.Dock = DockStyle.Fill
-        FormDaftarTransaksi.from = "ctkpenjualan"
-        FormDaftarTransaksi.ShowDialog()
+        FormDaftarTransaksi.Show()
     End Sub
 End Class

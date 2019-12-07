@@ -200,7 +200,16 @@ Public Class FormPenjualan
         Dim simpan As String = "INSERT INTO tb_penjualan " _
                             & "VALUES ('" & tbkdpenjualan.Text & "', '" & Format(dtptanggal.Value, "yyyy-MM-dd") & "', '" & tbkdpelanggan.Text & "', '" & status & "')"
         Query(simpan)
-        MsgBox("Penjualan berhasil disimpan!", MsgBoxStyle.Information, "Informasi")
+        Dim nplh As Integer
+        nplh = MsgBox("Penjualan berhasil disimpan! Cetak Bukti Penjualan?", 48 + 4 + 256, "Konfirmasi")
+        If nplh = 6 Then
+            If status = "S" Then
+                FormViewCR.penjualan_langsung(tbkdpenjualan.Text)
+            ElseIf status = "P" Then
+                FormViewCR.penjualan_antar(tbkdpenjualan.Text)
+            End If
+            FormViewCR.ShowDialog()
+        End If
     End Sub
 
     Private Sub btnsimpan_Click(sender As Object, e As EventArgs) Handles btnsimpan.Click

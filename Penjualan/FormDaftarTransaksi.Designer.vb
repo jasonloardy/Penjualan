@@ -44,6 +44,8 @@ Partial Class FormDaftarTransaksi
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.tbpage)
         Me.GroupBox1.Controls.Add(Me.lbltotpage)
         Me.GroupBox1.Controls.Add(Me.btnlast)
@@ -55,7 +57,7 @@ Partial Class FormDaftarTransaksi
         Me.GroupBox1.Controls.Add(Me.dgvtrx)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(443, 537)
+        Me.GroupBox1.Size = New System.Drawing.Size(504, 537)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Daftar Transaksi"
@@ -63,7 +65,7 @@ Partial Class FormDaftarTransaksi
         'tbpage
         '
         Me.tbpage.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tbpage.Location = New System.Drawing.Point(273, 49)
+        Me.tbpage.Location = New System.Drawing.Point(334, 50)
         Me.tbpage.Name = "tbpage"
         Me.tbpage.Size = New System.Drawing.Size(40, 22)
         Me.tbpage.TabIndex = 26
@@ -72,7 +74,7 @@ Partial Class FormDaftarTransaksi
         '
         Me.lbltotpage.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbltotpage.AutoSize = True
-        Me.lbltotpage.Location = New System.Drawing.Point(319, 52)
+        Me.lbltotpage.Location = New System.Drawing.Point(380, 53)
         Me.lbltotpage.Name = "lbltotpage"
         Me.lbltotpage.Size = New System.Drawing.Size(36, 16)
         Me.lbltotpage.TabIndex = 25
@@ -81,7 +83,7 @@ Partial Class FormDaftarTransaksi
         'btnlast
         '
         Me.btnlast.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnlast.Location = New System.Drawing.Point(402, 49)
+        Me.btnlast.Location = New System.Drawing.Point(463, 49)
         Me.btnlast.Name = "btnlast"
         Me.btnlast.Size = New System.Drawing.Size(35, 23)
         Me.btnlast.TabIndex = 24
@@ -91,7 +93,7 @@ Partial Class FormDaftarTransaksi
         'btnnext
         '
         Me.btnnext.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnnext.Location = New System.Drawing.Point(361, 49)
+        Me.btnnext.Location = New System.Drawing.Point(422, 49)
         Me.btnnext.Name = "btnnext"
         Me.btnnext.Size = New System.Drawing.Size(35, 23)
         Me.btnnext.TabIndex = 23
@@ -101,7 +103,7 @@ Partial Class FormDaftarTransaksi
         'btnprev
         '
         Me.btnprev.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnprev.Location = New System.Drawing.Point(232, 49)
+        Me.btnprev.Location = New System.Drawing.Point(293, 49)
         Me.btnprev.Name = "btnprev"
         Me.btnprev.Size = New System.Drawing.Size(35, 23)
         Me.btnprev.TabIndex = 22
@@ -111,7 +113,7 @@ Partial Class FormDaftarTransaksi
         'btnfirst
         '
         Me.btnfirst.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnfirst.Location = New System.Drawing.Point(191, 49)
+        Me.btnfirst.Location = New System.Drawing.Point(252, 49)
         Me.btnfirst.Name = "btnfirst"
         Me.btnfirst.Size = New System.Drawing.Size(35, 23)
         Me.btnfirst.TabIndex = 21
@@ -133,38 +135,47 @@ Partial Class FormDaftarTransaksi
         Me.tbkdsupplier.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbkdsupplier.Location = New System.Drawing.Point(149, 21)
         Me.tbkdsupplier.Name = "tbkdsupplier"
-        Me.tbkdsupplier.Size = New System.Drawing.Size(288, 22)
+        Me.tbkdsupplier.Size = New System.Drawing.Size(349, 22)
         Me.tbkdsupplier.TabIndex = 4
         '
         'dgvtrx
         '
+        Me.dgvtrx.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.dgvtrx.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvtrx.Location = New System.Drawing.Point(6, 78)
         Me.dgvtrx.Name = "dgvtrx"
-        Me.dgvtrx.Size = New System.Drawing.Size(431, 453)
+        Me.dgvtrx.Size = New System.Drawing.Size(492, 453)
         Me.dgvtrx.TabIndex = 0
         '
         'GroupBox2
         '
+        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.dgvbarang)
-        Me.GroupBox2.Location = New System.Drawing.Point(461, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(522, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(711, 456)
+        Me.GroupBox2.Size = New System.Drawing.Size(650, 456)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Daftar Barang"
         '
         'dgvbarang
         '
+        Me.dgvbarang.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvbarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvbarang.Enabled = False
         Me.dgvbarang.Location = New System.Drawing.Point(6, 21)
         Me.dgvbarang.Name = "dgvbarang"
-        Me.dgvbarang.Size = New System.Drawing.Size(699, 429)
+        Me.dgvbarang.Size = New System.Drawing.Size(638, 429)
         Me.dgvbarang.TabIndex = 1
         '
         'btncetak
         '
+        Me.btncetak.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btncetak.Image = CType(resources.GetObject("btncetak.Image"), System.Drawing.Image)
         Me.btncetak.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btncetak.Location = New System.Drawing.Point(1097, 474)
