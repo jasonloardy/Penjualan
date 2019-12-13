@@ -106,4 +106,11 @@ Public Class FormUtama
         FormDaftarTransaksi.Dock = DockStyle.Fill
         FormDaftarTransaksi.Show()
     End Sub
+
+    Private Sub LaporanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanToolStripMenuItem.Click
+        allclose()
+        FormViewLaporanCR.MdiParent = Me
+        FormViewLaporanCR.Dock = DockStyle.Fill
+        FormViewLaporanCR.Show()
+    End Sub
 End Class

@@ -114,19 +114,19 @@ Partial Class FormUtama
         'PembelianToolStripMenuItem
         '
         Me.PembelianToolStripMenuItem.Name = "PembelianToolStripMenuItem"
-        Me.PembelianToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PembelianToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.PembelianToolStripMenuItem.Text = "Pembelian"
         '
         'PenjualanToolStripMenuItem
         '
         Me.PenjualanToolStripMenuItem.Name = "PenjualanToolStripMenuItem"
-        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.PenjualanToolStripMenuItem.Text = "Penjualan"
         '
         'SuratJalanToolStripMenuItem1
         '
         Me.SuratJalanToolStripMenuItem1.Name = "SuratJalanToolStripMenuItem1"
-        Me.SuratJalanToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SuratJalanToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
         Me.SuratJalanToolStripMenuItem1.Text = "Surat Jalan"
         '
         'LaporanToolStripMenuItem
@@ -145,19 +145,19 @@ Partial Class FormUtama
         'PembelianToolStripMenuItem1
         '
         Me.PembelianToolStripMenuItem1.Name = "PembelianToolStripMenuItem1"
-        Me.PembelianToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.PembelianToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
         Me.PembelianToolStripMenuItem1.Text = "Pembelian"
         '
         'PenjualanToolStripMenuItem1
         '
         Me.PenjualanToolStripMenuItem1.Name = "PenjualanToolStripMenuItem1"
-        Me.PenjualanToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.PenjualanToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
         Me.PenjualanToolStripMenuItem1.Text = "Penjualan"
         '
         'SuratJalanToolStripMenuItem
         '
         Me.SuratJalanToolStripMenuItem.Name = "SuratJalanToolStripMenuItem"
-        Me.SuratJalanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SuratJalanToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.SuratJalanToolStripMenuItem.Text = "Surat Jalan"
         '
         'FormUtama

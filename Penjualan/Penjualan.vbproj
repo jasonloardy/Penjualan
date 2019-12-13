@@ -80,6 +80,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRPenjualanHarian.vb">
+      <DependentUpon>CRPenjualanHarian.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CRPembelianHarian.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRPembelianHarian.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CRPenjualanAntar.vb">
       <DependentUpon>CRPenjualanAntar.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -177,6 +189,12 @@
     <Compile Include="FormViewCR.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormViewLaporanCR.Designer.vb">
+      <DependentUpon>FormViewLaporanCR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewLaporanCR.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModuleDB.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -195,6 +213,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CRPenjualanHarian.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRPenjualanHarian.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRPembelianHarian.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRPembelianHarian.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CRPenjualanAntar.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRPenjualanAntar.vb</LastGenOutput>
@@ -246,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormViewCR.resx">
       <DependentUpon>FormViewCR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewLaporanCR.resx">
+      <DependentUpon>FormViewLaporanCR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
