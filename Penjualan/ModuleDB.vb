@@ -185,4 +185,12 @@ Module ModuleDB
         da.Fill(dt)
         Return dt
     End Function
+    Function cekdata(ByVal query As String)
+        cmd = New MySqlCommand(query, konek)
+        dr = cmd.ExecuteReader
+        dr.Read()
+        Dim hasRows As Boolean = dr.HasRows
+        dr.Close()
+        Return hasRows
+    End Function
 End Module

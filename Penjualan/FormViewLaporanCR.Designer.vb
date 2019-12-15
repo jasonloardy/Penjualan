@@ -231,12 +231,10 @@ Partial Class FormViewLaporanCR
         'rbpembelian
         '
         Me.rbpembelian.AutoSize = True
-        Me.rbpembelian.Checked = True
         Me.rbpembelian.Location = New System.Drawing.Point(7, 24)
         Me.rbpembelian.Name = "rbpembelian"
         Me.rbpembelian.Size = New System.Drawing.Size(137, 20)
         Me.rbpembelian.TabIndex = 0
-        Me.rbpembelian.TabStop = True
         Me.rbpembelian.Text = "Semua Pembelian"
         Me.rbpembelian.UseVisualStyleBackColor = True
         '
