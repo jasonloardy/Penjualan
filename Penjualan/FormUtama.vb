@@ -14,15 +14,7 @@ Public Class FormUtama
         Next
     End Sub
 
-    Private Sub DataBarangToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataBarangToolStripMenuItem.Click
-        allclose()
-        FormBarang.from = "utama"
-        FormBarang.MdiParent = Me
-        FormBarang.Dock = DockStyle.Fill
-        FormBarang.Show()
-    End Sub
-
-    Private Sub JenisBarangToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JenisBarangToolStripMenuItem.Click
+    Private Sub JenisBarangToolStripMenuItem_Click(sender As Object, e As EventArgs)
         allclose()
         FormJenis.from = "utama"
         FormJenis.MdiParent = Me
@@ -30,7 +22,7 @@ Public Class FormUtama
         FormJenis.Show()
     End Sub
 
-    Private Sub SatuanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SatuanToolStripMenuItem.Click
+    Private Sub SatuanToolStripMenuItem_Click(sender As Object, e As EventArgs)
         allclose()
         FormSatuan.from = "utama"
         FormSatuan.MdiParent = Me
@@ -112,5 +104,29 @@ Public Class FormUtama
         FormViewLaporanCR.MdiParent = Me
         FormViewLaporanCR.Dock = DockStyle.Fill
         FormViewLaporanCR.Show()
+    End Sub
+
+    Private Sub JenisBarangToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles JenisBarangToolStripMenuItem1.Click
+        allclose()
+        FormJenis.from = "utama"
+        FormJenis.MdiParent = Me
+        FormJenis.Dock = DockStyle.Fill
+        FormJenis.Show()
+    End Sub
+
+    Private Sub SatuanBarangToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SatuanBarangToolStripMenuItem.Click
+        allclose()
+        FormSatuan.from = "utama"
+        FormSatuan.MdiParent = Me
+        FormSatuan.Dock = DockStyle.Fill
+        FormSatuan.Show()
+    End Sub
+
+    Private Sub DaftarBarangToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DaftarBarangToolStripMenuItem.Click
+        allclose()
+        FormBarang.from = "utama"
+        FormBarang.MdiParent = Me
+        FormBarang.Dock = DockStyle.Fill
+        FormBarang.Show()
     End Sub
 End Class

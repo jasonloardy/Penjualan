@@ -45,7 +45,7 @@ Public Class FormBarang
     End Sub
 
     Sub isigrid(ByVal page As String)
-        Dim jumlahitem As Integer = 50
+        Dim jumlahitem As Integer = 1
         Dim index As Integer = jumlahitem * (page - 1)
         Dim param As String = "stok"
         If from = "penjualan" Then

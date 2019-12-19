@@ -39,3 +39,9 @@ C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Deb
 C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.FormDaftarTransaksi.resources
 C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.FormViewLaporanCR.resources
 C:\Users\Jason\Documents\Visual Studio 2013\Projects\Penjualan\Penjualan\obj\Debug\Penjualan.vbprojResolveAssemblyReference.cache
+C:\Users\Jason\Documents\GitHub\Penjualan\Penjualan\obj\Debug\Penjualan.FormDaftarTransaksi.resources
+C:\Users\Jason\Documents\GitHub\Penjualan\Penjualan\obj\Debug\Penjualan.FormPenjualan.resources
+C:\Users\Jason\Documents\GitHub\Penjualan\Penjualan\obj\Debug\Penjualan.FormSopir.resources
+C:\Users\Jason\Documents\GitHub\Penjualan\Penjualan\obj\Debug\Penjualan.FormSuratJalan.resources
+C:\Users\Jason\Documents\GitHub\Penjualan\Penjualan\obj\Debug\Penjualan.FormViewCR.resources
+C:\Users\Jason\Documents\GitHub\Penjualan\Penjualan\obj\Debug\Penjualan.FormViewLaporanCR.resources
