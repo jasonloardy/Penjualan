@@ -25,21 +25,21 @@ Partial Class FormViewLaporanCR
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CRViewer = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.dtp2 = New System.Windows.Forms.DateTimePicker()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.dtpharian = New System.Windows.Forms.DateTimePicker()
+        Me.dtp1 = New System.Windows.Forms.DateTimePicker()
         Me.rbtahunan = New System.Windows.Forms.RadioButton()
         Me.rbbulanan = New System.Windows.Forms.RadioButton()
-        Me.rbperiode = New System.Windows.Forms.RadioButton()
         Me.rbharian = New System.Windows.Forms.RadioButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.rbpenjualanantar = New System.Windows.Forms.RadioButton()
         Me.rbpenjualanlangsung = New System.Windows.Forms.RadioButton()
         Me.rbpenjualan = New System.Windows.Forms.RadioButton()
         Me.rbpembelian = New System.Windows.Forms.RadioButton()
+        Me.rbbarangterjual = New System.Windows.Forms.RadioButton()
+        Me.rbbarangdibeli = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -51,11 +51,11 @@ Partial Class FormViewLaporanCR
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.CRViewer)
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 166)
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 137)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(1258, 382)
+        Me.GroupBox1.Size = New System.Drawing.Size(1258, 411)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
@@ -69,43 +69,41 @@ Partial Class FormViewLaporanCR
         Me.CRViewer.Name = "CRViewer"
         Me.CRViewer.ShowCloseButton = False
         Me.CRViewer.ShowLogo = False
-        Me.CRViewer.Size = New System.Drawing.Size(1250, 359)
+        Me.CRViewer.Size = New System.Drawing.Size(1250, 388)
         Me.CRViewer.TabIndex = 1
         Me.CRViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.DateTimePicker3)
+        Me.GroupBox2.Controls.Add(Me.dtp2)
         Me.GroupBox2.Controls.Add(Me.ComboBox3)
         Me.GroupBox2.Controls.Add(Me.ComboBox2)
         Me.GroupBox2.Controls.Add(Me.ComboBox1)
-        Me.GroupBox2.Controls.Add(Me.DateTimePicker2)
-        Me.GroupBox2.Controls.Add(Me.dtpharian)
+        Me.GroupBox2.Controls.Add(Me.dtp1)
         Me.GroupBox2.Controls.Add(Me.rbtahunan)
         Me.GroupBox2.Controls.Add(Me.rbbulanan)
-        Me.GroupBox2.Controls.Add(Me.rbperiode)
         Me.GroupBox2.Controls.Add(Me.rbharian)
         Me.GroupBox2.Location = New System.Drawing.Point(13, 13)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox2.Size = New System.Drawing.Size(330, 145)
+        Me.GroupBox2.Size = New System.Drawing.Size(330, 116)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Periode"
         '
-        'DateTimePicker3
+        'dtp2
         '
-        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker3.Location = New System.Drawing.Point(213, 52)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(110, 22)
-        Me.DateTimePicker3.TabIndex = 9
+        Me.dtp2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp2.Location = New System.Drawing.Point(213, 24)
+        Me.dtp2.Name = "dtp2"
+        Me.dtp2.Size = New System.Drawing.Size(110, 22)
+        Me.dtp2.TabIndex = 9
         '
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(97, 110)
+        Me.ComboBox3.Location = New System.Drawing.Point(97, 82)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(73, 24)
         Me.ComboBox3.TabIndex = 8
@@ -113,7 +111,7 @@ Partial Class FormViewLaporanCR
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(176, 80)
+        Me.ComboBox2.Location = New System.Drawing.Point(176, 52)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(147, 24)
         Me.ComboBox2.TabIndex = 7
@@ -121,30 +119,23 @@ Partial Class FormViewLaporanCR
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(97, 80)
+        Me.ComboBox1.Location = New System.Drawing.Point(97, 52)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(73, 24)
         Me.ComboBox1.TabIndex = 6
         '
-        'DateTimePicker2
+        'dtp1
         '
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(97, 52)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(110, 22)
-        Me.DateTimePicker2.TabIndex = 5
-        '
-        'dtpharian
-        '
-        Me.dtpharian.Location = New System.Drawing.Point(97, 24)
-        Me.dtpharian.Name = "dtpharian"
-        Me.dtpharian.Size = New System.Drawing.Size(226, 22)
-        Me.dtpharian.TabIndex = 4
+        Me.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp1.Location = New System.Drawing.Point(97, 24)
+        Me.dtp1.Name = "dtp1"
+        Me.dtp1.Size = New System.Drawing.Size(110, 22)
+        Me.dtp1.TabIndex = 5
         '
         'rbtahunan
         '
         Me.rbtahunan.AutoSize = True
-        Me.rbtahunan.Location = New System.Drawing.Point(7, 112)
+        Me.rbtahunan.Location = New System.Drawing.Point(7, 84)
         Me.rbtahunan.Name = "rbtahunan"
         Me.rbtahunan.Size = New System.Drawing.Size(79, 20)
         Me.rbtahunan.TabIndex = 3
@@ -154,22 +145,12 @@ Partial Class FormViewLaporanCR
         'rbbulanan
         '
         Me.rbbulanan.AutoSize = True
-        Me.rbbulanan.Location = New System.Drawing.Point(7, 82)
+        Me.rbbulanan.Location = New System.Drawing.Point(7, 54)
         Me.rbbulanan.Name = "rbbulanan"
         Me.rbbulanan.Size = New System.Drawing.Size(75, 20)
         Me.rbbulanan.TabIndex = 2
         Me.rbbulanan.Text = "Bulanan"
         Me.rbbulanan.UseVisualStyleBackColor = True
-        '
-        'rbperiode
-        '
-        Me.rbperiode.AutoSize = True
-        Me.rbperiode.Location = New System.Drawing.Point(7, 52)
-        Me.rbperiode.Name = "rbperiode"
-        Me.rbperiode.Size = New System.Drawing.Size(74, 20)
-        Me.rbperiode.TabIndex = 1
-        Me.rbperiode.Text = "Periode"
-        Me.rbperiode.UseVisualStyleBackColor = True
         '
         'rbharian
         '
@@ -185,6 +166,8 @@ Partial Class FormViewLaporanCR
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.rbbarangdibeli)
+        Me.GroupBox3.Controls.Add(Me.rbbarangterjual)
         Me.GroupBox3.Controls.Add(Me.rbpenjualanantar)
         Me.GroupBox3.Controls.Add(Me.rbpenjualanlangsung)
         Me.GroupBox3.Controls.Add(Me.rbpenjualan)
@@ -193,7 +176,7 @@ Partial Class FormViewLaporanCR
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox3.Size = New System.Drawing.Size(330, 145)
+        Me.GroupBox3.Size = New System.Drawing.Size(354, 116)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Jenis"
@@ -201,7 +184,7 @@ Partial Class FormViewLaporanCR
         'rbpenjualanantar
         '
         Me.rbpenjualanantar.AutoSize = True
-        Me.rbpenjualanantar.Location = New System.Drawing.Point(7, 114)
+        Me.rbpenjualanantar.Location = New System.Drawing.Point(185, 24)
         Me.rbpenjualanantar.Name = "rbpenjualanantar"
         Me.rbpenjualanantar.Size = New System.Drawing.Size(120, 20)
         Me.rbpenjualanantar.TabIndex = 3
@@ -238,6 +221,26 @@ Partial Class FormViewLaporanCR
         Me.rbpembelian.Text = "Semua Pembelian"
         Me.rbpembelian.UseVisualStyleBackColor = True
         '
+        'rbbarangterjual
+        '
+        Me.rbbarangterjual.AutoSize = True
+        Me.rbbarangterjual.Location = New System.Drawing.Point(185, 52)
+        Me.rbbarangterjual.Name = "rbbarangterjual"
+        Me.rbbarangterjual.Size = New System.Drawing.Size(161, 20)
+        Me.rbbarangterjual.TabIndex = 4
+        Me.rbbarangterjual.Text = "Jumlah Barang Terjual"
+        Me.rbbarangterjual.UseVisualStyleBackColor = True
+        '
+        'rbbarangdibeli
+        '
+        Me.rbbarangdibeli.AutoSize = True
+        Me.rbbarangdibeli.Location = New System.Drawing.Point(185, 82)
+        Me.rbbarangdibeli.Name = "rbbarangdibeli"
+        Me.rbbarangdibeli.Size = New System.Drawing.Size(154, 20)
+        Me.rbbarangdibeli.TabIndex = 5
+        Me.rbbarangdibeli.Text = "Jumlah Barang Dibeli"
+        Me.rbbarangdibeli.UseVisualStyleBackColor = True
+        '
         'FormViewLaporanCR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -263,15 +266,13 @@ Partial Class FormViewLaporanCR
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtp2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents dtpharian As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtp1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents rbtahunan As System.Windows.Forms.RadioButton
     Friend WithEvents rbbulanan As System.Windows.Forms.RadioButton
-    Friend WithEvents rbperiode As System.Windows.Forms.RadioButton
     Friend WithEvents rbharian As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents rbpenjualanantar As System.Windows.Forms.RadioButton
@@ -279,4 +280,6 @@ Partial Class FormViewLaporanCR
     Friend WithEvents rbpenjualan As System.Windows.Forms.RadioButton
     Friend WithEvents rbpembelian As System.Windows.Forms.RadioButton
     Friend WithEvents CRViewer As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents rbbarangdibeli As System.Windows.Forms.RadioButton
+    Friend WithEvents rbbarangterjual As System.Windows.Forms.RadioButton
 End Class

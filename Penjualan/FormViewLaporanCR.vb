@@ -18,12 +18,14 @@ Public Class FormViewLaporanCR
             MsgBox("Data Kosong!")
         End If
     End Sub
-    Sub penjualanharian(ByVal tanggal As Date)
-        query = "SELECT * FROM tb_penjualan WHERE tanggal = '" & Format(tanggal, "yyyy-MM-dd") & "' LIMIT 1"
+    Sub penjualanharian(ByVal tanggal As Date, ByVal tanggal2 As Date)
+        query = "SELECT * FROM tb_penjualan " _
+              & "WHERE tanggal BETWEEN '" & Format(tanggal, "yyyy-MM-dd") & "' AND '" & Format(tanggal2, "yyyy-MM-dd") & "' LIMIT 1"
         If cekdata(query) Then
             cryReport.Load(RepLocation & "CRPenjualanHarian.rpt")
             cryReport.Refresh()
             cryReport.SetParameterValue("tanggal", tanggal)
+            cryReport.SetParameterValue("tanggal2", tanggal2)
             Dim txtObj As TextObject = cryReport.ReportDefinition.ReportObjects("text1")
             txtObj.Text = "LAPORAN SEMUA PENJUALAN HARIAN"
             cryReport.RecordSelectionFormula = "{@jenis} = {@jenis}"
@@ -33,7 +35,7 @@ Public Class FormViewLaporanCR
             MsgBox("Data Kosong!")
         End If
     End Sub
-    Sub penjualanlangsungharian(ByVal tanggal As Date)
+    Sub penjualanlangsungharian(ByVal tanggal As Date, ByVal tanggal2 As Date)
         query = "SELECT tj.tanggal,sum(tjd.qty)-sum(tjd.ambil) as qty FROM tb_penjualan tj " _
               & "JOIN tb_penjualan_detail tjd ON tj.kd_penjualan = tjd.kd_penjualan " _
               & "GROUP by tj.kd_penjualan " _
@@ -52,7 +54,7 @@ Public Class FormViewLaporanCR
             MsgBox("Data Kosong!")
         End If
     End Sub
-    Sub penjualanantarharian(ByVal tanggal As Date)
+    Sub penjualanantarharian(ByVal tanggal As Date, ByVal tanggal2 As Date)
         query = "SELECT tj.tanggal,sum(tjd.qty)-sum(tjd.ambil) as qty FROM tb_penjualan tj " _
               & "JOIN tb_penjualan_detail tjd ON tj.kd_penjualan = tjd.kd_penjualan " _
               & "GROUP by tj.kd_penjualan " _
@@ -73,37 +75,49 @@ Public Class FormViewLaporanCR
     End Sub
     Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles rbpembelian.CheckedChanged
         If rbharian.Checked And rbpembelian.Checked Then
-            pembelianharian(dtpharian.Value)
-        End If
-    End Sub
-
-    Private Sub dtpharian_CloseUp(sender As Object, e As EventArgs) Handles dtpharian.CloseUp
-        If rbharian.Checked And rbpembelian.Checked Then
-            pembelianharian(dtpharian.Value)
-        ElseIf rbharian.Checked And rbpenjualan.Checked Then
-            penjualanharian(dtpharian.Value)
-        ElseIf rbharian.Checked And rbpenjualanlangsung.Checked Then
-            penjualanlangsungharian(dtpharian.Value)
-        ElseIf rbharian.Checked And rbpenjualanantar.Checked Then
-            penjualanantarharian(dtpharian.Value)
+            'pembelianharian(dtpharian.Value)
         End If
     End Sub
 
     Private Sub rbpenjualan_CheckedChanged(sender As Object, e As EventArgs) Handles rbpenjualan.CheckedChanged
         If rbharian.Checked And rbpenjualan.Checked Then
-            penjualanharian(dtpharian.Value)
+            penjualanharian(dtp1.Value, dtp2.Value)
         End If
     End Sub
 
     Private Sub rbpenjualanlangsung_CheckedChanged(sender As Object, e As EventArgs) Handles rbpenjualanlangsung.CheckedChanged
         If rbharian.Checked And rbpenjualanlangsung.Checked Then
-            penjualanlangsungharian(dtpharian.Value)
+            penjualanlangsungharian(dtp1.Value, dtp2.Value)
         End If
     End Sub
 
     Private Sub rbpenjualanantar_CheckedChanged(sender As Object, e As EventArgs) Handles rbpenjualanantar.CheckedChanged
         If rbharian.Checked And rbpenjualanantar.Checked Then
-            penjualanantarharian(dtpharian.Value)
+            penjualanantarharian(dtp1.Value, dtp2.Value)
+        End If
+    End Sub
+
+    Private Sub dtp1_CloseUp(sender As Object, e As EventArgs) Handles dtp1.CloseUp
+        If rbharian.Checked And rbpembelian.Checked Then
+            'pembelianharian(dtpharian.Value)
+        ElseIf rbharian.Checked And rbpenjualan.Checked Then
+            penjualanharian(dtp1.Value, dtp2.Value)
+        ElseIf rbharian.Checked And rbpenjualanlangsung.Checked Then
+            penjualanlangsungharian(dtp1.Value, dtp2.Value)
+        ElseIf rbharian.Checked And rbpenjualanantar.Checked Then
+            penjualanantarharian(dtp1.Value, dtp2.Value)
+        End If
+    End Sub
+
+    Private Sub dtp2_CloseUp(sender As Object, e As EventArgs) Handles dtp2.CloseUp
+        If rbharian.Checked And rbpembelian.Checked Then
+            'pembelianharian(dtpharian.Value)
+        ElseIf rbharian.Checked And rbpenjualan.Checked Then
+            penjualanharian(dtp1.Value, dtp2.Value)
+        ElseIf rbharian.Checked And rbpenjualanlangsung.Checked Then
+            penjualanlangsungharian(dtp1.Value, dtp2.Value)
+        ElseIf rbharian.Checked And rbpenjualanantar.Checked Then
+            penjualanantarharian(dtp1.Value, dtp2.Value)
         End If
     End Sub
 End Class
