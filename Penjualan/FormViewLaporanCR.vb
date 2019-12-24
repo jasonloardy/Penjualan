@@ -76,6 +76,46 @@ Public Class FormViewLaporanCR
             MsgBox("Data Kosong!")
         End If
     End Sub
+    Sub barangterjualharian(ByVal tanggal As Date, ByVal tanggal2 As Date)
+        query = "SELECT t2.kd_barang, tbr.nama_barang, sum(t2.qty) FROM tb_penjualan t1 " _
+            & "JOIN tb_penjualan_detail t2 ON t1.kd_penjualan = t2.kd_penjualan " _
+            & "JOIN tb_barang tbr ON t2.kd_barang = tbr.kd_barang " _
+            & "WHERE t1.tanggal BETWEEN '" & Format(tanggal, "yyyy-MM-dd") & "' AND '" & Format(tanggal2, "yyyy-MM-dd") & "' " _
+            & "GROUP BY t2.kd_barang"
+        If cekdata(query) Then
+            cryReport.Load(RepLocation & "CRBarang.rpt")
+            cryReport.Refresh()
+            cryReport.SetParameterValue("tgl1", tanggal)
+            cryReport.SetParameterValue("tgl2", tanggal2)
+            cryReport.SetParameterValue("transaksi", "penjualan")
+            Dim txtObj As TextObject = cryReport.ReportDefinition.ReportObjects("text17")
+            txtObj.Text = "LAPORAN BARANG TERJUAL HARIAN"
+            CRViewer.ReportSource = cryReport
+        Else
+            CRViewer.ReportSource = Nothing
+            MsgBox("Data Kosong!")
+        End If
+    End Sub
+    Sub barangdibeliharian(ByVal tanggal As Date, ByVal tanggal2 As Date)
+        query = "SELECT t2.kd_barang, tbr.nama_barang, sum(t2.qty) FROM tb_pembelian t1 " _
+            & "JOIN tb_pembelian_detail t2 ON t1.kd_pembelian = t2.kd_pembelian " _
+            & "JOIN tb_barang tbr ON t2.kd_barang = tbr.kd_barang " _
+            & "WHERE t1.tanggal BETWEEN '" & Format(tanggal, "yyyy-MM-dd") & "' AND '" & Format(tanggal2, "yyyy-MM-dd") & "' " _
+            & "GROUP BY t2.kd_barang"
+        If cekdata(query) Then
+            cryReport.Load(RepLocation & "CRBarang.rpt")
+            cryReport.Refresh()
+            cryReport.SetParameterValue("tgl1", tanggal)
+            cryReport.SetParameterValue("tgl2", tanggal2)
+            cryReport.SetParameterValue("transaksi", "pembelian")
+            Dim txtObj As TextObject = cryReport.ReportDefinition.ReportObjects("text17")
+            txtObj.Text = "LAPORAN BARANG DIBELI HARIAN"
+            CRViewer.ReportSource = cryReport
+        Else
+            CRViewer.ReportSource = Nothing
+            MsgBox("Data Kosong!")
+        End If
+    End Sub
     Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles rbpembelian.CheckedChanged
         If rbharian.Checked And rbpembelian.Checked Then
             pembelianharian(dtp1.Value, dtp2.Value)
@@ -109,6 +149,10 @@ Public Class FormViewLaporanCR
             penjualanlangsungharian(dtp1.Value, dtp2.Value)
         ElseIf rbharian.Checked And rbpenjualanantar.Checked Then
             penjualanantarharian(dtp1.Value, dtp2.Value)
+        ElseIf rbharian.Checked And rbbarangterjual.Checked Then
+            barangterjualharian(dtp1.Value, dtp2.Value)
+        ElseIf rbharian.Checked And rbbarangdibeli.Checked Then
+            barangdibeliharian(dtp1.Value, dtp2.Value)
         End If
     End Sub
 
@@ -121,6 +165,22 @@ Public Class FormViewLaporanCR
             penjualanlangsungharian(dtp1.Value, dtp2.Value)
         ElseIf rbharian.Checked And rbpenjualanantar.Checked Then
             penjualanantarharian(dtp1.Value, dtp2.Value)
+        ElseIf rbharian.Checked And rbbarangterjual.Checked Then
+            barangterjualharian(dtp1.Value, dtp2.Value)
+        ElseIf rbharian.Checked And rbbarangdibeli.Checked Then
+            barangdibeliharian(dtp1.Value, dtp2.Value)
+        End If
+    End Sub
+
+    Private Sub rbbarangterjual_CheckedChanged(sender As Object, e As EventArgs) Handles rbbarangterjual.CheckedChanged
+        If rbharian.Checked And rbbarangterjual.Checked Then
+            barangterjualharian(dtp1.Value, dtp2.Value)
+        End If
+    End Sub
+
+    Private Sub rbbarangdibeli_CheckedChanged(sender As Object, e As EventArgs) Handles rbbarangdibeli.CheckedChanged
+        If rbharian.Checked And rbbarangdibeli.Checked Then
+            barangdibeliharian(dtp1.Value, dtp2.Value)
         End If
     End Sub
 End Class

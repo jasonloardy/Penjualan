@@ -34,12 +34,12 @@ Partial Class FormViewLaporanCR
         Me.rbbulanan = New System.Windows.Forms.RadioButton()
         Me.rbharian = New System.Windows.Forms.RadioButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.rbbarangdibeli = New System.Windows.Forms.RadioButton()
+        Me.rbbarangterjual = New System.Windows.Forms.RadioButton()
         Me.rbpenjualanantar = New System.Windows.Forms.RadioButton()
         Me.rbpenjualanlangsung = New System.Windows.Forms.RadioButton()
         Me.rbpenjualan = New System.Windows.Forms.RadioButton()
         Me.rbpembelian = New System.Windows.Forms.RadioButton()
-        Me.rbbarangterjual = New System.Windows.Forms.RadioButton()
-        Me.rbbarangdibeli = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -181,6 +181,26 @@ Partial Class FormViewLaporanCR
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Jenis"
         '
+        'rbbarangdibeli
+        '
+        Me.rbbarangdibeli.AutoSize = True
+        Me.rbbarangdibeli.Location = New System.Drawing.Point(185, 82)
+        Me.rbbarangdibeli.Name = "rbbarangdibeli"
+        Me.rbbarangdibeli.Size = New System.Drawing.Size(154, 20)
+        Me.rbbarangdibeli.TabIndex = 5
+        Me.rbbarangdibeli.Text = "Jumlah Barang Dibeli"
+        Me.rbbarangdibeli.UseVisualStyleBackColor = True
+        '
+        'rbbarangterjual
+        '
+        Me.rbbarangterjual.AutoSize = True
+        Me.rbbarangterjual.Location = New System.Drawing.Point(185, 52)
+        Me.rbbarangterjual.Name = "rbbarangterjual"
+        Me.rbbarangterjual.Size = New System.Drawing.Size(161, 20)
+        Me.rbbarangterjual.TabIndex = 4
+        Me.rbbarangterjual.Text = "Jumlah Barang Terjual"
+        Me.rbbarangterjual.UseVisualStyleBackColor = True
+        '
         'rbpenjualanantar
         '
         Me.rbpenjualanantar.AutoSize = True
@@ -220,26 +240,6 @@ Partial Class FormViewLaporanCR
         Me.rbpembelian.TabIndex = 0
         Me.rbpembelian.Text = "Semua Pembelian"
         Me.rbpembelian.UseVisualStyleBackColor = True
-        '
-        'rbbarangterjual
-        '
-        Me.rbbarangterjual.AutoSize = True
-        Me.rbbarangterjual.Location = New System.Drawing.Point(185, 52)
-        Me.rbbarangterjual.Name = "rbbarangterjual"
-        Me.rbbarangterjual.Size = New System.Drawing.Size(161, 20)
-        Me.rbbarangterjual.TabIndex = 4
-        Me.rbbarangterjual.Text = "Jumlah Barang Terjual"
-        Me.rbbarangterjual.UseVisualStyleBackColor = True
-        '
-        'rbbarangdibeli
-        '
-        Me.rbbarangdibeli.AutoSize = True
-        Me.rbbarangdibeli.Location = New System.Drawing.Point(185, 82)
-        Me.rbbarangdibeli.Name = "rbbarangdibeli"
-        Me.rbbarangdibeli.Size = New System.Drawing.Size(154, 20)
-        Me.rbbarangdibeli.TabIndex = 5
-        Me.rbbarangdibeli.Text = "Jumlah Barang Dibeli"
-        Me.rbbarangdibeli.UseVisualStyleBackColor = True
         '
         'FormViewLaporanCR
         '

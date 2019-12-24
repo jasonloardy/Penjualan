@@ -80,6 +80,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRBarang.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRBarang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CRPenjualanBulanan.vb">
+      <DependentUpon>CRPenjualanBulanan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="CRPenjualanHarian.vb">
       <DependentUpon>CRPenjualanHarian.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -213,6 +225,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CRBarang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRBarang.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRPenjualanBulanan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRPenjualanBulanan.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CRPenjualanHarian.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRPenjualanHarian.vb</LastGenOutput>

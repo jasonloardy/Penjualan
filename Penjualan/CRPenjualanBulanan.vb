@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class CRPembelianHarian
+Public Class CRPenjualanBulanan
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class CRPembelianHarian
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "CRPembelianHarian.rpt"
+            Return "CRPenjualanBulanan.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class CRPembelianHarian
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "Penjualan.CRPembelianHarian.rpt"
+            Return "Penjualan.CRPenjualanBulanan.rpt"
         End Get
         Set
             'Do nothing
@@ -123,26 +123,10 @@ Public Class CRPembelianHarian
             Return Me.ReportDefinition.Sections(8)
         End Get
     End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_tanggal() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(0)
-        End Get
-    End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_tanggal2() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(1)
-        End Get
-    End Property
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedCRPembelianHarian
+Public Class CachedCRPenjualanBulanan
     Inherits Component
     Implements ICachedReport
     
@@ -184,7 +168,7 @@ Public Class CachedCRPembelianHarian
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As CRPembelianHarian = New CRPembelianHarian()
+        Dim rpt As CRPenjualanBulanan = New CRPenjualanBulanan()
         rpt.Site = Me.Site
         Return rpt
     End Function
