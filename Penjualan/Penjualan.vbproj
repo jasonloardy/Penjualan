@@ -80,11 +80,41 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRBarangTahunan.vb">
+      <DependentUpon>CRBarangTahunan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CRBarangBulanan.vb">
+      <DependentUpon>CRBarangBulanan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="CRBarang.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CRBarang.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CRPembelianTahunan.vb">
+      <DependentUpon>CRPembelianTahunan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CRPembelianBulanan.vb">
+      <DependentUpon>CRPembelianBulanan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CRPenjualanTahunan.vb">
+      <DependentUpon>CRPenjualanTahunan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="CRPenjualanBulanan.vb">
       <DependentUpon>CRPenjualanBulanan.rpt</DependentUpon>
@@ -225,9 +255,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CRBarangTahunan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRBarangTahunan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRBarangBulanan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRBarangBulanan.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CRBarang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRBarang.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRPembelianTahunan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRPembelianTahunan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRPembelianBulanan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRPembelianBulanan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRPenjualanTahunan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRPenjualanTahunan.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CRPenjualanBulanan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

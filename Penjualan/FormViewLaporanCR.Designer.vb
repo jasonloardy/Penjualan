@@ -26,9 +26,7 @@ Partial Class FormViewLaporanCR
         Me.CRViewer = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dtp2 = New System.Windows.Forms.DateTimePicker()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbtahun = New System.Windows.Forms.ComboBox()
         Me.dtp1 = New System.Windows.Forms.DateTimePicker()
         Me.rbtahunan = New System.Windows.Forms.RadioButton()
         Me.rbbulanan = New System.Windows.Forms.RadioButton()
@@ -40,6 +38,7 @@ Partial Class FormViewLaporanCR
         Me.rbpenjualanlangsung = New System.Windows.Forms.RadioButton()
         Me.rbpenjualan = New System.Windows.Forms.RadioButton()
         Me.rbpembelian = New System.Windows.Forms.RadioButton()
+        Me.dtp3 = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -75,10 +74,9 @@ Partial Class FormViewLaporanCR
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.dtp3)
         Me.GroupBox2.Controls.Add(Me.dtp2)
-        Me.GroupBox2.Controls.Add(Me.ComboBox3)
-        Me.GroupBox2.Controls.Add(Me.ComboBox2)
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
+        Me.GroupBox2.Controls.Add(Me.cbtahun)
         Me.GroupBox2.Controls.Add(Me.dtp1)
         Me.GroupBox2.Controls.Add(Me.rbtahunan)
         Me.GroupBox2.Controls.Add(Me.rbbulanan)
@@ -100,29 +98,13 @@ Partial Class FormViewLaporanCR
         Me.dtp2.Size = New System.Drawing.Size(110, 22)
         Me.dtp2.TabIndex = 9
         '
-        'ComboBox3
+        'cbtahun
         '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(97, 82)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(73, 24)
-        Me.ComboBox3.TabIndex = 8
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(176, 52)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(147, 24)
-        Me.ComboBox2.TabIndex = 7
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(97, 52)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(73, 24)
-        Me.ComboBox1.TabIndex = 6
+        Me.cbtahun.FormattingEnabled = True
+        Me.cbtahun.Location = New System.Drawing.Point(97, 82)
+        Me.cbtahun.Name = "cbtahun"
+        Me.cbtahun.Size = New System.Drawing.Size(110, 24)
+        Me.cbtahun.TabIndex = 8
         '
         'dtp1
         '
@@ -241,6 +223,15 @@ Partial Class FormViewLaporanCR
         Me.rbpembelian.Text = "Semua Pembelian"
         Me.rbpembelian.UseVisualStyleBackColor = True
         '
+        'dtp3
+        '
+        Me.dtp3.CustomFormat = "MMMM yyyy"
+        Me.dtp3.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtp3.Location = New System.Drawing.Point(97, 54)
+        Me.dtp3.Name = "dtp3"
+        Me.dtp3.Size = New System.Drawing.Size(226, 22)
+        Me.dtp3.TabIndex = 10
+        '
         'FormViewLaporanCR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -267,9 +258,7 @@ Partial Class FormViewLaporanCR
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents dtp2 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cbtahun As System.Windows.Forms.ComboBox
     Friend WithEvents dtp1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents rbtahunan As System.Windows.Forms.RadioButton
     Friend WithEvents rbbulanan As System.Windows.Forms.RadioButton
@@ -282,4 +271,5 @@ Partial Class FormViewLaporanCR
     Friend WithEvents CRViewer As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents rbbarangdibeli As System.Windows.Forms.RadioButton
     Friend WithEvents rbbarangterjual As System.Windows.Forms.RadioButton
+    Friend WithEvents dtp3 As System.Windows.Forms.DateTimePicker
 End Class
