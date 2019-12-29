@@ -3,9 +3,11 @@
 Public Class FormDaftarTransaksi
     Public from As String
     Public status As Char
+    Public halaman As Integer = 1
     Private Sub FormDaftarPenjualanAntar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         custom()
-        isigridtrx()
+        tbpage.Text = "1"
+        isigridtrx(tbpage.Text)
     End Sub
     Sub custom()
         If from = "suratjalan" Then
@@ -21,43 +23,96 @@ Public Class FormDaftarTransaksi
             Me.Text = "Daftar Pembelian"
         End If
     End Sub
-    Sub isigridtrx()
+    Sub isigridtrx(ByVal page As String)
         Dim query As String = ""
+        Dim querycari As String = ""
         If from = "suratjalan" Then
             query = "SELECT tj.kd_penjualan, tj.tanggal, tp.nama, tp.kd_pelanggan, tp.alamat, tp.no_telp " _
                   & "FROM tb_penjualan tj " _
                   & "JOIN tb_pelanggan tp ON tj.kd_pelanggan = tp.kd_pelanggan " _
-                  & "WHERE tj.status = 'P'" _
+                  & "WHERE tj.status = 'P' AND (tj.kd_penjualan LIKE @param1 OR tp.nama LIKE @param2) " _
                   & "ORDER BY tj.kd_penjualan DESC"
+            querycari = "SELECT COUNT(*) FROM tb_penjualan tj " _
+                        & "JOIN tb_pelanggan tp ON tj.kd_pelanggan = tp.kd_pelanggan " _
+                        & "WHERE tj.status = 'P' AND (tj.kd_penjualan LIKE @param1 OR tp.nama LIKE @param2)"
+            isigridtrx2(page, query, querycari)
         ElseIf from = "ctksuratjalan" Then
             query = "SELECT tsj.kd_suratjalan, tsj.tanggal, tp.nama " _
                 & "FROM tb_suratjalan tsj " _
                 & "JOIN tb_penjualan tj ON tsj.kd_penjualan = tj.kd_penjualan " _
                 & "JOIN tb_pelanggan tp ON tj.kd_pelanggan = tp.kd_pelanggan " _
+                & "WHERE (tsj.kd_suratjalan LIKE @param1 OR tp.nama LIKE @param2) " _
                 & "ORDER BY tsj.kd_suratjalan DESC"
+            querycari = "SELECT COUNT(*) FROM tb_suratjalan tsj " _
+                        & "JOIN tb_penjualan tj ON tsj.kd_penjualan = tj.kd_penjualan " _
+                        & "JOIN tb_pelanggan tp ON tj.kd_pelanggan = tp.kd_pelanggan " _
+                        & "WHERE (tsj.kd_suratjalan LIKE @param1 OR tp.nama LIKE @param2)"
+            isigridtrx2(page, query, querycari)
         ElseIf from = "ctkpenjualan" Then
             query = "SELECT tj.kd_penjualan, tj.tanggal, tp.nama, IF(sum(tjd.qty-tjd.ambil)>0,'Antaran','Langsung') AS Status " _
                 & "FROM tb_penjualan tj " _
                 & "JOIN tb_pelanggan tp ON tj.kd_pelanggan = tp.kd_pelanggan " _
                 & "JOIN tb_penjualan_detail tjd ON tj.kd_penjualan = tjd.kd_penjualan " _
                 & "GROUP BY tj.kd_penjualan " _
+                & "HAVING (tj.kd_penjualan LIKE @param1 OR tp.nama LIKE @param2) " _
                 & "ORDER BY tj.kd_penjualan DESC"
+            querycari = "SELECT COUNT(*) FROM tb_penjualan tj " _
+                        & "JOIN tb_pelanggan tp ON tj.kd_pelanggan = tp.kd_pelanggan " _
+                        & "WHERE (tj.kd_penjualan LIKE @param1 OR tp.nama LIKE @param2)"
+            isigridtrx2(page, query, querycari)
         ElseIf from = "ctkpembelian" Then
             query = "SELECT tb.kd_pembelian, tb.tanggal, tsp.nama, tb.kd_bukti AS 'Kd. Bukti' " _
                 & "FROM tb_pembelian tb " _
                 & "JOIN tb_supplier tsp ON tb.kd_supplier = tsp.kd_supplier " _
+                & "WHERE (tb.kd_pembelian LIKE @param1 OR tsp.nama LIKE @param2) " _
                 & "ORDER BY tb.kd_pembelian DESC"
+            querycari = "SELECT COUNT(*) FROM tb_pembelian tb " _
+                        & "JOIN tb_supplier tsp ON tb.kd_supplier = tsp.kd_supplier " _
+                        & "WHERE (tb.kd_pembelian LIKE @param1 OR tsp.nama LIKE @param2)"
+            isigridtrx2(page, query, querycari)
         End If
-        Dim da As New MySqlDataAdapter(query, konek)
-        Dim ds As New DataSet()
-        If da.Fill(ds) Then
-            dgvtrx.DataSource = ds.Tables(0)
-            dgvtrx.Refresh()
+    End Sub
+    Sub isigridtrx2(ByVal page As String, ByVal query As String, ByVal querycari As String)
+        Dim jumlahitem As Integer = 1
+        Dim index As Integer = jumlahitem * (page - 1)
+        cmd = New MySqlCommand(query & " LIMIT " & index & "," & jumlahitem, konek)
+        cmd.Parameters.AddWithValue("@param1", "%" + tbcari.Text + "%")
+        cmd.Parameters.AddWithValue("@param2", "%" + tbcari.Text + "%")
+        dr = cmd.ExecuteReader
+        If dr.HasRows Then
+            dt = New DataTable
+            dt.Load(dr)
+            dgvtrx.DataSource = dt
+            dr.Close()
+            cmd = New MySqlCommand(querycari, konek)
+            cmd.Parameters.AddWithValue("@param1", "%" + tbcari.Text + "%")
+            cmd.Parameters.AddWithValue("@param2", "%" + tbcari.Text + "%")
+            dr = cmd.ExecuteReader
+            dr.Read()
+            halaman = Math.Ceiling(dr.Item(0).ToString / jumlahitem)
+            dr.Close()
+            lbltotpage.Text = " / " & halaman
         Else
+            dr.Close()
             dgvtrx.DataSource = Nothing
+            tbpage.Text = "1"
+            lbltotpage.Text = " / 0"
         End If
         If dgvtrx.RowCount > 0 Then
             judulgridtrx()
+        End If
+        paging()
+    End Sub
+    Sub paging()
+        If tbpage.Text = halaman Then
+            btnnext.Enabled = False
+        Else
+            btnnext.Enabled = True
+        End If
+        If tbpage.Text = "1" Then
+            btnprev.Enabled = False
+        Else
+            btnprev.Enabled = True
         End If
     End Sub
     Sub judulgridtrx()
@@ -235,5 +290,32 @@ Public Class FormDaftarTransaksi
             kd_trx = .Item(0, baris).Value
         End With
         isigridbarang(kd_trx)
+    End Sub
+
+    Private Sub tbpage_TextChanged(sender As Object, e As EventArgs) Handles tbpage.TextChanged
+        If Not (tbpage.Text = "" Or Val(tbpage.Text) > halaman) Then
+            isigridtrx(tbpage.Text)
+        End If
+    End Sub
+
+    Private Sub btnnext_Click(sender As Object, e As EventArgs) Handles btnnext.Click
+        tbpage.Text = tbpage.Text + 1
+    End Sub
+
+    Private Sub btnprev_Click(sender As Object, e As EventArgs) Handles btnprev.Click
+        tbpage.Text = tbpage.Text - 1
+    End Sub
+
+    Private Sub btnfirst_Click(sender As Object, e As EventArgs) Handles btnfirst.Click
+        tbpage.Text = "1"
+    End Sub
+
+    Private Sub btnlast_Click(sender As Object, e As EventArgs) Handles btnlast.Click
+        tbpage.Text = halaman
+    End Sub
+
+    Private Sub tbcari_TextChanged(sender As Object, e As EventArgs) Handles tbcari.TextChanged
+        tbpage.Text = "1"
+        isigridtrx(tbpage.Text)
     End Sub
 End Class

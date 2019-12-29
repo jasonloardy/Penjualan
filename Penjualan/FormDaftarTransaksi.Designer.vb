@@ -31,7 +31,7 @@ Partial Class FormDaftarTransaksi
         Me.btnprev = New System.Windows.Forms.Button()
         Me.btnfirst = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.tbkdsupplier = New System.Windows.Forms.TextBox()
+        Me.tbcari = New System.Windows.Forms.TextBox()
         Me.dgvtrx = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dgvbarang = New System.Windows.Forms.DataGridView()
@@ -53,7 +53,7 @@ Partial Class FormDaftarTransaksi
         Me.GroupBox1.Controls.Add(Me.btnprev)
         Me.GroupBox1.Controls.Add(Me.btnfirst)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.tbkdsupplier)
+        Me.GroupBox1.Controls.Add(Me.tbcari)
         Me.GroupBox1.Controls.Add(Me.dgvtrx)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -130,13 +130,13 @@ Partial Class FormDaftarTransaksi
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Cari Kd. TRX / Nama :"
         '
-        'tbkdsupplier
+        'tbcari
         '
-        Me.tbkdsupplier.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbkdsupplier.Location = New System.Drawing.Point(149, 21)
-        Me.tbkdsupplier.Name = "tbkdsupplier"
-        Me.tbkdsupplier.Size = New System.Drawing.Size(349, 22)
-        Me.tbkdsupplier.TabIndex = 4
+        Me.tbcari.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbcari.Location = New System.Drawing.Point(149, 21)
+        Me.tbcari.Name = "tbcari"
+        Me.tbcari.Size = New System.Drawing.Size(349, 22)
+        Me.tbcari.TabIndex = 4
         '
         'dgvtrx
         '
@@ -215,7 +215,7 @@ Partial Class FormDaftarTransaksi
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents dgvbarang As System.Windows.Forms.DataGridView
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents tbkdsupplier As System.Windows.Forms.TextBox
+    Friend WithEvents tbcari As System.Windows.Forms.TextBox
     Friend WithEvents btncetak As System.Windows.Forms.Button
     Friend WithEvents tbpage As System.Windows.Forms.TextBox
     Friend WithEvents lbltotpage As System.Windows.Forms.Label
