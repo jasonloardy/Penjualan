@@ -98,7 +98,7 @@ Public Class FormSopir
     End Sub
 
     Sub queryhapus()
-        cmd.CommandText = "SELECT * FROM tb_surat_jalan WHERE sopir = '" & id_data & "'"
+        cmd.CommandText = "SELECT * FROM tb_suratjalan WHERE sopir = '" & id_data & "'"
         cmd.Connection = konek
         dr = cmd.ExecuteReader
         dr.Read()
