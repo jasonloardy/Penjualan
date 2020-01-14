@@ -34,8 +34,6 @@ Partial Class FormSopir
         Me.btnhapus = New System.Windows.Forms.Button()
         Me.btnedit = New System.Windows.Forms.Button()
         Me.btntambah = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cbstatus = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,8 +43,6 @@ Partial Class FormSopir
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.cbstatus)
-        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.tbkdsopir)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -63,7 +59,7 @@ Partial Class FormSopir
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(81, 17)
+        Me.Label2.Location = New System.Drawing.Point(81, 31)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(81, 16)
         Me.Label2.TabIndex = 3
@@ -75,7 +71,7 @@ Partial Class FormSopir
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbkdsopir.Enabled = False
         Me.tbkdsopir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbkdsopir.Location = New System.Drawing.Point(183, 14)
+        Me.tbkdsopir.Location = New System.Drawing.Point(183, 28)
         Me.tbkdsopir.Name = "tbkdsopir"
         Me.tbkdsopir.Size = New System.Drawing.Size(169, 22)
         Me.tbkdsopir.TabIndex = 2
@@ -84,7 +80,7 @@ Partial Class FormSopir
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(81, 45)
+        Me.Label1.Location = New System.Drawing.Point(81, 59)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 16)
         Me.Label1.TabIndex = 1
@@ -95,7 +91,7 @@ Partial Class FormSopir
         Me.tbnamasopir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbnamasopir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbnamasopir.Location = New System.Drawing.Point(183, 42)
+        Me.tbnamasopir.Location = New System.Drawing.Point(183, 56)
         Me.tbnamasopir.MaxLength = 32
         Me.tbnamasopir.Name = "tbnamasopir"
         Me.tbnamasopir.Size = New System.Drawing.Size(341, 22)
@@ -182,26 +178,6 @@ Partial Class FormSopir
         Me.btntambah.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btntambah.UseVisualStyleBackColor = True
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(81, 73)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 16)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Status :"
-        '
-        'cbstatus
-        '
-        Me.cbstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbstatus.FormattingEnabled = True
-        Me.cbstatus.Items.AddRange(New Object() {"Aktif", "Non-aktif"})
-        Me.cbstatus.Location = New System.Drawing.Point(183, 70)
-        Me.cbstatus.Name = "cbstatus"
-        Me.cbstatus.Size = New System.Drawing.Size(169, 23)
-        Me.cbstatus.TabIndex = 5
-        '
         'FormSopir
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -237,6 +213,4 @@ Partial Class FormSopir
     Friend WithEvents btnhapus As System.Windows.Forms.Button
     Friend WithEvents btnedit As System.Windows.Forms.Button
     Friend WithEvents btntambah As System.Windows.Forms.Button
-    Friend WithEvents cbstatus As System.Windows.Forms.ComboBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class
