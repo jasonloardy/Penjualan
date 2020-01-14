@@ -263,6 +263,7 @@ Partial Class FormBarang
         '
         'cbsatuan
         '
+        Me.cbsatuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbsatuan.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbsatuan.FormattingEnabled = True
         Me.cbsatuan.Location = New System.Drawing.Point(110, 125)
@@ -302,6 +303,7 @@ Partial Class FormBarang
         '
         'cbjenis
         '
+        Me.cbjenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbjenis.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbjenis.FormattingEnabled = True
         Me.cbjenis.Location = New System.Drawing.Point(110, 92)
