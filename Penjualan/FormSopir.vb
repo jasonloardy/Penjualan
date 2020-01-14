@@ -10,7 +10,8 @@ Public Class FormSopir
         reset()
     End Sub
     Sub isigrid()
-        Dim query As String = "SELECT * FROM tb_sopir"
+        Dim query As String = "SELECT kd_sopir,nama_sopir, CASE WHEN status='A' THEN 'Aktif' " _
+                              & " WHEN status='N' THEN 'Non-aktif' END FROM tb_sopir"
         Dim da As New MySqlDataAdapter(query, konek)
         Dim ds As New DataSet()
         If da.Fill(ds) Then
@@ -28,9 +29,11 @@ Public Class FormSopir
         dgv.AlternatingRowsDefaultCellStyle = objAlternatingCellStyle
         Dim style As DataGridViewCellStyle = dgv.Columns(0).DefaultCellStyle
         dgv.Columns(0).HeaderText = "ID"
-        dgv.Columns(1).HeaderText = "Nama Sopir"
         dgv.Columns(0).Width = 150
+        dgv.Columns(1).HeaderText = "Nama Sopir"
         dgv.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        dgv.Columns(2).HeaderText = "Status"
+        dgv.Columns(2).Width = 150
         objAlternatingCellStyle.BackColor = Color.AliceBlue
         dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgv.ReadOnly = True
@@ -58,6 +61,7 @@ Public Class FormSopir
     End Sub
     Sub reset()
         tbnamasopir.Enabled = False
+        cbstatus.Enabled = False
         bersih()
         btntambah.Enabled = True
         btntambah.Text = "Tambah"
@@ -66,6 +70,7 @@ Public Class FormSopir
     End Sub
     Sub modesimpan()
         tbnamasopir.Enabled = True
+        cbstatus.Enabled = True
         btntambah.Enabled = True
         btntambah.Text = "Simpan"
         btnedit.Enabled = False
@@ -80,25 +85,26 @@ Public Class FormSopir
                 id_data = .Item(0, baris).Value
                 tbkdsopir.Text = .Item(0, baris).Value
                 tbnamasopir.Text = .Item(1, baris).Value
+                cbstatus.Text = .Item(2, baris).Value
             End With
         End If
     End Sub
     Sub querytambah()
-        Dim query As String = "INSERT INTO tb_sopir VALUES (@kd_sopir, @nama_sopir)"
-        Querysopir(query, tbkdsopir.Text, tbnamasopir.Text.ToUpper)
+        Dim query As String = "INSERT INTO tb_sopir VALUES (@kd_sopir, @nama_sopir, @status)"
+        QuerySopir(query, tbkdsopir.Text, tbnamasopir.Text.ToUpper, Microsoft.VisualBasic.Left(cbstatus.Text, 1))
         MsgBox("Berhasil tambah data!", MsgBoxStyle.Information, "Informasi")
         isigrid()
     End Sub
 
     Sub queryedit()
-        Dim query As String = "UPDATE tb_sopir SET nama_sopir = @nama_sopir WHERE kd_sopir = @kd_sopir"
-        Querysopir(query, id_data, tbnamasopir.Text.ToUpper)
+        Dim query As String = "UPDATE tb_sopir SET nama_sopir = @nama_sopir, status = @status WHERE kd_sopir = @kd_sopir"
+        QuerySopir(query, id_data, tbnamasopir.Text.ToUpper, Microsoft.VisualBasic.Left(cbstatus.Text, 1))
         MsgBox("Berhasil edit data!", MsgBoxStyle.Information, "Informasi")
         isigrid()
     End Sub
 
     Sub queryhapus()
-        cmd.CommandText = "SELECT * FROM tb_suratjalan WHERE sopir = '" & id_data & "'"
+        cmd.CommandText = "SELECT * FROM tb_suratjalan WHERE kd_sopir = '" & id_data & "'"
         cmd.Connection = konek
         dr = cmd.ExecuteReader
         dr.Read()
@@ -108,7 +114,7 @@ Public Class FormSopir
         Else
             dr.Close()
             Dim query As String = "DELETE FROM tb_sopir WHERE kd_sopir = @kd_sopir"
-            Querysopir(query, id_data, "")
+            QuerySopir(query, id_data, "", "")
             isigrid()
             MsgBox("Berhasil hapus data!", MsgBoxStyle.Information, "Informasi")
         End If
@@ -159,13 +165,5 @@ Public Class FormSopir
 
     Private Sub btnbatal_Click(sender As Object, e As EventArgs) Handles btnbatal.Click
         reset()
-    End Sub
-
-    Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
-        If from = "suratjalan" Then
-            FormSuratJalan.tbkdsopir.Text = tbkdsopir.Text
-            FormSuratJalan.tbnamasopir.Text = tbnamasopir.Text
-            Me.Close()
-        End If
     End Sub
 End Class

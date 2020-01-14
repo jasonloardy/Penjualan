@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-12-05 00:05:21
+Date: 2020-01-14 12:24:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,9 +33,11 @@ CREATE TABLE `tb_barang` (
 -- ----------------------------
 -- Records of tb_barang
 -- ----------------------------
-INSERT INTO `tb_barang` VALUES ('B0000001', 'BAUT 5/16X18\"', 'J001', 'S001', '10000', '100000', '9945');
-INSERT INTO `tb_barang` VALUES ('B0000002', 'STIKER HONDA', 'J002', 'S001', '10000', '10000', '123013');
+INSERT INTO `tb_barang` VALUES ('B0000001', 'BAUT 5/16X18\"', 'J001', 'S001', '10000', '100000', '9930');
+INSERT INTO `tb_barang` VALUES ('B0000002', 'STIKER HONDA', 'J002', 'S001', '10000', '10000', '122903');
 INSERT INTO `tb_barang` VALUES ('B0000003', 'KOMSTIR', 'J003', 'S002', '100000', '2000000', '44334');
+INSERT INTO `tb_barang` VALUES ('B0000004', 'PEMBELIAN', 'J001', 'S001', '15000', '20000', '15');
+INSERT INTO `tb_barang` VALUES ('B0000005', 'PENJUALAN', 'J002', 'S002', '30000', '40000', '0');
 
 -- ----------------------------
 -- Table structure for `tb_jenis`
@@ -110,7 +112,7 @@ CREATE TABLE `tb_pelanggan` (
 -- Records of tb_pelanggan
 -- ----------------------------
 INSERT INTO `tb_pelanggan` VALUES ('PL000001', 'JASON', 'BARONANG', '123901293');
-INSERT INTO `tb_pelanggan` VALUES ('PL000002', 'ACOS', 'BAROMBONK', '129301923');
+INSERT INTO `tb_pelanggan` VALUES ('PL000002', 'IMAN', 'VETRAN', '129301923');
 
 -- ----------------------------
 -- Table structure for `tb_pembelian`
@@ -130,6 +132,10 @@ CREATE TABLE `tb_pembelian` (
 INSERT INTO `tb_pembelian` VALUES ('PBL191100001', null, '2019-11-22', 'SP000001');
 INSERT INTO `tb_pembelian` VALUES ('PBL191100002', 'ajsnd123', '2019-11-24', 'SP000001');
 INSERT INTO `tb_pembelian` VALUES ('PBL191200003', '', '2019-12-04', 'SP000001');
+INSERT INTO `tb_pembelian` VALUES ('PBL200100004', '', '2020-01-14', 'SP000001');
+INSERT INTO `tb_pembelian` VALUES ('PBL200100005', '', '2020-01-14', 'SP000001');
+INSERT INTO `tb_pembelian` VALUES ('PBL200100006', '', '2020-01-14', 'SP000001');
+INSERT INTO `tb_pembelian` VALUES ('PBL200100007', '', '2020-01-14', 'SP000001');
 
 -- ----------------------------
 -- Table structure for `tb_pembelian_detail`
@@ -152,6 +158,10 @@ INSERT INTO `tb_pembelian_detail` VALUES ('PBL191100002', 'B0000003', '5', '1000
 INSERT INTO `tb_pembelian_detail` VALUES ('PBL191200003', 'B0000001', '5', '10000');
 INSERT INTO `tb_pembelian_detail` VALUES ('PBL191200003', 'B0000002', '10', '10000');
 INSERT INTO `tb_pembelian_detail` VALUES ('PBL191200003', 'B0000003', '15', '100000');
+INSERT INTO `tb_pembelian_detail` VALUES ('PBL200100004', 'B0000004', '1', '10000');
+INSERT INTO `tb_pembelian_detail` VALUES ('PBL200100005', 'B0000004', '5', '10000');
+INSERT INTO `tb_pembelian_detail` VALUES ('PBL200100006', 'B0000004', '3', '15000');
+INSERT INTO `tb_pembelian_detail` VALUES ('PBL200100007', 'B0000004', '5', '15000');
 
 -- ----------------------------
 -- Table structure for `tb_penjualan`
@@ -174,6 +184,10 @@ INSERT INTO `tb_penjualan` VALUES ('PJL191200003', '2019-12-04', 'PL000002', 'S'
 INSERT INTO `tb_penjualan` VALUES ('PJL191200004', '2019-12-04', 'PL000002', 'S');
 INSERT INTO `tb_penjualan` VALUES ('PJL191200005', '2019-12-04', 'PL000001', 'S');
 INSERT INTO `tb_penjualan` VALUES ('PJL191200006', '2019-12-04', 'PL000001', 'S');
+INSERT INTO `tb_penjualan` VALUES ('PJL191200007', '2019-12-19', 'PL000002', 'S');
+INSERT INTO `tb_penjualan` VALUES ('PJL191200008', '2019-12-19', 'PL000002', 'S');
+INSERT INTO `tb_penjualan` VALUES ('PJL191200009', '2019-12-19', 'PL000002', 'S');
+INSERT INTO `tb_penjualan` VALUES ('PJL200100010', '2020-01-14', 'PL000002', 'S');
 
 -- ----------------------------
 -- Table structure for `tb_penjualan_detail`
@@ -206,6 +220,11 @@ INSERT INTO `tb_penjualan_detail` VALUES ('PJL191200005', 'B0000002', '10', '0',
 INSERT INTO `tb_penjualan_detail` VALUES ('PJL191200005', 'B0000003', '15', '0', '100000', '2000000');
 INSERT INTO `tb_penjualan_detail` VALUES ('PJL191200006', 'B0000001', '5', '0', '10000', '100000');
 INSERT INTO `tb_penjualan_detail` VALUES ('PJL191200006', 'B0000002', '10', '0', '10000', '10000');
+INSERT INTO `tb_penjualan_detail` VALUES ('PJL191200007', 'B0000002', '100', '10', '10000', '10000');
+INSERT INTO `tb_penjualan_detail` VALUES ('PJL191200008', 'B0000001', '5', '0', '10000', '100000');
+INSERT INTO `tb_penjualan_detail` VALUES ('PJL191200008', 'B0000002', '10', '0', '10000', '10000');
+INSERT INTO `tb_penjualan_detail` VALUES ('PJL191200009', 'B0000001', '10', '2', '10000', '100000');
+INSERT INTO `tb_penjualan_detail` VALUES ('PJL200100010', 'B0000005', '1', '1', '30000', '40000');
 
 -- ----------------------------
 -- Table structure for `tb_satuan`
@@ -222,7 +241,6 @@ CREATE TABLE `tb_satuan` (
 -- ----------------------------
 INSERT INTO `tb_satuan` VALUES ('S001', 'PCS');
 INSERT INTO `tb_satuan` VALUES ('S002', 'DOS');
-INSERT INTO `tb_satuan` VALUES ('S003', 'LUSIN');
 
 -- ----------------------------
 -- Table structure for `tb_sopir`
@@ -231,14 +249,14 @@ DROP TABLE IF EXISTS `tb_sopir`;
 CREATE TABLE `tb_sopir` (
   `kd_sopir` varchar(4) NOT NULL,
   `nama_sopir` varchar(32) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
   PRIMARY KEY (`kd_sopir`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_sopir
 -- ----------------------------
-INSERT INTO `tb_sopir` VALUES ('SR01', 'MARKUS');
-INSERT INTO `tb_sopir` VALUES ('SR02', 'ACO');
+INSERT INTO `tb_sopir` VALUES ('SR01', 'ACO', 'A');
 
 -- ----------------------------
 -- Table structure for `tb_supplier`
@@ -255,7 +273,7 @@ CREATE TABLE `tb_supplier` (
 -- ----------------------------
 -- Records of tb_supplier
 -- ----------------------------
-INSERT INTO `tb_supplier` VALUES ('SP000001', 'ASD', 'ANUGERAH MAS', '21309123');
+INSERT INTO `tb_supplier` VALUES ('SP000001', 'ANUGERAH MAS', 'PANAMPU', '0411457102');
 
 -- ----------------------------
 -- Table structure for `tb_suratjalan`
@@ -267,20 +285,15 @@ CREATE TABLE `tb_suratjalan` (
   `kd_penjualan` varchar(12) DEFAULT NULL,
   `alamat` varchar(32) DEFAULT NULL,
   `no_telp` varchar(16) DEFAULT NULL,
-  `nama_sopir` varchar(32) DEFAULT NULL,
+  `kd_sopir` varchar(4) DEFAULT NULL,
   PRIMARY KEY (`kd_suratjalan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_suratjalan
 -- ----------------------------
-INSERT INTO `tb_suratjalan` VALUES ('SJL191200001', '2019-12-04', 'PJL191200002', 'BARONANG', '123901293', 'MARKUS');
-INSERT INTO `tb_suratjalan` VALUES ('SJL191200002', '2019-12-04', 'PJL191200002', 'BARONANG', '123901293', 'MARKUS');
-INSERT INTO `tb_suratjalan` VALUES ('SJL191200003', '2019-12-04', 'PJL191200002', 'BARONANG', '123901293', 'ACO');
-INSERT INTO `tb_suratjalan` VALUES ('SJL191200004', '2019-12-04', 'PJL191200003', 'BAROMBONK', '129301923', 'MARKUS');
-INSERT INTO `tb_suratjalan` VALUES ('SJL191200005', '2019-12-04', 'PJL191200005', 'SERIGALA', '878221', 'ACO');
-INSERT INTO `tb_suratjalan` VALUES ('SJL191200006', '2019-12-04', 'PJL191200006', 'BARONANG', '123901293', 'MARKUS');
-INSERT INTO `tb_suratjalan` VALUES ('SJL191200007', '2019-12-04', 'PJL191200006', 'BARONANG', '123901293', 'ACO');
+INSERT INTO `tb_suratjalan` VALUES ('SJL200100001', '2020-01-14', 'PJL191200009', 'VETRAN', '129301923', 'SR01');
+INSERT INTO `tb_suratjalan` VALUES ('SJL200100002', '2020-01-14', 'PJL191200008', 'VETRAN', '129301923', 'SR01');
 
 -- ----------------------------
 -- Table structure for `tb_suratjalan_detail`
@@ -307,6 +320,12 @@ INSERT INTO `tb_suratjalan_detail` VALUES ('SJL191200005', 'B0000002', '10');
 INSERT INTO `tb_suratjalan_detail` VALUES ('SJL191200005', 'B0000003', '15');
 INSERT INTO `tb_suratjalan_detail` VALUES ('SJL191200006', 'B0000002', '10');
 INSERT INTO `tb_suratjalan_detail` VALUES ('SJL191200007', 'B0000001', '5');
+INSERT INTO `tb_suratjalan_detail` VALUES ('SJL191200008', 'B0000002', '50');
+INSERT INTO `tb_suratjalan_detail` VALUES ('SJL191200009', 'B0000002', '40');
+INSERT INTO `tb_suratjalan_detail` VALUES ('SJL191200010', 'B0000001', '4');
+INSERT INTO `tb_suratjalan_detail` VALUES ('SJL200100001', 'B0000001', '8');
+INSERT INTO `tb_suratjalan_detail` VALUES ('SJL200100002', 'B0000001', '5');
+INSERT INTO `tb_suratjalan_detail` VALUES ('SJL200100002', 'B0000002', '10');
 DROP TRIGGER IF EXISTS `menambah stok`;
 DELIMITER ;;
 CREATE TRIGGER `menambah stok` AFTER INSERT ON `tb_pembelian_detail` FOR EACH ROW BEGIN

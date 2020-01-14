@@ -24,6 +24,8 @@ Partial Class FormSopir
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormSopir))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbstatus = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tbkdsopir = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -43,6 +45,8 @@ Partial Class FormSopir
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.cbstatus)
+        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.tbkdsopir)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -50,10 +54,30 @@ Partial Class FormSopir
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(610, 100)
+        Me.GroupBox1.Size = New System.Drawing.Size(610, 131)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "DATA SOPIR"
+        '
+        'cbstatus
+        '
+        Me.cbstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbstatus.FormattingEnabled = True
+        Me.cbstatus.Items.AddRange(New Object() {"Aktif", "Non-aktif"})
+        Me.cbstatus.Location = New System.Drawing.Point(183, 85)
+        Me.cbstatus.Name = "cbstatus"
+        Me.cbstatus.Size = New System.Drawing.Size(169, 23)
+        Me.cbstatus.TabIndex = 25
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(81, 88)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(51, 16)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Status :"
         '
         'Label2
         '
@@ -104,9 +128,9 @@ Partial Class FormSopir
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.dgv)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 199)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 230)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(610, 350)
+        Me.GroupBox2.Size = New System.Drawing.Size(610, 319)
         Me.GroupBox2.TabIndex = 20
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "DAFTAR SOPIR"
@@ -119,7 +143,7 @@ Partial Class FormSopir
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Location = New System.Drawing.Point(6, 19)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(598, 325)
+        Me.dgv.Size = New System.Drawing.Size(598, 294)
         Me.dgv.TabIndex = 0
         '
         'btnbatal
@@ -128,7 +152,7 @@ Partial Class FormSopir
         Me.btnbatal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbatal.Image = CType(resources.GetObject("btnbatal.Image"), System.Drawing.Image)
         Me.btnbatal.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnbatal.Location = New System.Drawing.Point(542, 118)
+        Me.btnbatal.Location = New System.Drawing.Point(542, 149)
         Me.btnbatal.Name = "btnbatal"
         Me.btnbatal.Size = New System.Drawing.Size(80, 75)
         Me.btnbatal.TabIndex = 24
@@ -142,7 +166,7 @@ Partial Class FormSopir
         Me.btnhapus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnhapus.Image = CType(resources.GetObject("btnhapus.Image"), System.Drawing.Image)
         Me.btnhapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnhapus.Location = New System.Drawing.Point(456, 118)
+        Me.btnhapus.Location = New System.Drawing.Point(456, 149)
         Me.btnhapus.Name = "btnhapus"
         Me.btnhapus.Size = New System.Drawing.Size(80, 75)
         Me.btnhapus.TabIndex = 23
@@ -156,7 +180,7 @@ Partial Class FormSopir
         Me.btnedit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnedit.Image = CType(resources.GetObject("btnedit.Image"), System.Drawing.Image)
         Me.btnedit.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnedit.Location = New System.Drawing.Point(370, 118)
+        Me.btnedit.Location = New System.Drawing.Point(370, 149)
         Me.btnedit.Name = "btnedit"
         Me.btnedit.Size = New System.Drawing.Size(80, 75)
         Me.btnedit.TabIndex = 22
@@ -170,7 +194,7 @@ Partial Class FormSopir
         Me.btntambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btntambah.Image = CType(resources.GetObject("btntambah.Image"), System.Drawing.Image)
         Me.btntambah.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btntambah.Location = New System.Drawing.Point(284, 118)
+        Me.btntambah.Location = New System.Drawing.Point(284, 149)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(80, 75)
         Me.btntambah.TabIndex = 21
@@ -213,4 +237,6 @@ Partial Class FormSopir
     Friend WithEvents btnhapus As System.Windows.Forms.Button
     Friend WithEvents btnedit As System.Windows.Forms.Button
     Friend WithEvents btntambah As System.Windows.Forms.Button
+    Friend WithEvents cbstatus As System.Windows.Forms.ComboBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

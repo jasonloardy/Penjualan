@@ -49,12 +49,13 @@ Module ModuleDB
             MsgBox(ex.Message, 16, "Error")
         End Try
     End Sub
-    Sub QuerySopir(ByVal query As String, ByVal kd_sopir As String, ByVal nama_sopir As String)
+    Sub QuerySopir(ByVal query As String, ByVal kd_sopir As String, ByVal nama_sopir As String, ByVal status As String)
         Try
             Using cmd As New MySqlCommand
                 cmd.CommandText = query
                 cmd.Parameters.AddWithValue("@kd_sopir", kd_sopir)
                 cmd.Parameters.AddWithValue("@nama_sopir", nama_sopir)
+                cmd.Parameters.AddWithValue("@status", status)
                 cmd.Connection = konek
                 cmd.ExecuteNonQuery()
             End Using

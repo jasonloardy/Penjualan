@@ -45,11 +45,8 @@ Partial Class FormSuratJalan
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btnsopir = New System.Windows.Forms.Button()
-        Me.tbnamasopir = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.tbkdsopir = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cbsopir = New System.Windows.Forms.ComboBox()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -270,60 +267,32 @@ Partial Class FormSuratJalan
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.btnsopir)
-        Me.GroupBox2.Controls.Add(Me.tbnamasopir)
+        Me.GroupBox2.Controls.Add(Me.cbsopir)
         Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.tbkdsopir)
-        Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Location = New System.Drawing.Point(946, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(326, 135)
+        Me.GroupBox2.Size = New System.Drawing.Size(326, 72)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Data Sopir"
         '
-        'btnsopir
-        '
-        Me.btnsopir.Location = New System.Drawing.Point(222, 20)
-        Me.btnsopir.Name = "btnsopir"
-        Me.btnsopir.Size = New System.Drawing.Size(30, 24)
-        Me.btnsopir.TabIndex = 0
-        Me.btnsopir.Text = "..."
-        Me.btnsopir.UseVisualStyleBackColor = True
-        '
-        'tbnamasopir
-        '
-        Me.tbnamasopir.Enabled = False
-        Me.tbnamasopir.Location = New System.Drawing.Point(116, 49)
-        Me.tbnamasopir.Name = "tbnamasopir"
-        Me.tbnamasopir.Size = New System.Drawing.Size(200, 22)
-        Me.tbnamasopir.TabIndex = 2
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 52)
+        Me.Label7.Location = New System.Drawing.Point(6, 32)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(51, 16)
         Me.Label7.TabIndex = 2
         Me.Label7.Text = "Nama :"
         '
-        'tbkdsopir
+        'cbsopir
         '
-        Me.tbkdsopir.Enabled = False
-        Me.tbkdsopir.Location = New System.Drawing.Point(116, 21)
-        Me.tbkdsopir.Name = "tbkdsopir"
-        Me.tbkdsopir.Size = New System.Drawing.Size(100, 22)
-        Me.tbkdsopir.TabIndex = 1
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 24)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(81, 16)
-        Me.Label11.TabIndex = 0
-        Me.Label11.Text = "Kode Sopir :"
+        Me.cbsopir.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbsopir.FormattingEnabled = True
+        Me.cbsopir.Location = New System.Drawing.Point(63, 29)
+        Me.cbsopir.Name = "cbsopir"
+        Me.cbsopir.Size = New System.Drawing.Size(257, 24)
+        Me.cbsopir.TabIndex = 3
         '
         'FormSuratJalan
         '
@@ -373,9 +342,6 @@ Partial Class FormSuratJalan
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents dgv As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents btnsopir As System.Windows.Forms.Button
-    Friend WithEvents tbnamasopir As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents tbkdsopir As System.Windows.Forms.TextBox
-    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents cbsopir As System.Windows.Forms.ComboBox
 End Class
