@@ -45,17 +45,14 @@ Partial Class FormSuratJalan
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btnsopir = New System.Windows.Forms.Button()
-        Me.tbnamasopir = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.tbkdsopir = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.GroupBox4.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
-        Me.SuspendLayout()
+        Me.cbsopir = New System.Windows.Forms.ComboBox()
+        Me.GroupBox4.SuspendLayout
+        Me.GroupBox1.SuspendLayout
+        Me.GroupBox3.SuspendLayout
+        CType(Me.dgv,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GroupBox2.SuspendLayout
+        Me.SuspendLayout
         '
         'GroupBox4
         '
@@ -71,7 +68,7 @@ Partial Class FormSuratJalan
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(326, 135)
         Me.GroupBox4.TabIndex = 3
-        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.TabStop = false
         Me.GroupBox4.Text = "Data Pelanggan"
         '
         'tbnotelp
@@ -83,7 +80,7 @@ Partial Class FormSuratJalan
         '
         'Label10
         '
-        Me.Label10.AutoSize = True
+        Me.Label10.AutoSize = true
         Me.Label10.Location = New System.Drawing.Point(6, 108)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(66, 16)
@@ -99,7 +96,7 @@ Partial Class FormSuratJalan
         '
         'tbnama
         '
-        Me.tbnama.Enabled = False
+        Me.tbnama.Enabled = false
         Me.tbnama.Location = New System.Drawing.Point(116, 49)
         Me.tbnama.Name = "tbnama"
         Me.tbnama.Size = New System.Drawing.Size(200, 22)
@@ -107,7 +104,7 @@ Partial Class FormSuratJalan
         '
         'Label9
         '
-        Me.Label9.AutoSize = True
+        Me.Label9.AutoSize = true
         Me.Label9.Location = New System.Drawing.Point(6, 80)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(56, 16)
@@ -116,7 +113,7 @@ Partial Class FormSuratJalan
         '
         'Label8
         '
-        Me.Label8.AutoSize = True
+        Me.Label8.AutoSize = true
         Me.Label8.Location = New System.Drawing.Point(6, 52)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(51, 16)
@@ -125,7 +122,7 @@ Partial Class FormSuratJalan
         '
         'tbkdpelanggan
         '
-        Me.tbkdpelanggan.Enabled = False
+        Me.tbkdpelanggan.Enabled = false
         Me.tbkdpelanggan.Location = New System.Drawing.Point(116, 21)
         Me.tbkdpelanggan.Name = "tbkdpelanggan"
         Me.tbkdpelanggan.Size = New System.Drawing.Size(100, 22)
@@ -133,7 +130,7 @@ Partial Class FormSuratJalan
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
+        Me.Label3.AutoSize = true
         Me.Label3.Location = New System.Drawing.Point(6, 24)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(102, 16)
@@ -153,7 +150,7 @@ Partial Class FormSuratJalan
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(336, 135)
         Me.GroupBox1.TabIndex = 2
-        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.TabStop = false
         Me.GroupBox1.Text = "Surat Jalan"
         '
         'btnpenjualan
@@ -163,11 +160,11 @@ Partial Class FormSuratJalan
         Me.btnpenjualan.Size = New System.Drawing.Size(30, 24)
         Me.btnpenjualan.TabIndex = 7
         Me.btnpenjualan.Text = "..."
-        Me.btnpenjualan.UseVisualStyleBackColor = True
+        Me.btnpenjualan.UseVisualStyleBackColor = true
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
+        Me.Label2.AutoSize = true
         Me.Label2.Location = New System.Drawing.Point(6, 53)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(103, 16)
@@ -176,7 +173,7 @@ Partial Class FormSuratJalan
         '
         'tbkdpenjualan
         '
-        Me.tbkdpenjualan.Enabled = False
+        Me.tbkdpenjualan.Enabled = false
         Me.tbkdpenjualan.Location = New System.Drawing.Point(126, 78)
         Me.tbkdpenjualan.Name = "tbkdpenjualan"
         Me.tbkdpenjualan.Size = New System.Drawing.Size(164, 22)
@@ -184,7 +181,7 @@ Partial Class FormSuratJalan
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
+        Me.Label1.AutoSize = true
         Me.Label1.Location = New System.Drawing.Point(6, 27)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(65, 16)
@@ -193,7 +190,7 @@ Partial Class FormSuratJalan
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
+        Me.Label4.AutoSize = true
         Me.Label4.Location = New System.Drawing.Point(6, 81)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(96, 16)
@@ -209,7 +206,7 @@ Partial Class FormSuratJalan
         '
         'tbkdsuratjalan
         '
-        Me.tbkdsuratjalan.Enabled = False
+        Me.tbkdsuratjalan.Enabled = false
         Me.tbkdsuratjalan.Location = New System.Drawing.Point(126, 50)
         Me.tbkdsuratjalan.Name = "tbkdsuratjalan"
         Me.tbkdsuratjalan.Size = New System.Drawing.Size(200, 22)
@@ -217,9 +214,9 @@ Partial Class FormSuratJalan
         '
         'btnbatal
         '
-        Me.btnbatal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnbatal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbatal.Image = CType(resources.GetObject("btnbatal.Image"), System.Drawing.Image)
+        Me.btnbatal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.btnbatal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnbatal.Image = CType(resources.GetObject("btnbatal.Image"),System.Drawing.Image)
         Me.btnbatal.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnbatal.Location = New System.Drawing.Point(1106, 574)
         Me.btnbatal.Name = "btnbatal"
@@ -227,13 +224,13 @@ Partial Class FormSuratJalan
         Me.btnbatal.TabIndex = 7
         Me.btnbatal.Text = "Batal"
         Me.btnbatal.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnbatal.UseVisualStyleBackColor = True
+        Me.btnbatal.UseVisualStyleBackColor = true
         '
         'btnsimpan
         '
-        Me.btnsimpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnsimpan.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsimpan.Image = CType(resources.GetObject("btnsimpan.Image"), System.Drawing.Image)
+        Me.btnsimpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.btnsimpan.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnsimpan.Image = CType(resources.GetObject("btnsimpan.Image"),System.Drawing.Image)
         Me.btnsimpan.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnsimpan.Location = New System.Drawing.Point(1192, 574)
         Me.btnsimpan.Name = "btnsimpan"
@@ -241,26 +238,26 @@ Partial Class FormSuratJalan
         Me.btnsimpan.TabIndex = 8
         Me.btnsimpan.Text = "Simpan"
         Me.btnsimpan.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnsimpan.UseVisualStyleBackColor = True
+        Me.btnsimpan.UseVisualStyleBackColor = true
         '
         'GroupBox3
         '
-        Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.dgv)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 153)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(1260, 415)
         Me.GroupBox3.TabIndex = 9
-        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.TabStop = false
         Me.GroupBox3.Text = "Daftar Barang"
         '
         'dgv
         '
-        Me.dgv.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Location = New System.Drawing.Point(9, 21)
         Me.dgv.Name = "dgv"
@@ -269,65 +266,37 @@ Partial Class FormSuratJalan
         '
         'GroupBox2
         '
-        Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.btnsopir)
-        Me.GroupBox2.Controls.Add(Me.tbnamasopir)
+        Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.cbsopir)
         Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.tbkdsopir)
-        Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Location = New System.Drawing.Point(946, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(326, 135)
+        Me.GroupBox2.Size = New System.Drawing.Size(326, 72)
         Me.GroupBox2.TabIndex = 7
-        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.TabStop = false
         Me.GroupBox2.Text = "Data Sopir"
-        '
-        'btnsopir
-        '
-        Me.btnsopir.Location = New System.Drawing.Point(222, 20)
-        Me.btnsopir.Name = "btnsopir"
-        Me.btnsopir.Size = New System.Drawing.Size(30, 24)
-        Me.btnsopir.TabIndex = 0
-        Me.btnsopir.Text = "..."
-        Me.btnsopir.UseVisualStyleBackColor = True
-        '
-        'tbnamasopir
-        '
-        Me.tbnamasopir.Enabled = False
-        Me.tbnamasopir.Location = New System.Drawing.Point(116, 49)
-        Me.tbnamasopir.Name = "tbnamasopir"
-        Me.tbnamasopir.Size = New System.Drawing.Size(200, 22)
-        Me.tbnamasopir.TabIndex = 2
         '
         'Label7
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 52)
+        Me.Label7.AutoSize = true
+        Me.Label7.Location = New System.Drawing.Point(19, 29)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(51, 16)
+        Me.Label7.Size = New System.Drawing.Size(86, 16)
         Me.Label7.TabIndex = 2
-        Me.Label7.Text = "Nama :"
+        Me.Label7.Text = "Nama Sopir :"
         '
-        'tbkdsopir
+        'cbsopir
         '
-        Me.tbkdsopir.Enabled = False
-        Me.tbkdsopir.Location = New System.Drawing.Point(116, 21)
-        Me.tbkdsopir.Name = "tbkdsopir"
-        Me.tbkdsopir.Size = New System.Drawing.Size(100, 22)
-        Me.tbkdsopir.TabIndex = 1
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 24)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(81, 16)
-        Me.Label11.TabIndex = 0
-        Me.Label11.Text = "Kode Sopir :"
+        Me.cbsopir.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbsopir.FormattingEnabled = true
+        Me.cbsopir.Location = New System.Drawing.Point(129, 27)
+        Me.cbsopir.Name = "cbsopir"
+        Me.cbsopir.Size = New System.Drawing.Size(136, 24)
+        Me.cbsopir.TabIndex = 3
         '
         'FormSuratJalan
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8!, 16!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1284, 661)
         Me.Controls.Add(Me.GroupBox2)
@@ -336,21 +305,21 @@ Partial Class FormSuratJalan
         Me.Controls.Add(Me.btnsimpan)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FormSuratJalan"
         Me.Text = "Form Surat Jalan"
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(false)
+        Me.GroupBox4.PerformLayout
+        Me.GroupBox1.ResumeLayout(false)
+        Me.GroupBox1.PerformLayout
+        Me.GroupBox3.ResumeLayout(false)
+        CType(Me.dgv,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox2.ResumeLayout(false)
+        Me.GroupBox2.PerformLayout
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents tbnotelp As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
@@ -373,9 +342,6 @@ Partial Class FormSuratJalan
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents dgv As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents btnsopir As System.Windows.Forms.Button
-    Friend WithEvents tbnamasopir As System.Windows.Forms.TextBox
+    Friend WithEvents cbsopir As System.Windows.Forms.ComboBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents tbkdsopir As System.Windows.Forms.TextBox
-    Friend WithEvents Label11 As System.Windows.Forms.Label
 End Class
