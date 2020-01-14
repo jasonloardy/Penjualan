@@ -6,13 +6,7 @@ Public Class FormSuratJalan
         FormDaftarTransaksi.from = "suratjalan"
         FormDaftarTransaksi.ShowDialog()
     End Sub
-    Sub cb_sopir()
-        Dim q As String = "SELECT kd_sopir,nama_sopir FROM tb_sopir WHERE status='A'"
-        cbsopir.DataSource = querycb(q)
-        cbsopir.ValueMember = "kd_sopir"
-        cbsopir.DisplayMember = "nama_sopir"
-        cbsopir.SelectedIndex = -1
-    End Sub
+
     Private Sub tbkdpenjualan_TextChanged(sender As Object, e As EventArgs) Handles tbkdpenjualan.TextChanged
         isigrid()
     End Sub
@@ -24,7 +18,8 @@ Public Class FormSuratJalan
         tbnama.Clear()
         tbalamat.Clear()
         tbnotelp.Clear()
-        cb_sopir()
+        tbkdsopir.Clear()
+        tbnamasopir.Clear()
     End Sub
     Sub kode_suratjalan()
         cmd = New MySqlCommand("SELECT kd_suratjalan FROM tb_suratjalan WHERE kd_suratjalan LIKE 'SJL%'" _
@@ -121,7 +116,7 @@ Public Class FormSuratJalan
         isigrid()
     End Sub
 
-    Private Sub btnsopir_Click(sender As Object, e As EventArgs)
+    Private Sub btnsopir_Click(sender As Object, e As EventArgs) Handles btnsopir.Click
         FormSopir.from = "suratjalan"
         FormSopir.ShowDialog()
     End Sub
@@ -138,7 +133,7 @@ Public Class FormSuratJalan
         End If
         Dim simpan As String = "INSERT INTO tb_suratjalan " _
                             & "VALUES ('" & tbkdsuratjalan.Text & "', '" & Format(dtptanggal.Value, "yyyy-MM-dd") & "', '" & tbkdpenjualan.Text & "', " _
-                            & "'" & tbalamat.Text & "', '" & tbnotelp.Text & "', '" & cbsopir.SelectedValue & "')"
+                            & "'" & tbalamat.Text & "', '" & tbnotelp.Text & "', '" & tbnamasopir.Text & "')"
         Query(simpan)
         Dim simpandetail As String = "INSERT INTO tb_suratjalan_detail (kd_suratjalan, kd_barang, antar) " _
                              & "SELECT '" & tbkdsuratjalan.Text & "', kd_barang, antar FROM tb_keranjang_antar WHERE antar > 0"
@@ -157,7 +152,7 @@ Public Class FormSuratJalan
         If nplh = 6 Then
             If tbkdpenjualan.Text = "" Then
                 MsgBox("Masukkan data penjualan!", 16, "Perhatian")
-            ElseIf cbsopir.Text = "" Then
+            ElseIf tbkdsopir.Text = "" Then
                 MsgBox("Masukkan data sopir!", 16, "Perhatian")
             Else
                 simpansuratjalan()
