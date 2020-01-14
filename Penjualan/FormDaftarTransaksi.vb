@@ -73,7 +73,7 @@ Public Class FormDaftarTransaksi
         End If
     End Sub
     Sub isigridtrx2(ByVal page As String, ByVal query As String, ByVal querycari As String)
-        Dim jumlahitem As Integer = 1
+        Dim jumlahitem As Integer = 5
         Dim index As Integer = jumlahitem * (page - 1)
         cmd = New MySqlCommand(query & " LIMIT " & index & "," & jumlahitem, konek)
         cmd.Parameters.AddWithValue("@param1", "%" + tbcari.Text + "%")

@@ -106,7 +106,7 @@ Public Class FormJenis
         dr.Read()
         If dr.HasRows Then
             dr.Close()
-            MsgBox("jenis tidak dapat dihapus!", 48, "Perhatian")
+            MsgBox("Jenis tidak dapat dihapus!", 48, "Perhatian")
         Else
             dr.Close()
             Dim query As String = "DELETE FROM tb_jenis WHERE kd_jenis = @kd_jenis"

@@ -129,10 +129,21 @@ Public Class FormSupplier
     End Sub
 
     Sub queryhapus()
-        Dim queryhapus As String = "DELETE FROM tb_supplier WHERE kd_supplier = '" & id_data & "'"
-        Query(queryhapus)
-        isigrid(tbpage.Text)
-        MsgBox("Berhasil hapus data!", MsgBoxStyle.Information, "Informasi")
+        cmd.CommandText = "SELECT * FROM tb_pembelian " _
+            & "WHERE kd_supplier = '" & id_data & "'"
+        cmd.Connection = konek
+        dr = cmd.ExecuteReader
+        dr.Read()
+        If dr.HasRows Then
+            dr.Close()
+            MsgBox("Supplier tidak dapat dihapus!", 48, "Perhatian")
+        Else
+            dr.Close()
+            Dim queryhapus As String = "DELETE FROM tb_supplier WHERE kd_supplier = '" & id_data & "'"
+            Query(queryhapus)
+            isigrid(tbpage.Text)
+            MsgBox("Berhasil hapus data!", MsgBoxStyle.Information, "Informasi")
+        End If
     End Sub
     Private Sub btntambah_Click(sender As Object, e As EventArgs) Handles btntambah.Click
         If btntambah.Text = "Tambah" Then
@@ -187,7 +198,7 @@ Public Class FormSupplier
         reset()
     End Sub
 
-    Private Sub dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellEnter
+    Private Sub dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellClick
         reset()
         GridToTextBox()
         btntambah.Enabled = False

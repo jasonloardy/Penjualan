@@ -188,10 +188,22 @@ Public Class FormBarang
     End Sub
 
     Sub queryhapus()
-        Dim queryhapus As String = "DELETE FROM tb_barang WHERE kd_barang = " & id_data
-        Query(queryhapus)
-        isigrid(tbpage.Text)
-        MsgBox("Berhasil hapus data!", MsgBoxStyle.Information, "Informasi")
+        cmd.CommandText = "SELECT * FROM " _
+            & "(SELECT kd_barang FROM tb_pembelian_detail UNION SELECT kd_barang FROM tb_penjualan_detail) AS u " _
+            & "WHERE u.kd_barang = '" & id_data & "'"
+        cmd.Connection = konek
+        dr = cmd.ExecuteReader
+        dr.Read()
+        If dr.HasRows Then
+            dr.Close()
+            MsgBox("Barang tidak dapat dihapus!", 48, "Perhatian")
+        Else
+            dr.Close()
+            Dim queryhapus As String = "DELETE FROM tb_barang WHERE kd_barang = '" & id_data & "'"
+            Query(queryhapus)
+            isigrid(tbpage.Text)
+            MsgBox("Berhasil hapus data!", MsgBoxStyle.Information, "Informasi")
+        End If
     End Sub
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles chkbarcode.CheckedChanged
         If Not chkbarcode.Checked Then
@@ -259,7 +271,7 @@ Public Class FormBarang
         reset()
     End Sub
 
-    Private Sub dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellEnter
+    Private Sub dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellClick
         reset()
         GridToTextBox()
         btntambah.Enabled = False
@@ -314,5 +326,9 @@ Public Class FormBarang
                 insertkeranjang(tbkdbarang.Text, "penjualan")
                 Me.Close()
         End If
+    End Sub
+
+    Private Sub FormBarang_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Dispose()
     End Sub
 End Class
